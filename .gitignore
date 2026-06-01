@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Local working/reference folders
+Digital Presance/
+Digital Presence/
+New Folder With Items/
+
+# Unused local image references
+public/images/generated/
+public/images/gum-pieces.png
+public/images/hero_lifestyle.png
+public/images/hero_lifestyle_old.png
+public/images/stand-pouch.png
+public/images/wholesale_box.png
+public/images/wholesale_box_old.png
+src/agent.js
+src/counter.js
+src/javascript.svg
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

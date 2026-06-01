@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sihatree | Nature’s Goodness, Made Simple for Everyday Life</title>
+  <meta name="description"
+    content="Sihatree brings Arabic Gum Powder into a modern, easy-to-enjoy format for daily use, retail customers, and wholesale partners." />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <ul class="nav-links nav-left">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+    </ul>
+
+    <div class="logo">
+      <a href="#"><img src="/images/logo.png" alt="Sihatree Logo" id="nav-logo"></a>
+    </div>
+
+    <ul class="nav-links nav-right">
+      <li><a href="#wholesale">Wholesale</a></li>
+      <li><a href="#" class="retail-cta">Retail</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sticky CTA Pill -->
+  <div class="sticky-cta" id="sticky-cta">
+    <a href="#" class="btn btn-primary retail-cta">Shop Retail</a>
+    <a href="#wholesale" class="btn btn-outline wholesale-cta" style="background: white;">Wholesale Inquiry</a>
+  </div>
+
+  <!-- Retail Modal -->
+  <div id="retailModal" class="modal">
+    <div class="modal-content">
+      <button type="button" class="close-modal" aria-label="Close retail store options">&times;</button>
+      <h3>Shop Sihatree Online</h3>
+      <p>Select your favorite store to order for personal use.</p>
+      <div class="modal-btn-group">
+        <a href="#" class="btn btn-primary"><i class="fab fa-tiktok"></i> TikTok Shop</a>
+        <a href="#" class="btn btn-primary" style="background: #EE4D2D;"><i class="fas fa-shopping-bag"></i> Shopee</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero" data-cta-section>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="hero-layout">
+      <div class="hero-content" data-aos="fade-right">
+        <span class="hero-tagline"
+          style="color: var(--secondary-color); font-weight: 700; text-transform: uppercase;">Nature’s Essence</span>
+        <h1><span class="essence-text">Nature’s Goodness</span>, <br> Made Simple for Everyday Life</h1>
+        <p>Sihatree brings Arabic Gum Powder into a modern, easy-to-enjoy format — perfect for daily use and available
+          for both retail and wholesale customers.</p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary retail-cta hero-action-btn" data-hero-hover="retail">Shop Retail</a>
+          <a href="#wholesale" class="btn btn-outline wholesale-cta hero-action-btn" data-hero-hover="wholesale" style="background: white;">Wholesale Inquiry</a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left">
+        <div class="hero-visual-container">
+          <div class="floating-icons">
+            <div class="f-icon f-icon-1"><img src="/images/shape_star.png" alt=""></div>
+            <div class="f-icon f-icon-2"><img src="/images/shape_heart.png" alt=""></div>
+            <div class="f-icon f-icon-3"><img src="/images/shape_leaf.png" alt=""></div>
+            <div class="f-icon f-icon-4"><img src="/images/shape_squircle.png" alt=""></div>
+            <div class="f-icon f-icon-5"><img src="/images/shape_circle.png" alt=""></div>
+          </div>
+          <img src="/images/newhero.png" alt="Sihatree Arabic Gum Powder" class="hero-img active"
+            id="hero-img-lifestyle">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Arabic Gum Scroll Story -->
+  <section id="benefits" class="gum-transition">
+    <div class="gum-sticky">
+      <div class="gum-layout">
+      <div class="gum-copy gum-copy-why">
+        <h2>A Fresh Way to Enjoy <span style="color: var(--secondary-color);">Arabic Gum Powder</span></h2>
+        <p style="font-size: 1.15rem; margin-bottom: 3.5rem; color: rgba(255, 255, 255, 0.8); max-width: 600px;">
+          Sihatree makes Arabic Gum Powder simple, enjoyable, and easy to include in your daily routine. From attractive
+          packaging to delicious fruit-inspired flavours, every detail is designed for today’s lifestyle.</p>
+
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon-box"
+              style="background: rgba(255, 255, 255, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); font-size: 1.2rem; flex-shrink: 0;">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="benefit-text">
+              <h4 style="color: white; margin-bottom: 0.3rem;">Naturally Inspired</h4>
+              <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Made from nature’s goodness.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon-box"
+              style="background: rgba(255, 255, 255, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); font-size: 1.2rem; flex-shrink: 0;">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="benefit-text">
+              <h4 style="color: white; margin-bottom: 0.3rem;">Easy for Everyday Use</h4>
+              <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Quick to mix and enjoy anytime.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon-box"
+              style="background: rgba(255, 255, 255, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); font-size: 1.2rem; flex-shrink: 0;">
+              <i class="fas fa-cube"></i>
+            </div>
+            <div class="benefit-text">
+              <h4 style="color: white; margin-bottom: 0.3rem;">Retail Ready</h4>
+              <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Modern packaging that stands out on the shelf.
+              </p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon-box"
+              style="background: rgba(255, 255, 255, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); font-size: 1.2rem; flex-shrink: 0;">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="benefit-text">
+              <h4 style="color: white; margin-bottom: 0.3rem;">Growing Worldwide</h4>
+              <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Available for retail and distribution opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gum-product">
+        <div class="why-visual shared-product-visual">
+          <div class="why-visual-container">
+            <div class="why-img-wrapper active"><img src="/images/plain.png" alt="Classic Sihatree Arabic Gum Powder" class="why-img"></div>
+            <div class="why-img-wrapper"><img src="/images/berries.png" alt="Sihatree Berry Blend Arabic Gum Powder" class="why-img"></div>
+            <div class="why-img-wrapper"><img src="/images/mango.png" alt="Sihatree Mango Arabic Gum Powder" class="why-img"></div>
+            <div class="why-img-wrapper"><img src="/images/pineapple.png" alt="Sihatree Pineapple Arabic Gum Powder" class="why-img"></div>
+            <div class="why-img-wrapper"><img src="/images/pomegranate.png" alt="Sihatree Pomegranate Arabic Gum Powder" class="why-img"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gum-copy gum-copy-love love-content">
+        <h2>Why People Love <span>Sihatree Arabic Gum</span></h2>
+        <div class="love-grid">
+          <article class="love-card">
+            <span class="love-icon"><i class="fas fa-seedling"></i></span>
+            <div>
+              <h3>Rich in Natural Fibre</h3>
+              <p>A simple way to support your daily fibre intake.</p>
+            </div>
+          </article>
+          <article class="love-card">
+            <span class="love-icon"><i class="fas fa-bacteria"></i></span>
+            <div>
+              <h3>Prebiotic Fibre Source</h3>
+              <p>Contains natural fibre that helps nourish beneficial gut bacteria.</p>
+            </div>
+          </article>
+          <article class="love-card">
+            <span class="love-icon"><i class="fas fa-mug-hot"></i></span>
+            <div>
+              <h3>Easy Daily Habit</h3>
+              <p>Quick to mix and easy to enjoy wherever you are.</p>
+            </div>
+          </article>
+          <article class="love-card">
+            <span class="love-icon"><i class="fas fa-leaf"></i></span>
+            <div>
+              <h3>Naturally Sourced</h3>
+              <p>Made from carefully selected Arabic Gum.</p>
+            </div>
+          </article>
+          <article class="love-card">
+            <span class="love-icon"><i class="fas fa-tint"></i></span>
+            <div>
+              <h3>Refreshing Flavour Choices</h3>
+              <p>Enjoy original or fruit-inspired flavours to suit your taste.</p>
+            </div>
+          </article>
+          <article class="love-card">
+            <span class="love-icon"><i class="fas fa-box-open"></i></span>
+            <div>
+              <h3>Convenient Powder Format</h3>
+              <p>Easy to store, carry, and prepare anytime.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Range -->
+  <section id="products" class="products">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our Vibrant Range</h2>
+      <p>Find Your Favourite Flavour</p>
+    </div>
+    <div class="product-carousel" aria-label="Sihatree product flavours">
+    <button type="button" class="carousel-control carousel-control-prev" id="productPrev" aria-label="Scroll products left">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="product-grid" id="productCarousel">
+      <div class="product-card" data-aos="fade-up">
+        <div class="card-visual">
+          <img src="/images/shape_squircle.png" alt="" class="card-bg-shape">
+          <img src="/images/plain.png" alt="Classic" class="product-img">
+        </div>
+        <span class="product-kicker">Classic</span>
+        <h3>Original Arabic Gum</h3>
+        <p>Simple, pure, and perfect for everyday use.</p>
+      </div>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-visual">
+          <img src="/images/shape_heart.png" alt="" class="card-bg-shape">
+          <img src="/images/berries.png" alt="Berries" class="product-img">
+        </div>
+        <span class="product-kicker">Berries</span>
+        <h3>Berry Blend</h3>
+        <p>A fruity and refreshing berry flavour.</p>
+      </div>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-visual">
+          <img src="/images/shape_circle.png" alt="" class="card-bg-shape">
+          <img src="/images/mango.png" alt="Mango" class="product-img">
+        </div>
+        <span class="product-kicker">Mango</span>
+        <h3>Mango</h3>
+        <p>Sweet, tropical, and full of sunshine.</p>
+      </div>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-visual">
+          <img src="/images/shape_star.png" alt="" class="card-bg-shape">
+          <img src="/images/pineapple.png" alt="Pineapple" class="product-img">
+        </div>
+        <span class="product-kicker">Pineapple</span>
+        <h3>Pineapple</h3>
+        <p>Bright, refreshing, and fun to enjoy.</p>
+      </div>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="card-visual">
+          <img src="/images/shape_leaf.png" alt="" class="card-bg-shape">
+          <img src="/images/pomegranate.png" alt="Pomegranate" class="product-img">
+        </div>
+        <span class="product-kicker">Pomegranate</span>
+        <h3>Pomegranate</h3>
+        <p>Rich, vibrant, and naturally distinctive.</p>
+      </div>
+    </div>
+    <button type="button" class="carousel-control carousel-control-next" id="productNext" aria-label="Scroll products right">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    </div>
+  </section>
+
+  <!-- Wholesale Lead Capture (Redesigned) -->
+  <section id="wholesale" class="wholesale-section" data-cta-section>
+    <div class="wholesale-layout">
+      <div class="wholesale-info" data-aos="fade-right">
+        <h2>Interested in Wholesale?</h2>
+        <p class="wholesale-desc">We welcome retailers, resellers, distributors, gift companies, and bulk buyers.
+          Contact us to learn more about pricing, order quantities, and partnership opportunities.</p>
+
+        <div class="wholesale-benefits">
+          <div class="wholesale-benefit-card">
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+            <p>Bulk Pricing Available</p>
+          </div>
+          <div class="wholesale-benefit-card">
+            <span class="check-icon"><i class="fas fa-check"></i></span>
+            <p>Marketing Support Materials</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wholesale-form-card" data-aos="fade-left">
+        <form id="wholesaleForm" class="grid-form">
+          <div class="form-row">
+            <input type="text" name="fullName" placeholder="Full Name" autocomplete="name" minlength="2" required>
+            <input type="text" name="companyName" placeholder="Company Name" autocomplete="organization">
+          </div>
+          <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+          <input type="tel" name="phone" placeholder="Phone / WhatsApp" autocomplete="tel" inputmode="tel"
+            pattern="^[+()0-9\\s-]{7,20}$" title="Enter a valid phone or WhatsApp number." required>
+          <textarea name="message" placeholder="Your Message" rows="5" minlength="10" required></textarea>
+          <button type="submit" class="btn-submit-wholesale">
+            Submit Wholesale Inquiry <i class="fas fa-paper-plane" style="margin-left: 8px; font-size: 0.9rem;"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (Redesigned with Tabs) -->
+  <section class="faq">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Common Questions</h2>
+    </div>
+
+    <div class="faq-tabs" data-aos="fade-up">
+      <button class="faq-tab active" data-tab="retail-faq">Retail FAQ<span>(For personal buyers)</span></button>
+      <button class="faq-tab" data-tab="wholesale-faq">Wholesale FAQ<span>(For business partners)</span></button>
+    </div>
+
+    <div class="faq-container">
+      <!-- Retail FAQ Content -->
+      <div id="retail-faq" class="faq-tab-content active">
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">What is Sihatree Arabic Gum Powder? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Sihatree is an instant Arabic Gum powder designed to be easy to use in everyday drinks
+            and recipes. It comes in a convenient format with optional fruit-inspired variants.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">How do I use Sihatree? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Sihatree can be mixed into drinks such as water, smoothies, or juice. It can also be
+            used in baking and cooking. Preparation suggestions are provided on the packaging.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">What does Arabic Gum taste like? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Arabic Gum naturally has a very mild, neutral taste. Sihatree variants may include
+            fruit extracts such as mango, pineapple, or pomegranate for a more enjoyable flavor profile.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">What flavours are available? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            Sihatree currently offers several options, including:
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+              <li>Original Arabic Gum Powder</li>
+              <li>Mango Extract</li>
+              <li>Pineapple Extract</li>
+              <li>Pomegranate Extract</li>
+              <li>Berry Blend</li>
+            </ul>
+            Availability may vary depending on the retailer.
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">What is the pack size? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Each Sihatree pack contains 150g.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">Where can I buy Sihatree? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">
+            You can purchase Sihatree through our official online retail platforms:
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+              <li>TikTok Shop</li>
+              <li>Shopee</li>
+            </ul>
+            Use the Shop Retail buttons on this page to go directly to the store.
+          </div>
+        </div>
+      </div>
+
+      <!-- Wholesale FAQ Content -->
+      <div id="wholesale-faq" class="faq-tab-content">
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">Can I buy Sihatree in bulk? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Yes. Sihatree is available for bulk orders for retailers, resellers, distributors, and
+            corporate buyers. Please contact our sales team to discuss pricing and order quantities.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">How do I become a reseller or distributor? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">You can contact our sales team through WhatsApp or the wholesale inquiry form on this
+            page. Our team will follow up with product and ordering details.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">Who can apply for wholesale? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Wholesale inquiries are suitable for retail stores, supermarkets, online sellers,
+            distributors, and corporate buyers.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">Is there a minimum order quantity (MOQ)? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Minimum order quantities may vary depending on the type of partnership and order
+            destination. Our sales team will provide details during the inquiry process.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">Do you support international distributors? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">Yes. We welcome inquiries from international retailers and distributors, subject to
+            logistics and regional availability.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button type="button" class="faq-question">How can I contact the Sihatree team? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer">You can contact our sales team through WhatsApp (fastest response) or the wholesale
+            inquiry form on this page. Our team typically responds within 1–2 business days.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA (Redesigned) -->
+  <section class="final-cta" data-cta-section>
+    <div data-aos="zoom-in">
+      <h2>Choose Your Sihatree Path</h2>
+      <p>Whether you’re looking for a daily wellness drink or a business opportunity, getting started is easy.</p>
+      <div class="footer-cta-group">
+        <a href="#" class="btn btn-footer-retail retail-cta">Shop Retail</a>
+        <a href="#wholesale" class="btn btn-footer-wholesale wholesale-cta">Wholesale Inquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Redesigned) -->
+  <footer class="main-footer">
+    <div class="footer-layout">
+      <div class="footer-col brand-col">
+        <img src="/images/logo.png" alt="Sihatree Logo" class="footer-logo">
+        <p class="footer-desc">Bringing the natural goodness of Arabic Gum into your daily routine. Simple, refreshing,
+          and easy to enjoy.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#wholesale">Wholesale</a></li>
+          <li><a href="#" class="retail-cta">Retail</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links-footer">
+          <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-contact">
+          <p>Questions? Email us at:</p>
+          <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sihatree. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

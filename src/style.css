@@ -534,8 +534,12 @@ nav.scrolled .nav-links {
 
 /* --- Products --- */
 .products {
+    min-height: 100vh;
     padding: 8rem 5%;
     background: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .product-carousel {
@@ -666,12 +670,14 @@ nav.scrolled .nav-links {
 
 /* --- Arabic Gum Scroll Story --- */
 .gum-transition {
+    --stage-2-progress: 0;
+    --why-in: 0;
     --gum-progress: 0;
     --why-out: 0;
     --love-in: 0;
     --product-x: 0px;
     --story-bg: var(--primary-color);
-    height: 220vh;
+    height: 450vh;
     position: relative;
     background: var(--story-bg);
 }
@@ -704,16 +710,34 @@ nav.scrolled .nav-links {
 .gum-copy {
     grid-area: copy;
     min-width: 0;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.gum-copy-tree {
+    opacity: calc(1 - var(--stage-2-progress));
+    transform: translateX(calc(var(--stage-2-progress) * -90px));
+    filter: blur(calc(var(--stage-2-progress) * 8px));
+    transition: none;
+}
+
+.gum-copy-crystals {
+    opacity: calc(var(--stage-2-progress) * (1 - var(--why-in)));
+    transform: translateX(calc((1 - var(--stage-2-progress)) * 90px - var(--why-in) * 90px));
+    filter: blur(calc((1 - var(--stage-2-progress)) * 8px + var(--why-in) * 8px));
+    transition: none;
 }
 
 .gum-copy-why {
-    opacity: calc(1 - var(--why-out));
-    transform: translateX(calc(var(--why-out) * -90px));
-    filter: blur(calc(var(--why-out) * 8px));
+    opacity: calc(var(--why-in) * (1 - var(--why-out)));
+    transform: translateX(calc((1 - var(--why-in)) * 90px - var(--why-out) * 90px));
+    filter: blur(calc((1 - var(--why-in)) * 8px + var(--why-out) * 8px));
     transition: none;
     pointer-events: auto;
 }
 
+.gum-copy-tree h2,
+.gum-copy-crystals h2,
 .gum-copy-why h2 {
     color: white;
     font-size: 3.5rem;
@@ -786,8 +810,29 @@ nav.scrolled .nav-links {
     width: 100%;
     height: 425px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+.gum-stage-img {
+    position: absolute;
+    width: 115%;
+    max-width: 690px;
+    object-fit: contain;
+    z-index: 10;
+    animation: float 6s infinite ease-in-out;
+}
+
+.gum-img-tree {
+    opacity: calc(1 - var(--stage-2-progress));
+    transform: translateX(calc(var(--stage-2-progress) * 100px)) scale(calc(0.9 + 0.1 * (1 - var(--stage-2-progress))));
+    filter: blur(calc(var(--stage-2-progress) * 8px)) drop-shadow(0 20px 50px rgba(0, 0, 0, 0.2));
+}
+
+.gum-img-crystals {
+    opacity: calc(var(--stage-2-progress) * (1 - var(--why-in)));
+    transform: translateX(calc((1 - var(--stage-2-progress)) * -100px + var(--why-in) * 100px)) scale(calc(0.9 + 0.1 * var(--stage-2-progress)));
+    filter: blur(calc((1 - var(--stage-2-progress)) * 8px + var(--why-in) * 8px)) drop-shadow(0 20px 50px rgba(0, 0, 0, 0.2));
 }
 
 .why-img-wrapper {
@@ -797,14 +842,13 @@ nav.scrolled .nav-links {
     justify-content: center;
     opacity: 0;
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: scale(0.8) translateY(20px);
-    filter: blur(20px);
+    transform: scale(calc(0.8 + 0.2 * var(--why-in))) translateX(calc((1 - var(--why-in)) * -100px)) translateY(20px);
     pointer-events: none;
 }
 
 .why-img-wrapper.active {
-    opacity: 1;
-    transform: scale(1) translateY(0) rotate(var(--random-rotate, 0deg));
+    opacity: calc(var(--why-in));
+    transform: scale(calc(0.9 + 0.1 * var(--why-in))) translateY(0) rotate(var(--random-rotate, 0deg));
     filter: blur(0);
     pointer-events: auto;
 }
@@ -859,10 +903,14 @@ nav.scrolled .nav-links {
 
 /* --- Wholesale (Redesigned) --- */
 .wholesale-section {
+    min-height: 100vh;
     padding: 10rem 5%;
     background: #F9F6F1;
     /* Pale Off-white/Cream */
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .wholesale-layout {
@@ -1102,10 +1150,14 @@ nav.scrolled .nav-links {
 
 /* --- Final CTA (Redesigned) --- */
 .final-cta {
+    min-height: 100vh;
     padding: 10rem 5%;
     text-align: center;
     background: var(--secondary-color);
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .final-cta h2 {
@@ -1252,8 +1304,12 @@ nav.scrolled .nav-links {
 
 /* --- FAQ --- */
 .faq {
+    min-height: 100vh;
     padding: 10rem 5%;
     background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .faq-tabs {
@@ -1426,6 +1482,8 @@ nav.scrolled .nav-links {
     .section-title h2,
     .final-cta h2,
     .hero-info h2,
+    .gum-copy-tree h2,
+    .gum-copy-crystals h2,
     .gum-copy-why h2,
     .gum-copy-love h2,
     .wholesale-info h2 {
@@ -1439,10 +1497,9 @@ nav.scrolled .nav-links {
 
     /* Hero Section Mobile */
     .hero {
-        padding-top: 3.5rem !important;
-        /* Reduced further to bring content closer to header (~30px less) */
-        padding-bottom: 1rem !important;
-        min-height: auto !important;
+        padding-top: 2rem !important;
+        padding-bottom: 0rem !important;
+        min-height: 100vh !important;
     }
 
     .hero-layout {
@@ -1456,8 +1513,12 @@ nav.scrolled .nav-links {
     .hero-visual {
         order: -1;
         width: 100%;
-        margin-bottom: -0.5rem;
-        /* Decreased to bring content closer to image */
+        margin-top: -50px;
+        margin-bottom: calc(-0.5rem - 15px);
+    }
+
+    .hero-img {
+        width: 132% !important;
     }
 
     .hero-tagline {
@@ -1494,11 +1555,11 @@ nav.scrolled .nav-links {
 
     /* Scroll Story Mobile */
     .gum-transition {
-        height: 220vh;
+        height: 450vh;
     }
 
     .gum-sticky {
-        padding: 4.5rem 5% 3rem !important;
+        padding: 4.5rem 5% 6rem !important;
         min-height: 100vh;
         height: 100vh;
         align-items: flex-start;
@@ -1525,20 +1586,33 @@ nav.scrolled .nav-links {
 
     .gum-copy {
         position: absolute;
-        top: 290px;
+        top: 380px;
         left: 0;
         right: 0;
-        max-height: calc(100vh - 320px);
-        overflow: hidden;
+        bottom: 85px; /* Clear the floating CTA */
+        overflow: visible;
     }
 
+    .gum-copy-tree,
+    .gum-copy-crystals,
     .gum-copy-why,
     .gum-copy-love {
-        top: 290px;
+        position: absolute;
+        top: 380px;
+        left: 0;
+        right: 0;
+    }
+
+    .gum-copy-tree {
+        transform: translateY(calc(var(--stage-2-progress) * -44px));
+    }
+
+    .gum-copy-crystals {
+        transform: translateY(calc((1 - var(--stage-2-progress)) * 44px - var(--why-in) * 44px));
     }
 
     .gum-copy-why {
-        transform: translateY(calc(var(--why-out) * -44px));
+        transform: translateY(calc((1 - var(--why-in)) * 44px - var(--why-out) * 44px));
     }
 
     .gum-copy-love {
@@ -1547,21 +1621,38 @@ nav.scrolled .nav-links {
 
     .benefits-grid {
         display: flex !important;
-        overflow-x: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
         gap: 0;
-        margin: 0 -5%;
-        padding: 0.5rem 0;
+        margin: 0;
+        padding: 0.5rem 5%;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .benefits-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
     }
 
     .benefit-item {
-        flex: 0 0 100%;
-        padding: 1.5rem 5% !important;
-        /* Reduced */
+        flex: 0 0 85%;
+        margin: 0 0.5rem;
+        padding: 1rem !important;
+        scroll-snap-align: center;
         text-align: center;
         transition: transform 0.5s ease;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .benefit-text h4,
+    .benefit-text p {
+        color: var(--primary-color) !important;
     }
 
     .benefit-icon-box {
@@ -1576,13 +1667,18 @@ nav.scrolled .nav-links {
     }
 
     .why-visual-container {
-        min-height: 272px;
-        height: 272px;
+        min-height: 250px;
+        height: 250px;
         width: 100%;
     }
 
     .why-img {
-        max-width: 238px;
+        max-width: 220px;
+        width: 100%;
+    }
+    .gum-stage-img {
+        max-width: 264px;
+        width: 100%;
     }
 
     .gum-copy-love h2 {
@@ -1591,16 +1687,34 @@ nav.scrolled .nav-links {
     }
 
     .love-grid {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
+        display: flex !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 0;
+        margin: 0;
+        padding: 0.5rem 5%;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .love-grid::-webkit-scrollbar {
+        display: none;
     }
 
     .love-card {
+        flex: 0 0 85%;
+        margin: 0 0.5rem;
+        padding: 1rem !important;
+        scroll-snap-align: center;
         min-height: auto;
         text-align: center;
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     .love-icon {
@@ -1610,33 +1724,53 @@ nav.scrolled .nav-links {
 
     .product-grid {
         display: flex !important;
-        gap: 1.5rem;
-        padding: 1.5rem 0 2rem !important;
+        gap: 1rem;
+        padding: 1rem 0 1.5rem !important;
         margin: 0;
-        margin-top: -1rem !important;
-        /* Reduced spacing between title and cards by 50px (from 2rem) */
+        margin-top: -1.5rem !important;
     }
 
     .product-card {
-        flex: 0 0 260px !important;
-        padding: 1rem 1.5rem !important;
-        /* Reduced top/bottom padding by 30px (from 2.5rem to ~1rem) */
+        flex: 0 0 220px !important;
+        padding: 1rem 1.25rem 0.5rem !important;
         scroll-snap-align: center;
+    }
+    
+    .product-card h3 {
+        color: var(--secondary-color) !important;
     }
 
     .product-img {
-        max-width: 160px !important;
-        /* Decreased from 200px by 20% */
+        max-width: 144px !important;
+        /* Decreased by 10% */
     }
 
     .product-carousel {
-        padding: 0 2.25rem;
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
     }
 
     .carousel-control {
-        width: 42px;
-        height: 42px;
-        font-size: 0.85rem;
+        width: 24px;
+        height: 24px;
+        font-size: 0.5rem;
+    }
+    
+    .product-kicker {
+        display: none !important;
+    }
+
+    /* Final CTA Mobile */
+    .final-cta {
+        padding: 4rem 5% !important;
+    }
+    
+    .final-cta .btn {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
     }
 
     /* FAQ Section Compact */

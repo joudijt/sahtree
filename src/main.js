@@ -254,24 +254,34 @@ let benefitsIndex = 0;
 const benefitsGrid = document.querySelector('.benefits-grid');
 const benefitItems = document.querySelectorAll('.benefit-item');
 
-function startBenefitsCarousel() {
-    if (!benefitsGrid || benefitItems.length === 0) return;
+// Mobile Horizontal Auto-Scroll (Native)
+function setupMobileAutoScroll(gridElement) {
+    if (!gridElement) return;
+    
+    let isTouching = false;
+    
+    // Pause auto-scroll on interaction
+    gridElement.addEventListener('touchstart', () => isTouching = true, {passive: true});
+    gridElement.addEventListener('touchend', () => {
+        setTimeout(() => isTouching = false, 2000);
+    });
+    gridElement.addEventListener('mouseenter', () => isTouching = true);
+    gridElement.addEventListener('mouseleave', () => isTouching = false);
 
-    // Only run on mobile (using the same breakpoint as CSS)
     setInterval(() => {
-        if (window.innerWidth <= 968) {
-            benefitsIndex = (benefitsIndex + 1) % benefitItems.length;
-            const offset = -benefitsIndex * 100;
-            benefitItems.forEach(item => {
-                item.style.transform = `translateX(${offset}%)`;
-            });
-        } else {
-            // Reset transforms if resized to desktop
-            benefitItems.forEach(item => {
-                item.style.transform = 'none';
-            });
+        if (window.innerWidth <= 968 && !isTouching) {
+            const itemWidth = gridElement.clientWidth;
+            if (gridElement.scrollLeft + itemWidth >= gridElement.scrollWidth - 10) {
+                // Reached the end, loop back
+                gridElement.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                // Scroll to next item
+                gridElement.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            }
+        } else if (window.innerWidth > 968) {
+            gridElement.style.transform = 'none'; // Ensure no stray transforms
         }
-    }, 4000); // 4 seconds per slide
+    }, 4000);
 }
 
 // Product Range Carousel
@@ -380,10 +390,16 @@ function startGumTransition() {
         const rect = section.getBoundingClientRect();
         const scrollable = section.offsetHeight - window.innerHeight;
         const rawProgress = scrollable > 0 ? clamp(-rect.top / scrollable) : 0;
-        const whyOut = smoothstep(range(0.08, 0.45, rawProgress));
-        const loveIn = smoothstep(range(0.68, 0.94, rawProgress));
-        const productProgress = smoothstep(range(0.22, 0.68, rawProgress));
-        const bgProgress = smoothstep(range(0.42, 0.82, rawProgress));
+        
+        // Stage 1 -> Stage 2 (Tree -> Crystals)
+        const stage2Progress = smoothstep(range(0.10, 0.25, rawProgress));
+        // Stage 2 -> Stage 3 (Crystals -> Why)
+        const whyIn = smoothstep(range(0.35, 0.50, rawProgress));
+        // Stage 3 -> Stage 4 (Why -> Love)
+        const whyOut = smoothstep(range(0.60, 0.75, rawProgress));
+        const loveIn = smoothstep(range(0.60, 0.75, rawProgress));
+        const productProgress = smoothstep(range(0.60, 0.75, rawProgress));
+        const bgProgress = smoothstep(range(0.55, 0.80, rawProgress));
 
         let productX = 0;
         if (window.innerWidth > 968) {
@@ -393,11 +409,13 @@ function startGumTransition() {
         }
 
         section.style.setProperty('--gum-progress', rawProgress.toFixed(4));
+        section.style.setProperty('--stage-2-progress', stage2Progress.toFixed(4));
+        section.style.setProperty('--why-in', whyIn.toFixed(4));
         section.style.setProperty('--why-out', whyOut.toFixed(4));
         section.style.setProperty('--love-in', loveIn.toFixed(4));
         section.style.setProperty('--product-x', `${productX.toFixed(2)}px`);
         section.style.setProperty('--story-bg', `rgb(${mix(primaryRgb[0], lightRgb[0], bgProgress)}, ${mix(primaryRgb[1], lightRgb[1], bgProgress)}, ${mix(primaryRgb[2], lightRgb[2], bgProgress)})`);
-        section.classList.toggle('is-love-active', rawProgress > 0.72);
+        section.classList.toggle('is-love-active', rawProgress > 0.60);
     }
 
     window.addEventListener('scroll', updateGumTransition, { passive: true });
@@ -409,7 +427,8 @@ document.addEventListener('DOMContentLoaded', () => {
     createParticles();
     handleScrollEffects();
     startWhySlider();
-    startBenefitsCarousel();
+    setupMobileAutoScroll(document.querySelector('.benefits-grid'));
+    setupMobileAutoScroll(document.querySelector('.love-grid'));
     startProductCarousel();
     startGumTransition();
     console.log('Sihatree Experience Initialized');

@@ -3092,3 +3092,384 @@ nav.scrolled .nav-links {
         height: 44px;
     }
 }
+
+/* =========================================================
+   SUB-PAGE SYSTEM — Products / Benefits / Wholesale / Retail / Contact
+   ========================================================= */
+
+/* --- Shared sub-page hero --- */
+.sp-hero {
+    position: relative;
+    padding: 11rem 5% 5rem;
+    text-align: center;
+    overflow: hidden;
+    background: var(--light-bg);
+}
+
+.sp-hero-blob {
+    position: absolute;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    filter: blur(10px);
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sp-hero-blob--a { top: -220px; left: -160px; }
+.sp-hero-blob--b { bottom: -260px; right: -180px; }
+
+.sp-hero--products .sp-hero-blob { background: var(--shape-yellow); }
+.sp-hero--benefits .sp-hero-blob { background: var(--shape-green); }
+.sp-hero--wholesale .sp-hero-blob { background: var(--shape-purple); }
+.sp-hero--retail .sp-hero-blob { background: var(--shape-pink); }
+.sp-hero--contact .sp-hero-blob { background: var(--shape-green); }
+
+.sp-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.sp-breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+}
+
+.sp-breadcrumb a { color: var(--secondary-color); font-weight: 600; }
+
+.sp-hero h1 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+}
+
+.sp-hero-sub {
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 0 auto 2rem;
+}
+
+.sp-hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sp-section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sp-section--tight { max-width: 960px; }
+
+/* --alt sections need a full-bleed background band, but .sp-section itself
+   carries the max-width/centering used for layout — so the alt variant
+   drops its own width constraint and padding, and an inner wrapper
+   (added in markup) re-applies both so content still lines up. */
+.sp-section--alt {
+    background: var(--white);
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sp-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.sp-section--alt.sp-section--tight .sp-section-inner { max-width: 960px; }
+
+/* Alternating image/copy row (used on Products + Benefits) */
+.sp-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.sp-row:last-child { margin-bottom: 0; }
+
+.sp-row--reverse .sp-row-img { order: 2; }
+.sp-row--reverse .sp-row-copy { order: 1; }
+
+.sp-row-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 28px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+}
+
+.sp-row-img img {
+    max-width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+}
+
+.sp-row-copy .se-eyebrow { display: block; margin-bottom: 0.6rem; }
+
+.sp-row-copy h2 {
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.sp-row-copy p { margin-bottom: 1rem; }
+
+.sp-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.2rem 0;
+}
+
+.sp-chip {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    background: var(--light-bg);
+    color: var(--primary-color);
+    border: 1px solid rgba(45, 41, 78, 0.08);
+}
+
+.sp-inline-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+.sp-inline-cta i { transition: transform 0.25s ease; }
+.sp-inline-cta:hover i { transform: translateX(4px); }
+
+/* Numbered process timeline (Wholesale + Benefits) */
+.sp-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    counter-reset: sp-step;
+}
+
+.sp-step {
+    position: relative;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.2rem 1.8rem 1.8rem;
+    box-shadow: var(--shadow);
+}
+
+.sp-step::before {
+    counter-increment: sp-step;
+    content: counter(sp-step);
+    position: absolute;
+    top: -18px;
+    left: 1.8rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.sp-step h3 { font-size: 1.15rem; margin: 0.6rem 0 0.6rem; }
+
+/* Card grid (Wholesale partner types / Retail stores / Benefit stats) */
+.sp-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+}
+
+.sp-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.2rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sp-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(31, 38, 135, 0.14); }
+
+.sp-card i {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.sp-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+
+/* Stat callout strip */
+.sp-stat-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    background: var(--primary-color);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+}
+
+.sp-stat { text-align: center; color: white; }
+.sp-stat strong { display: block; font-size: 2.2rem; color: var(--accent-yellow); }
+.sp-stat span { font-size: 0.9rem; opacity: 0.85; }
+
+/* Retail store cards */
+.rt-store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.rt-store-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 2.8rem 2.2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.rt-store-card:hover { transform: translateY(-8px); }
+
+.rt-store-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.rt-store-icon--tiktok { background: #010101; }
+.rt-store-icon--shopee { background: #EE4D2D; }
+
+.rt-store-card h3 { margin-bottom: 0.6rem; }
+.rt-store-card p { margin-bottom: 1.4rem; }
+
+/* Retail flavour quick-pick strip */
+.rt-flavor-pick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.2rem;
+}
+
+.rt-flavor-pick {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 1.4rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.rt-flavor-pick img { width: 84px; height: auto; margin: 0 auto 0.8rem; display: block; }
+.rt-flavor-pick span { font-weight: 600; font-size: 0.9rem; color: var(--primary-color); }
+
+/* Contact page */
+.ct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.ct-info-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    margin-bottom: 1.4rem;
+}
+
+.ct-info-card i {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    background: var(--light-bg);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ct-info-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+.ct-info-card a, .ct-info-card p { font-size: 0.95rem; margin: 0; }
+.ct-info-card a { color: var(--secondary-color); font-weight: 600; }
+
+.ct-form-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+}
+
+.ct-form-card h2 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.ct-form-card > p { margin-bottom: 1.6rem; }
+
+/* Prose sections reused for long-form SEO/AEO copy on sub-pages */
+.sp-prose {
+    color: var(--text-color);
+    line-height: 1.75;
+    font-size: 1.05rem;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.sp-prose h2 { font-size: 1.6rem; margin: 2.2rem 0 1rem; }
+.sp-prose h2:first-child { margin-top: 0; }
+.sp-prose p, .sp-prose ul { margin: 0 0 1.2rem; }
+.sp-prose ul { padding-left: 1.4rem; }
+.sp-prose li { margin-bottom: 0.6rem; }
+.sp-prose strong { color: var(--primary-color); }
+
+@media (max-width: 968px) {
+    .sp-row { grid-template-columns: 1fr; gap: 2rem; }
+    .sp-row--reverse .sp-row-img,
+    .sp-row--reverse .sp-row-copy { order: initial; }
+    .ct-grid { grid-template-columns: 1fr; }
+    .sp-hero h1 { font-size: 2.4rem; }
+}
+
+@media (max-width: 480px) {
+    .sp-hero { padding: 9rem 5% 3.5rem; }
+    .sp-hero h1 { font-size: 2rem; }
+    .sp-section { padding: 3.5rem 5%; }
+    .ct-form-card { padding: 1.6rem; }
+}
+
+/* Wholesale form section, reused on the standalone /wholesale page —
+   the homepage version relies on min-height:100vh to fill the screen as a
+   standalone block; on this page it sits after other content, so it should
+   size to its content instead of forcing another full viewport of height. */
+#wholesale-form.wholesale-section {
+    min-height: auto;
+    padding: 6rem 5%;
+}

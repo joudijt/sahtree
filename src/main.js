@@ -11,7 +11,7 @@ AOS.init({
 
 // Floating Particles Logic
 function createParticles() {
-    const hero = document.querySelector('.hero');
+    const hero = document.querySelector('.se-hero');
     if (!hero) return;
     for (let i = 0; i < 15; i++) {
         const particle = document.createElement('div');
@@ -120,6 +120,33 @@ document.querySelectorAll('.faq-question').forEach(item => {
     });
 });
 
+// FAQ Tab Logic
+const faqTabs = document.querySelectorAll('.faq-tab');
+const faqContents = document.querySelectorAll('.faq-tab-content');
+
+faqTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-tab');
+
+        // Update tabs
+        faqTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Update contents
+        faqContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === targetId) {
+                content.classList.add('active');
+            }
+        });
+
+        // Optional: Refresh AOS for new content
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
+    });
+});
+
 // Wholesale Form + Confetti
 const form = document.getElementById('wholesaleForm');
 if (form) {
@@ -181,255 +208,8 @@ function createConfetti() {
     }
 }
 
-// Hero button hover feedback
-const heroSection = document.querySelector('.hero');
-const heroActionButtons = document.querySelectorAll('.hero-action-btn');
-
-heroActionButtons.forEach(button => {
-    button.addEventListener('mouseenter', () => {
-        const hoverState = button.dataset.heroHover;
-        heroSection?.classList.remove('hero-hover-retail', 'hero-hover-wholesale');
-        if (hoverState) {
-            heroSection?.classList.add(`hero-hover-${hoverState}`);
-        }
-    });
-
-    button.addEventListener('mouseleave', () => {
-        heroSection?.classList.remove('hero-hover-retail', 'hero-hover-wholesale');
-    });
-});
-
-// Why Section Product Slider
-let whyIndex = 0;
-const whyWrappers = document.querySelectorAll('.why-img-wrapper');
-
-function startWhySlider() {
-    if (whyWrappers.length === 0) return;
-
-    setInterval(() => {
-        // Current one goes out
-        whyWrappers[whyIndex].classList.remove('active');
-
-        // Move to next
-        whyIndex = (whyIndex + 1) % whyWrappers.length;
-
-        // Generate random rotation between -25 and +25
-        const randomRotate = Math.floor(Math.random() * 51) - 25;
-        whyWrappers[whyIndex].style.setProperty('--random-rotate', `${randomRotate}deg`);
-
-        // Next one comes in
-        whyWrappers[whyIndex].classList.add('active');
-    }, 5000);
-}
-
-// FAQ Tab Logic
-const faqTabs = document.querySelectorAll('.faq-tab');
-const faqContents = document.querySelectorAll('.faq-tab-content');
-
-faqTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const targetId = tab.getAttribute('data-tab');
-
-        // Update tabs
-        faqTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        // Update contents
-        faqContents.forEach(content => {
-            content.classList.remove('active');
-            if (content.id === targetId) {
-                content.classList.add('active');
-            }
-        });
-
-        // Optional: Refresh AOS for new content
-        if (typeof AOS !== 'undefined') {
-            AOS.refresh();
-        }
-    });
-});
-
-// Mobile Benefits Carousel logic
-let benefitsIndex = 0;
-const benefitsGrid = document.querySelector('.benefits-grid');
-const benefitItems = document.querySelectorAll('.benefit-item');
-
-// Mobile Horizontal Auto-Scroll (Native)
-function setupMobileAutoScroll(gridElement) {
-    if (!gridElement) return;
-    
-    let isTouching = false;
-    
-    // Pause auto-scroll on interaction
-    gridElement.addEventListener('touchstart', () => isTouching = true, {passive: true});
-    gridElement.addEventListener('touchend', () => {
-        setTimeout(() => isTouching = false, 2000);
-    });
-    gridElement.addEventListener('mouseenter', () => isTouching = true);
-    gridElement.addEventListener('mouseleave', () => isTouching = false);
-
-    setInterval(() => {
-        if (window.innerWidth <= 968 && !isTouching) {
-            const itemWidth = gridElement.clientWidth;
-            if (gridElement.scrollLeft + itemWidth >= gridElement.scrollWidth - 10) {
-                // Reached the end, loop back
-                gridElement.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                // Scroll to next item
-                gridElement.scrollBy({ left: itemWidth, behavior: 'smooth' });
-            }
-        } else if (window.innerWidth > 968) {
-            gridElement.style.transform = 'none'; // Ensure no stray transforms
-        }
-    }, 4000);
-}
-
-// Product Range Carousel
-const productCarousel = document.getElementById('productCarousel');
-const productPrev = document.getElementById('productPrev');
-const productNext = document.getElementById('productNext');
-let productCarouselTimer;
-let productCarouselIndex = 0;
-let productCarouselOriginalCount = 0;
-let productCarouselStep = 0;
-
-function startProductCarousel() {
-    if (!productCarousel || productCarousel.children.length === 0) return;
-
-    if (!productCarousel.dataset.cloned) {
-        const originalCards = Array.from(productCarousel.children);
-        productCarouselOriginalCount = originalCards.length;
-        originalCards.forEach(card => {
-            const clone = card.cloneNode(true);
-            clone.setAttribute('aria-hidden', 'true');
-            clone.removeAttribute('data-aos');
-            productCarousel.appendChild(clone);
-        });
-        productCarousel.dataset.cloned = 'true';
-    }
-
-    const getStep = () => {
-        const firstCard = productCarousel.querySelector('.product-card');
-        if (!firstCard) return 0;
-        const styles = getComputedStyle(productCarousel);
-        const gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
-        return firstCard.getBoundingClientRect().width + gap;
-    };
-
-    const scrollProductCarousel = (direction = 1, behavior = 'smooth') => {
-        productCarouselStep = getStep();
-        if (!productCarouselStep) return;
-
-        productCarouselIndex += direction;
-        if (productCarouselIndex < 0) {
-            productCarouselIndex = Math.max(productCarouselOriginalCount - 1, 0);
-            productCarousel.scrollTo({
-                left: productCarouselOriginalCount * productCarouselStep,
-                behavior: 'auto'
-            });
-        }
-
-        productCarousel.scrollTo({
-            left: productCarouselIndex * productCarouselStep,
-            behavior
-        });
-
-        if (productCarouselIndex >= productCarouselOriginalCount) {
-            window.setTimeout(() => {
-                productCarouselIndex = 0;
-                productCarousel.scrollTo({ left: 0, behavior: 'auto' });
-            }, 700);
-        }
-    };
-
-    clearInterval(productCarouselTimer);
-    productCarouselTimer = setInterval(() => {
-        scrollProductCarousel(1);
-    }, 4000);
-
-    if (!productCarousel.dataset.listeners) {
-        productCarousel.addEventListener('mouseenter', () => clearInterval(productCarouselTimer));
-        productCarousel.addEventListener('mouseleave', startProductCarousel);
-        productCarousel.addEventListener('scroll', () => {
-            const step = getStep();
-            if (!step) return;
-            productCarouselIndex = Math.round(productCarousel.scrollLeft / step) % productCarouselOriginalCount;
-        });
-        productPrev?.addEventListener('click', () => {
-            clearInterval(productCarouselTimer);
-            scrollProductCarousel(-1);
-            startProductCarousel();
-        });
-        productNext?.addEventListener('click', () => {
-            clearInterval(productCarouselTimer);
-            scrollProductCarousel(1);
-            startProductCarousel();
-        });
-        productCarousel.dataset.listeners = 'true';
-    }
-}
-
-// Scroll-controlled Arabic Gum story
-function startGumTransition() {
-    const section = document.querySelector('.gum-transition');
-    const layout = document.querySelector('.gum-layout');
-    const product = document.querySelector('.gum-product');
-    if (!section || !layout || !product) return;
-
-    const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-    const smoothstep = value => {
-        const x = clamp(value);
-        return x * x * (3 - 2 * x);
-    };
-    const range = (start, end, value) => clamp((value - start) / (end - start));
-    const mix = (a, b, amount) => Math.round(a + (b - a) * amount);
-    const primaryRgb = [45, 41, 78];
-    const lightRgb = [248, 250, 248];
-
-    function updateGumTransition() {
-        const rect = section.getBoundingClientRect();
-        const scrollable = section.offsetHeight - window.innerHeight;
-        const rawProgress = scrollable > 0 ? clamp(-rect.top / scrollable) : 0;
-        
-        // Stage 1 -> Stage 2 (Tree -> Crystals)
-        const stage2Progress = smoothstep(range(0.10, 0.25, rawProgress));
-        // Stage 2 -> Stage 3 (Crystals -> Why)
-        const whyIn = smoothstep(range(0.35, 0.50, rawProgress));
-        // Stage 3 -> Stage 4 (Why -> Love)
-        const whyOut = smoothstep(range(0.60, 0.75, rawProgress));
-        const loveIn = smoothstep(range(0.60, 0.75, rawProgress));
-        const productProgress = smoothstep(range(0.60, 0.75, rawProgress));
-        const bgProgress = smoothstep(range(0.55, 0.80, rawProgress));
-
-        let productX = 0;
-        if (window.innerWidth > 968) {
-            const layoutRect = layout.getBoundingClientRect();
-            const productBaseLeft = layoutRect.left + product.offsetLeft;
-            productX = (layoutRect.left - productBaseLeft) * productProgress;
-        }
-
-        section.style.setProperty('--gum-progress', rawProgress.toFixed(4));
-        section.style.setProperty('--stage-2-progress', stage2Progress.toFixed(4));
-        section.style.setProperty('--why-in', whyIn.toFixed(4));
-        section.style.setProperty('--why-out', whyOut.toFixed(4));
-        section.style.setProperty('--love-in', loveIn.toFixed(4));
-        section.style.setProperty('--product-x', `${productX.toFixed(2)}px`);
-        section.style.setProperty('--story-bg', `rgb(${mix(primaryRgb[0], lightRgb[0], bgProgress)}, ${mix(primaryRgb[1], lightRgb[1], bgProgress)}, ${mix(primaryRgb[2], lightRgb[2], bgProgress)})`);
-        section.classList.toggle('is-love-active', rawProgress > 0.60);
-    }
-
-    window.addEventListener('scroll', updateGumTransition, { passive: true });
-    window.addEventListener('resize', updateGumTransition);
-    updateGumTransition();
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     createParticles();
     handleScrollEffects();
-    startWhySlider();
-    setupMobileAutoScroll(document.querySelector('.benefits-grid'));
-    setupMobileAutoScroll(document.querySelector('.love-grid'));
-    startProductCarousel();
-    startGumTransition();
     console.log('Sihatree Experience Initialized');
 });

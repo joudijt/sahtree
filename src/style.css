@@ -2358,7 +2358,7 @@ nav.scrolled .nav-links {
 
 .se-section-title {
     max-width: 720px;
-    margin: 0 0 3rem;
+    margin: 0 0 2rem;
 }
 
 .se-eyebrow {
@@ -2391,10 +2391,10 @@ nav.scrolled .nav-links {
 /* --- SE Hero --- */
 .se-hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 92vh;
     display: flex;
     align-items: center;
-    padding: 9rem 5% 4rem;
+    padding: 7rem 5% 3rem;
     overflow: hidden;
     background: linear-gradient(135deg, var(--primary-color) 0%, #241f42 55%, var(--primary-color) 100%);
     color: var(--white);
@@ -2533,11 +2533,11 @@ nav.scrolled .nav-links {
 
     0%,
     100% {
-        transform: translateY(0) rotate(-2deg);
+        transform: translateY(0) rotate(-3deg) scale(1);
     }
 
     50% {
-        transform: translateY(-18px) rotate(2deg);
+        transform: translateY(-26px) rotate(3deg) scale(1.03);
     }
 }
 
@@ -2550,7 +2550,7 @@ nav.scrolled .nav-links {
 /* --- SE Origin Story --- */
 .se-story {
     background: var(--light-bg);
-    padding: 6rem 5%;
+    padding: 4rem 5%;
 }
 
 .se-story-inner {
@@ -2558,7 +2558,7 @@ nav.scrolled .nav-links {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 3.5rem;
 }
 
 .se-story-block {
@@ -2646,7 +2646,7 @@ nav.scrolled .nav-links {
 
 /* --- SE Benefits (stat cards) --- */
 .se-benefits {
-    padding: 6rem 5%;
+    padding: 3.5rem 5%;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -2709,7 +2709,7 @@ nav.scrolled .nav-links {
 
 /* --- SE Flavor Showcase --- */
 .se-flavors {
-    padding: 6rem 5%;
+    padding: 3.5rem 5%;
     background: var(--light-bg);
 }
 
@@ -2784,7 +2784,7 @@ nav.scrolled .nav-links {
 
 /* --- SE Trust (Halal & Malaysia) --- */
 .se-trust-section {
-    padding: 6rem 5%;
+    padding: 3.5rem 5% 5rem;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -2959,5 +2959,108 @@ nav.scrolled .nav-links {
 
     .se-trust-stats {
         gap: 1.2rem;
+    }
+}
+
+/* --- SE Motion: flavour marquee + idle image float --- */
+.se-marquee {
+    overflow: hidden;
+    background: var(--primary-color);
+    padding: 1.1rem 0;
+}
+
+.se-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    width: max-content;
+    animation: seMarquee 16s linear infinite;
+}
+
+.se-marquee:hover .se-marquee-track {
+    animation-play-state: paused;
+}
+
+.se-marquee-track img {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+    animation: seBob 3s ease-in-out infinite;
+}
+
+.se-marquee-track img:nth-child(even) {
+    animation-delay: -1.5s;
+}
+
+@keyframes seMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes seBob {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+}
+
+@keyframes seImgFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.se-story-media img {
+    animation: seImgFloat 5s ease-in-out infinite;
+}
+
+.se-story-block:nth-child(2) .se-story-media img {
+    animation-delay: -1.7s;
+}
+
+.se-story-block:nth-child(3) .se-story-media img {
+    animation-delay: -3.4s;
+}
+
+.se-flavor-card img {
+    animation: seImgFloat 4s ease-in-out infinite;
+}
+
+.se-flavor-card:nth-child(2) img {
+    animation-delay: -0.8s;
+}
+
+.se-flavor-card:nth-child(3) img {
+    animation-delay: -1.6s;
+}
+
+.se-flavor-card:nth-child(4) img {
+    animation-delay: -2.4s;
+}
+
+.se-flavor-card:nth-child(5) img {
+    animation-delay: -3.2s;
+}
+
+@media (max-width: 968px) {
+    .se-marquee-track img {
+        height: 44px;
     }
 }

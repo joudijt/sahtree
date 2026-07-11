@@ -1,0 +1,172 @@
+<!--
+  ARTICLE TEMPLATE — duplicate this file for each new daily post.
+  1. Rename the copy to a URL-friendly slug, e.g. blog/your-article-slug
+  2. Replace every {{PLACEHOLDER}} below
+  3. Add the matching card to the blog page's grid, linking to this file
+  4. Add a matching BlogPosting entry to the "blogPost" array in the blog page's Blog JSON-LD
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{TITLE}} | Sihatree</title>
+  <meta name="description" content="{{META_DESCRIPTION — 140-160 chars}}" />
+  <link rel="canonical" href="https://sihatree.com/blog/{{SLUG}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{TITLE}}" />
+  <meta property="og:description" content="{{META_DESCRIPTION}}" />
+  <meta property="og:image" content="https://sihatree.com/images/{{IMAGE}}.png" />
+  <meta property="article:published_time" content="{{YYYY-MM-DD}}" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{TITLE}}",
+    "url": "https://sihatree.com/blog/{{SLUG}}",
+    "datePublished": "{{YYYY-MM-DD}}",
+    "dateModified": "{{YYYY-MM-DD}}",
+    "image": "https://sihatree.com/images/{{IMAGE}}.png",
+    "author": { "@type": "Organization", "name": "Sihatree", "url": "https://sihatree.com" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sihatree",
+      "logo": { "@type": "ImageObject", "url": "https://sihatree.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sihatree.com/blog/{{SLUG}}" },
+    "description": "{{META_DESCRIPTION}}"
+  }
+  </script>
+
+  <!-- Optional: keep if this article answers 2+ direct questions, delete otherwise -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{QUESTION_1}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{ANSWER_1}}" }
+      },
+      {
+        "@type": "Question",
+        "name": "{{QUESTION_2}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{ANSWER_2}}" }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <ul class="nav-links nav-left">
+      <li><a href="/#products">Products</a></li>
+      <li><a href="/#benefits">Benefits</a></li>
+    </ul>
+
+    <div class="logo">
+      <a href="/"><img src="/images/logo.png" alt="Sihatree Logo" id="nav-logo"></a>
+    </div>
+
+    <ul class="nav-links nav-right">
+      <li><a href="/#wholesale">Wholesale</a></li>
+      <li><a href="/blog" class="active">Blog</a></li>
+    </ul>
+  </nav>
+
+  <article class="blog-post">
+    <header class="blog-post-header" data-aos="fade-up">
+      <p class="blog-post-breadcrumb"><a href="/blog">Blog</a> / {{SHORT_TITLE}}</p>
+      <h1>{{TITLE}}</h1>
+      <div class="blog-card-meta">
+        <time datetime="{{YYYY-MM-DD}}">{{Month DD, YYYY}}</time>
+        <span class="blog-dot" aria-hidden="true">&middot;</span>
+        <span>{{N}} min read</span>
+        <span class="blog-dot" aria-hidden="true">&middot;</span>
+        <span>By Sihatree</span>
+      </div>
+    </header>
+
+    <div class="blog-post-hero-img" data-aos="fade-up">
+      <img src="/images/{{IMAGE}}.png" alt="{{DESCRIPTIVE_ALT_TEXT}}">
+    </div>
+
+    <div class="blog-post-body" data-aos="fade-up">
+
+      <!--
+        First paragraph: answer the core question directly in 1-2 sentences.
+        This is the passage AI systems (ChatGPT/Perplexity/AI Overviews) extract
+        as a citable snippet — keep it self-contained, ~40-60 words.
+      -->
+      <p><strong>{{DIRECT_ANSWER_OPENING_STATEMENT}}</strong> {{Supporting context sentence.}}</p>
+
+      <h2>{{Question-phrased H2, e.g. "How does X work?"}}</h2>
+      <p>{{Body copy.}}</p>
+
+      <h2>{{Another question-phrased H2}}</h2>
+      <ul>
+        <li><strong>{{Point}}</strong> — {{detail.}}</li>
+        <li><strong>{{Point}}</strong> — {{detail.}}</li>
+      </ul>
+
+      <h2>{{Another question-phrased H2}}</h2>
+      <p>{{Body copy, include a stat or source where possible — measurably raises AI-citation rate.}}</p>
+
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-layout">
+      <div class="footer-col brand-col">
+        <img src="/images/logo.png" alt="Sihatree Logo" class="footer-logo">
+        <p class="footer-desc">Bringing the natural goodness of Arabic Gum into your daily routine. Simple,
+          refreshing, and easy to enjoy.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/#products">Products</a></li>
+          <li><a href="/#benefits">Benefits</a></li>
+          <li><a href="/#wholesale">Wholesale</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="social-links-footer">
+          <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-contact">
+          <p>Questions? Email us at:</p>
+          <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sihatree. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
+  </script>
+</body>
+
+</html>

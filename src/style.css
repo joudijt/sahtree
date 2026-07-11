@@ -2070,3 +2070,280 @@ nav.scrolled .nav-links {
         font-size: 1.2rem !important;
     }
 }
+
+/* --- Blog --- */
+.blog-hero {
+    padding: 10rem 5% 3rem;
+    text-align: center;
+    background: var(--light-bg);
+}
+
+.blog-hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.blog-hero p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.blog-list {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 3rem 5% 6rem;
+    box-sizing: border-box;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.blog-card {
+    min-width: 0;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(31, 38, 135, 0.14);
+}
+
+.blog-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.blog-card-thumb {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--light-bg);
+}
+
+.blog-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-card-body {
+    padding: 1.5rem 1.6rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.blog-card-tag {
+    display: inline-block;
+    width: fit-content;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--secondary-color);
+}
+
+.blog-card-title {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+}
+
+.blog-card-excerpt {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-light);
+    overflow-wrap: break-word;
+}
+
+.blog-card-meta {
+    margin-top: auto;
+    font-size: 0.82rem;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.blog-dot {
+    opacity: 0.6;
+}
+
+.blog-card--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--light-bg);
+    box-shadow: none;
+    border: 2px dashed rgba(45, 41, 78, 0.15);
+    min-height: 220px;
+}
+
+.blog-card--placeholder .blog-card-body {
+    padding: 1.5rem;
+}
+
+/* Single article page */
+.blog-post {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10rem 5% 6rem;
+    box-sizing: border-box;
+}
+
+.blog-post-breadcrumb {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.blog-post-breadcrumb a {
+    color: var(--secondary-color);
+}
+
+.blog-post-header h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.blog-post-hero-img {
+    margin: 2rem 0;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.blog-post-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-post-body {
+    color: var(--text-color);
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+.blog-post-body h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 2.2rem 0 1rem;
+}
+
+.blog-post-body p,
+.blog-post-body ul {
+    margin: 0 0 1.2rem;
+}
+
+.blog-post-body ul {
+    padding-left: 1.4rem;
+}
+
+.blog-post-body li {
+    margin-bottom: 0.6rem;
+}
+
+@media (max-width: 375px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .blog-post {
+        padding-top: 8rem;
+    }
+
+    .blog-post-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* --- Malaysia localization: language switcher --- */
+.lang-switch {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.lang-switch a,
+.footer-lang-switch a {
+    color: inherit;
+}
+
+.lang-switch .lang-current,
+.footer-lang-switch .lang-current {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.footer-lang-switch {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    color: #94A3B8;
+}
+
+/* --- Malaysia localization: Halal badge --- */
+.halal-badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding: 1rem 1.4rem;
+    width: fit-content;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(127, 188, 59, 0.4);
+    border-radius: 14px;
+    color: white;
+}
+
+.halal-badge-icon {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.halal-badge div {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.halal-badge strong {
+    font-size: 1rem;
+}
+
+@media (max-width: 375px) {
+    .halal-badge {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

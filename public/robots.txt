@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# AI answer/search engines — allowed so Sihatree can be cited (AEO/GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Training-only crawler, no citation/search value — blocked
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://sihatree.com/sitemap.xml

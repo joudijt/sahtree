@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# If a visitor or link hits the .html URL directly, 301 to the clean version
+# (keeps one canonical URL per page — avoids duplicate-content SEO issues).
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Serve the matching .html file for extensionless requests.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]

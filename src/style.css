@@ -2203,7 +2203,12 @@ nav.scrolled .nav-links {
     padding: 1.5rem;
 }
 
-/* Single article page */
+/* Single article page — smooth-scroll for TOC anchors, scoped to article
+   pages only (`.blog-post` never appears on the listing page). */
+html:has(.blog-post) {
+    scroll-behavior: smooth;
+}
+
 .blog-post {
     max-width: 900px;
     margin: 0 auto;
@@ -2221,18 +2226,33 @@ nav.scrolled .nav-links {
     color: var(--secondary-color);
 }
 
-.blog-post-header h1 {
-    font-size: 2.2rem;
+.blog-post-tag {
+    display: inline-block;
+    background: rgba(127, 188, 59, 0.16);
     color: var(--primary-color);
-    line-height: 1.3;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
     margin-bottom: 1rem;
 }
 
+.blog-post-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
 .blog-post-hero-img {
-    margin: 2rem 0;
-    border-radius: 20px;
+    margin: 2rem 0 0.75rem;
+    border-radius: 24px;
     overflow: hidden;
     aspect-ratio: 16 / 9;
+    box-shadow: 0 20px 40px rgba(45, 41, 78, 0.12);
 }
 
 .blog-post-hero-img img {
@@ -2242,21 +2262,56 @@ nav.scrolled .nav-links {
     display: block;
 }
 
+.blog-post-hero-caption {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 2rem;
+}
+
 .blog-post-body {
     color: var(--text-color);
-    line-height: 1.75;
+    line-height: 1.8;
     font-size: 1.05rem;
+}
+
+.blog-post-lede {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--primary-color);
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 1.2rem;
+    margin: 0 0 2rem;
 }
 
 .blog-post-body h2 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin: 2.2rem 0 1rem;
+    font-size: 1.55rem;
+    margin: 3rem 0 1.2rem;
+    padding-top: 0.4rem;
+    position: relative;
+}
+
+.blog-post-body h2::before {
+    content: '';
+    display: block;
+    width: 42px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--secondary-color);
+    margin-bottom: 0.9rem;
+}
+
+.blog-post-body h3 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    margin: 1.6rem 0 0.8rem;
 }
 
 .blog-post-body p,
 .blog-post-body ul {
-    margin: 0 0 1.2rem;
+    margin: 0 0 1.3rem;
 }
 
 .blog-post-body ul {
@@ -2264,24 +2319,433 @@ nav.scrolled .nav-links {
 }
 
 .blog-post-body li {
+    margin-bottom: 0.7rem;
+}
+
+/* Content components: use sparingly, only where they aid understanding */
+.blog-highlight {
+    background: rgba(127, 188, 59, 0.08);
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.blog-highlight p,
+.blog-highlight ul,
+.blog-highlight ol {
+    margin: 0;
+}
+
+.blog-highlight li:last-child {
+    margin-bottom: 0;
+}
+
+.blog-tip {
+    background: rgba(249, 171, 64, 0.1);
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.blog-tip-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #C9820A;
+    margin-bottom: 0.5rem;
+}
+
+.blog-tip p {
+    margin: 0;
+}
+
+.blog-caution {
+    background: rgba(200, 52, 60, 0.06);
+    border-left: 4px solid #C8343C;
+    border-radius: 12px;
+    padding: 1.3rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.blog-caution-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #C8343C;
+    margin-bottom: 0.5rem;
+}
+
+.blog-caution p {
+    margin: 0;
+}
+
+.blog-quote {
+    position: relative;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--primary-color);
+    padding: 0.5rem 0 0.5rem 2.2rem;
+    margin: 2.5rem 0;
+    border-left: 3px solid rgba(45, 41, 78, 0.15);
+}
+
+.blog-quote::before {
+    content: '\201C';
+    position: absolute;
+    left: 0.3rem;
+    top: -0.6rem;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--secondary-color);
+    font-style: normal;
+}
+
+.blog-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.blog-benefit-card {
+    background: var(--light-bg);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+}
+
+.blog-benefit-card i {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.blog-benefit-card h3 {
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+}
+
+.blog-benefit-card p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* FAQ (reuses the site's existing .faq-item/.faq-question/.faq-answer
+   accordion — same component used on retail.html, styled + animated already) */
+.blog-faq {
+    margin: 3rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(45, 41, 78, 0.1);
+}
+
+.blog-faq h2 {
+    color: var(--primary-color);
+    font-size: 1.55rem;
+    margin: 0 0 1.2rem;
+}
+
+.blog-faq h2::before {
+    content: '';
+    display: block;
+    width: 42px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--secondary-color);
+    margin-bottom: 0.9rem;
+}
+
+/* Footer heading fix: article/blog footer uses h3 (not h4) so it doesn't skip a
+   heading level after the article's h1/h2s — sized to match the original h4. */
+.footer-col h3 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Breadcrumb: secondary-color green fails WCAG AA on the light background —
+   reuse primary-color (already used for headings/nav) instead, plus an
+   underline so the link isn't distinguishable by color alone. */
+.blog-post-breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.blog-post-breadcrumb a:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Table of contents (long articles only, injected by src/blog.js as a
+   <details class="blog-toc"> — native disclosure, collapsed by default on
+   mobile, open by default on desktop). */
+.blog-toc {
+    background: var(--light-bg);
+    border: 1px solid rgba(45, 41, 78, 0.1);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    margin: 0 0 2rem;
+}
+
+.blog-toc-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--secondary-color);
+    cursor: pointer;
+    list-style: none;
+}
+
+.blog-toc-title::-webkit-details-marker {
+    display: none;
+}
+
+.blog-toc-title .blog-toc-chevron {
+    transition: transform 0.3s;
+    color: var(--primary-color);
+}
+
+.blog-toc[open] .blog-toc-chevron {
+    transform: rotate(180deg);
+}
+
+.blog-toc ol {
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.blog-toc li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-toc a {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.blog-toc a:hover {
+    color: var(--secondary-color);
+}
+
+/* In-article CTA */
+.blog-inline-cta {
+    background: linear-gradient(135deg, rgba(127, 188, 59, 0.1), var(--light-bg));
+    border-radius: 20px;
+    padding: 2.2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+}
+
+.blog-inline-cta h3 {
     margin-bottom: 0.6rem;
 }
 
-@media (max-width: 375px) {
-    .blog-grid {
-        grid-template-columns: 1fr;
+.blog-inline-cta p {
+    color: var(--text-light);
+    margin: 0 auto 1.2rem;
+    max-width: 480px;
+}
+
+/* Related articles (end of article, reuses .blog-grid / .blog-card) */
+.blog-related {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(45, 41, 78, 0.1);
+}
+
+.blog-related h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* Slightly richer hover than the listing page's cards — scoped to this
+   section only, the listing page's own .blog-card:hover is untouched. */
+.blog-related .blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-related .blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.16);
+}
+
+/* Article-only WCAG AA contrast fixes. Scoped to `.blog-post` (never the
+   listing page's `.blog-list`) and to `body:has(.blog-post)` for the shared
+   footer, so the homepage/listing page keep their exact current colors —
+   nothing here is visible anywhere outside an individual article page. */
+.blog-post .btn-primary {
+    background: #3E6B1C;
+}
+
+.blog-post .blog-card-meta time,
+.blog-post .blog-card-meta span {
+    color: #5B6B7D;
+}
+
+.blog-post .blog-card-meta .blog-dot {
+    opacity: 1;
+}
+
+body:has(.blog-post) footer.main-footer .footer-desc,
+body:has(.blog-post) footer.main-footer .footer-links a,
+body:has(.blog-post) footer.main-footer .footer-contact p,
+body:has(.blog-post) footer.main-footer .footer-lang-switch a,
+body:has(.blog-post) footer.main-footer .footer-bottom p {
+    color: #5B6B7D;
+}
+
+/* Micro-interactions — article pages only. Transform/opacity/box-shadow only
+   (no layout-triggering properties), so these stay cheap for Lighthouse. */
+
+.blog-post-hero-img img {
+    transition: transform 0.5s ease;
+}
+
+.blog-post-hero-img:hover img {
+    transform: scale(1.04);
+}
+
+.blog-related .blog-card-thumb img {
+    transition: transform 0.4s ease;
+}
+
+.blog-related .blog-card:hover .blog-card-thumb img {
+    transform: scale(1.06);
+}
+
+.blog-faq .faq-item {
+    transition: background-color 0.25s ease;
+}
+
+.blog-faq .faq-item:hover {
+    background-color: rgba(127, 188, 59, 0.05);
+}
+
+.blog-inline-cta {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-inline-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(31, 38, 135, 0.12);
+}
+
+.blog-highlight,
+.blog-tip,
+.blog-caution {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-highlight:hover,
+.blog-tip:hover,
+.blog-caution:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(31, 38, 135, 0.08);
+}
+
+.blog-post .btn {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.blog-post .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(31, 38, 135, 0.15);
+}
+
+.blog-post .btn-primary:hover {
+    background: #355C18;
+}
+
+.blog-post .btn:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+.blog-toc a {
+    transition: color 0.2s ease;
+}
+
+.blog-toc a.active {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:has(.blog-post) {
+        scroll-behavior: auto;
     }
 
-    .blog-hero h1 {
-        font-size: 2.2rem;
+    .blog-post *,
+    .blog-post *::before,
+    .blog-post *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
+}
 
+/* Article-only mobile refinements (375-480px). Distinct from the listing
+   page's own 375px query above — no selectors here touch the listing page. */
+@media (max-width: 480px) {
     .blog-post {
         padding-top: 8rem;
     }
 
     .blog-post-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
+    }
+
+    .blog-post-tag {
+        font-size: 0.7rem;
+    }
+
+    .blog-post-lede {
+        font-size: 1.08rem;
+        padding-left: 1rem;
+    }
+
+    .blog-post-body h2 {
+        font-size: 1.3rem;
+        margin: 2.4rem 0 1rem;
+    }
+
+    .blog-quote {
+        font-size: 1.1rem;
+        padding-left: 1.8rem;
+    }
+
+    .blog-benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-inline-cta,
+    .blog-highlight,
+    .blog-tip {
+        padding: 1.4rem;
+    }
+
+    .blog-post .footer-cta-group {
+        flex-direction: column;
+    }
+
+    .blog-post .footer-cta-group .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 

@@ -1,0 +1,44 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp_server_fetch"
+      ],
+      "env": {}
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "env": {}
+    },
+    "brave-search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@brave/brave-search-mcp-server"
+      ],
+      "env": {
+        "BRAVE_API_KEY": ""
+      }
+    },
+    "firecrawl": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": ""
+      }
+    }
+  }
+}

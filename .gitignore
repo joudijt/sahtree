@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+audit-reports/
+playwright-report/
+test-results/
 
 # Local working/reference folders
 Digital Presance/

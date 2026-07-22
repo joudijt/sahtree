@@ -19,6 +19,10 @@
   <meta property="og:description"
     content="Arabic Gum (gum acacia) is a natural soluble fiber with digestive and gut-health benefits. Learn what it is, how it works, and the right daily dosage." />
   <meta property="og:image" content="https://sihatree.com/images/gum-crystals.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:locale" content="en_MY" />
+  <meta property="og:locale:alternate" content="ms_MY" />
   <meta property="article:published_time" content="2026-07-11" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="What Is Arabic Gum? Benefits, Uses & Dosage | Sihatree" />
@@ -28,6 +32,7 @@
   <link rel="stylesheet" href="/src/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <noscript><style>[data-aos]{opacity:1 !important;transform:none !important}</style></noscript>
 
   <script type="application/ld+json">
   {
@@ -80,6 +85,17 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sihatree.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sihatree.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "What Is Arabic Gum?", "item": "https://sihatree.com/blog/what-is-arabic-gum-benefits-uses-dosage" }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -91,19 +107,21 @@
     </ul>
 
     <div class="logo">
-      <a href="/"><img src="/images/logo.png" alt="Sihatree Logo" id="nav-logo"></a>
+      <a href="/"><img src="/images/logo.webp" alt="Sihatree Logo" id="nav-logo"></a>
     </div>
 
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/blog" class="active">Blog</a></li>
+      <li class="lang-switch"><a href="/blog/what-is-arabic-gum-benefits-uses-dosage" class="lang-current">EN</a> | <a href="/ms/blog/apa-itu-gam-arab-faedah-kegunaan-dos">BM</a></li>
     </ul>
   </nav>
 
+  <main>
   <article class="blog-post">
     <header class="blog-post-header" data-aos="fade-up">
       <p class="blog-post-breadcrumb"><a href="/blog">Blog</a> / What Is Arabic Gum?</p>
+      <span class="blog-post-tag">Wellness Basics</span>
       <h1>What Is Arabic Gum? Benefits, Uses, and Daily Dosage</h1>
       <div class="blog-card-meta">
         <time datetime="2026-07-11">July 11, 2026</time>
@@ -115,12 +133,13 @@
     </header>
 
     <div class="blog-post-hero-img" data-aos="fade-up">
-      <img src="/images/gum-crystals.png" alt="Raw Arabic Gum resin crystals in a bowl">
+      <img src="/images/gum-crystals.webp" alt="Raw Arabic Gum resin crystals in a bowl">
     </div>
+    <p class="blog-post-hero-caption">Raw Arabic Gum resin crystals — the source ingredient behind Sihatree's powder.</p>
 
     <div class="blog-post-body" data-aos="fade-up">
 
-      <p><strong>Arabic Gum is a natural, water-soluble fiber harvested from the sap of the Acacia tree — most
+      <p class="blog-post-lede"><strong>Arabic Gum is a natural, water-soluble fiber harvested from the sap of the Acacia tree — most
           commonly taken as a daily supplement for digestive and gut-health support.</strong> It has no flavor of
         its own, dissolves fully in water, and has been used as a dietary fiber source for centuries across the
         Middle East and North Africa.</p>
@@ -133,21 +152,58 @@
         most supplements, including Sihatree, use.</p>
 
       <h2>What are the benefits of Arabic Gum?</h2>
-      <ul>
-        <li><strong>Digestive support</strong> — as a soluble prebiotic fiber, it feeds beneficial gut bacteria.
-        </li>
-        <li><strong>Gut comfort</strong> — commonly used to ease bloating and support regularity.</li>
-        <li><strong>Low glycemic impact</strong> — unlike many fiber sources, it has minimal effect on blood sugar.
-        </li>
-        <li><strong>Neutral taste</strong> — mixes into water, tea, or smoothies without altering flavor.</li>
-      </ul>
+      <div class="blog-benefit-grid">
+        <div class="blog-benefit-card">
+          <i class="fas fa-seedling" aria-hidden="true"></i>
+          <h3>Digestive support</h3>
+          <p>As a soluble prebiotic fiber, it feeds beneficial gut bacteria.</p>
+        </div>
+        <div class="blog-benefit-card">
+          <i class="fas fa-heart" aria-hidden="true"></i>
+          <h3>Gut comfort</h3>
+          <p>Commonly used to ease bloating and support regularity.</p>
+        </div>
+        <div class="blog-benefit-card">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+          <h3>Low glycemic impact</h3>
+          <p>Unlike many fiber sources, it has minimal effect on blood sugar.</p>
+        </div>
+        <div class="blog-benefit-card">
+          <i class="fas fa-tint" aria-hidden="true"></i>
+          <h3>Neutral taste</h3>
+          <p>Mixes into water, tea, or smoothies without altering flavor.</p>
+        </div>
+        <div class="blog-benefit-card">
+          <i class="fas fa-utensils" aria-hidden="true"></i>
+          <h3>Satiety support</h3>
+          <p>Forms a gel-like texture in the gut, helping you feel fuller for longer between meals.</p>
+        </div>
+        <div class="blog-benefit-card">
+          <i class="fas fa-feather" aria-hidden="true"></i>
+          <h3>Gentle fermentation</h3>
+          <p>Ferments slower than many fiber sources, making it easier to tolerate day to day.</p>
+        </div>
+      </div>
 
       <h2>How much Arabic Gum should I take daily?</h2>
       <p>Most adults start with <strong>5–10 grams per day</strong>, mixed into a glass of water, and gradually
         increase to <strong>15–30 grams</strong> as tolerated. Starting low and increasing gradually helps avoid
-        initial bloating as your gut adjusts to the added fiber. Splitting the dose across two servings — once in
-        the morning and once in the evening — tends to be gentler than taking the full amount in one sitting,
-        especially in the first week or two.</p>
+        initial bloating as your gut adjusts to the added fiber.</p>
+
+      <div class="blog-tip">
+        <p class="blog-tip-label"><i class="fas fa-lightbulb" aria-hidden="true"></i> Tip</p>
+        <p>Split the dose across two servings — once in the morning, once in the evening — it's gentler than taking
+          the full amount in one sitting, especially in the first week or two.</p>
+      </div>
+
+      <div class="blog-inline-cta">
+        <h3>Ready to Try Sihatree?</h3>
+        <p>Halal-certified Arabic Gum Powder in 5 flavours — shop retail or enquire wholesale.</p>
+        <div class="footer-cta-group">
+          <a href="/products" class="btn btn-primary">Shop Products</a>
+          <a href="/retail" class="btn btn-outline">Retail Info</a>
+        </div>
+      </div>
 
       <h2>Arabic Gum vs. other fiber supplements</h2>
       <p>Arabic Gum isn't the only soluble fiber on the market, and it's worth knowing how it compares to two common
@@ -160,8 +216,8 @@
           gas and bloating in sensitive individuals due to faster fermentation. Arabic Gum's slower fermentation
           rate is one reason it's often recommended as a gentler starting point.</li>
       </ul>
-      <p>Neither is objectively "better" — they suit different needs, and some people even rotate between fiber
-        types for variety.</p>
+      <p class="blog-quote">Neither is objectively "better" — they suit different needs, and some people even rotate
+        between fiber types for variety.</p>
 
       <h2>Arabic Gum and satiety</h2>
       <p>Soluble fibers like Arabic Gum absorb water and form a gel-like texture in the gut, which is one reason
@@ -171,11 +227,14 @@
         water 20-30 minutes before a meal is the most common way people use it for this purpose.</p>
 
       <h2>Who should be cautious with Arabic Gum?</h2>
-      <p>Arabic Gum is well-tolerated by most people, but as with any fiber supplement, a few groups should check
-        with a doctor before starting: those with an existing gastrointestinal condition, anyone currently on
-        medication where fiber timing can affect absorption, and pregnant or breastfeeding women who haven't
-        cleared new supplements with their healthcare provider yet. If you notice unusual bloating, cramping, or
-        discomfort beyond mild initial adjustment, scale back the dose or pause and consult a doctor.</p>
+      <div class="blog-caution">
+        <p class="blog-caution-label"><i class="fas fa-exclamation-circle" aria-hidden="true"></i> Good to know</p>
+        <p>Arabic Gum is well-tolerated by most people, but as with any fiber supplement, a few groups should check
+          with a doctor before starting: those with an existing gastrointestinal condition, anyone currently on
+          medication where fiber timing can affect absorption, and pregnant or breastfeeding women who haven't
+          cleared new supplements with their healthcare provider yet. If you notice unusual bloating, cramping, or
+          discomfort beyond mild initial adjustment, scale back the dose or pause and consult a doctor.</p>
+      </div>
 
       <h2>Is Arabic Gum the same as gum arabic?</h2>
       <p>Yes — <strong>Arabic Gum and gum arabic are the same ingredient</strong>, just two common names for the
@@ -201,19 +260,64 @@
         from.</p>
 
     </div>
+
+    <section class="blog-faq" data-aos="fade-up">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button type="button" class="faq-question">How much Arabic Gum should I take daily? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="faq-answer">Most adults start with 5–10 grams of Arabic Gum powder per day, mixed into water or a drink, and can build up to 15–30 grams as tolerated.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">Is Arabic Gum the same as gum arabic? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="faq-answer">Yes. Arabic Gum and gum arabic both refer to the dried natural exudate of the Acacia senegal or Acacia seyal tree — it's the same ingredient under two common names.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">Is Arabic Gum halal, and is it available in Malaysia? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="faq-answer">Yes. Arabic Gum is a plant-derived fiber with no halal concerns, and Sihatree's Arabic Gum Powder is Halal-certified for the Malaysian market, available via retail platforms like TikTok Shop and Shopee, and through wholesale supply.</div>
+      </div>
+    </section>
+
+    <section class="blog-related" data-aos="fade-up">
+      <h2>Related Articles</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <a class="blog-card-link" href="/blog/is-arabic-gum-halal-malaysia">
+            <div class="blog-card-thumb">
+              <img src="/images/acacia-tree.webp" alt="Acacia tree, the natural source of halal-certified Arabic Gum" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Halal &amp; Certification</span>
+              <h3 class="blog-card-title">Is Arabic Gum Halal? Complete Guide for Malaysian Buyers</h3>
+            </div>
+          </a>
+        </article>
+        <article class="blog-card">
+          <a class="blog-card-link" href="/blog/where-to-buy-arabic-gum-malaysia">
+            <div class="blog-card-thumb">
+              <img src="/images/plain.webp" alt="Sihatree Original Arabic Gum Powder pack available in Malaysia" loading="lazy">
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-card-tag">Buying Guide</span>
+              <h3 class="blog-card-title">Where to Buy Arabic Gum Powder in Malaysia (2026 Guide)</h3>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
   </article>
+  </main>
 
   <!-- Footer -->
   <footer class="main-footer">
     <div class="footer-layout">
       <div class="footer-col brand-col">
-        <img src="/images/logo.png" alt="Sihatree Logo" class="footer-logo">
+        <img src="/images/logo.webp" alt="Sihatree Logo" class="footer-logo">
         <p class="footer-desc">Bringing the natural goodness of Arabic Gum into your daily routine. Simple,
           refreshing, and easy to enjoy.</p>
       </div>
 
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h3>Quick Links</h3>
         <ul class="footer-links">
           <li><a href="/products">Products</a></li>
           <li><a href="/benefits">Benefits</a></li>
@@ -225,7 +329,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Connect</h4>
+        <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
@@ -236,6 +340,9 @@
         <div class="footer-contact">
           <p>Questions? Email us at:</p>
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
+        </div>
+        <div class="footer-lang-switch">
+          <a href="/blog/what-is-arabic-gum-benefits-uses-dosage" class="lang-current">EN</a> | <a href="/ms/blog/apa-itu-gam-arab-faedah-kegunaan-dos">Bahasa Malaysia</a>
         </div>
       </div>
     </div>
@@ -248,6 +355,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
+  <script type="module" src="/src/blog.js"></script>
 </body>
 
 </html>

@@ -6,9 +6,34 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "audit:html": "html-validate \"*.html\" \"ms/*.html\" \"blog/*.html\" \"ms/blog/*.html\"",
+    "audit:lighthouse": "start-server-and-test preview http://localhost:4173 \"npx lighthouse http://localhost:4173/index.html --output=html --output-path=./audit-reports/lighthouse-en.html --chrome-flags=--headless --quiet & npx lighthouse http://localhost:4173/ms/index.html --output=html --output-path=./audit-reports/lighthouse-ms.html --chrome-flags=--headless --quiet\"",
+    "audit:a11y": "start-server-and-test preview http://localhost:4173 \"npx axe http://localhost:4173/index.html http://localhost:4173/ms/index.html --exit\"",
+    "audit:pa11y": "start-server-and-test preview http://localhost:4173 \"npx pa11y http://localhost:4173/index.html & npx pa11y http://localhost:4173/ms/index.html\"",
+    "audit:links": "start-server-and-test preview http://localhost:4173 \"npx linkinator http://localhost:4173 --recurse\"",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "audit:all": "npm run audit:html & npm run audit:links & npm run audit:a11y & npm run audit:pa11y & npm run audit:lighthouse",
+    "lint": "eslint src",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@axe-core/cli": "^4.12.1",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.7.0",
+    "html-validate": "^11.5.6",
+    "lighthouse": "^13.4.0",
+    "linkinator": "^7.6.1",
+    "pa11y": "^9.1.1",
+    "prettier": "^3.9.5",
+    "schema-dts": "^2.0.0",
+    "sharp": "^0.35.3",
+    "start-server-and-test": "^3.0.11",
+    "svgo": "^4.0.2",
     "vite": "^7.3.1"
   },
   "dependencies": {

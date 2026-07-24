@@ -26,6 +26,11 @@ Business name in code/schema: **Sihatree**. `package.json` name field is `sihatr
   etc. Do not introduce a second animation library.
 - `.htaccess` in `public/` strips `.html` from URLs and 301-redirects `.html` hits to the clean
   URL — so canonical URLs are extensionless (`/products` not `/products.html`).
+  **Do not add a `RewriteCond %{REQUEST_FILENAME} !-d` guard to the extensionless rewrite.** `/blog`
+  is both a clean URL (`blog.html`) and a real directory (`blog/`); with `!-d` the rewrite is
+  skipped, mod_dir 301s `/blog` → `/blog/`, and Apache serves a directory listing of every article
+  file instead of the blog index. It ends in HTTP 200, so a status-code-only sweep passes — assert
+  the served `<title>`. Same for `/ms/blog`. `Options -Indexes` is there as a second line of defence.
 - No test suite. Verification = `npm run dev`, load pages, check console, mobile-width check at
   375px (project convention — flex/grid children need `min-width: 0` to avoid overflow).
 - Commands: `npm run dev`, `npm run build`, `npm run preview`.
@@ -378,7 +383,25 @@ localization spec. Find-and-replace tokens when the client supplies real values;
   current homepage's "Vibrant Editorial" redesign (already implemented) — origin story replaced a
   scroll-hijacked pinned section for accessibility/mobile reasons, flavour carousel now uses CSS
   scroll-snap instead of custom drag-JS. Read before touching homepage structure again.
-- All work on this project so far has been local-only — no deploys, no pushes, no live domain
-  changes. Treat any deploy/push as requiring explicit confirmation.
-- Repo was cloned to `D:\sahtree` (not under a user profile / npm global folder) so it lives as a
-  normal standalone project on the D: drive.
+- Treat any deploy/push as requiring explicit confirmation from the client.
+- Working copy on this machine is `E:\sahtree` (an earlier note said `D:\sahtree`).
+
+## Deploy — live on https://sihatree.com since 2026-07-22
+
+Host: Namecheap cPanel. `npm run build`, then FTPS-mirror the whole `dist/` to the docroot.
+
+- **`ftp.madinah.com.my` does not resolve (NXDOMAIN).** Real host is `162.0.215.47`
+  (= `ftp.sihatree.com`, = `mail.madinah.com.my`). Pure-FTPd, explicit FTPS on port 21, PASV.
+- User `claudesihatree@madinah.com.my` is **chrooted to the sihatree.com docroot** — `pwd` returns
+  `/` and that already *is* the docroot. Upload to `/`, never to a `sihatree.com/` subfolder.
+- The certificate does not match the bare IP → an FTPS client needs
+  `check_hostname=False` + `verify_mode=CERT_NONE`, then `.prot_p()`. Password is not stored in
+  this repo; pass it through an environment variable.
+- The upload walk **must include dotfiles** or `.htaccess` silently never ships and every clean URL
+  404s. Verify each `STOR` with `ftp.size()` against the local size — a failed transfer does not
+  always raise.
+- Do not delete `/.well-known/pki-validation/verify.txt` or `/.ftpquota` — both belong to the host,
+  not to the build.
+- Verify after deploying by asserting each route's served `<title>`, not its status code.
+- Deployed 2026-07-22: 179 files, all size-verified, 19 routes checked green, `sihatree.com` A
+  record now correctly points at `162.0.215.47`.

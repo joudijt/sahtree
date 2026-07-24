@@ -6,6 +6,12 @@ RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
 # Serve the matching .html file for extensionless requests.
-RewriteCond %{REQUEST_FILENAME} !-d
+# No !-d guard on purpose: /blog is both a clean URL (blog.html) and a real
+# directory (blog/). With !-d the rewrite is skipped, mod_dir 301s /blog -> /blog/
+# and Apache serves a directory listing instead of the blog index (200, so a
+# status-code-only check misses it). Same for /ms/blog.
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
+
+# Never fall back to an autoindex listing.
+Options -Indexes

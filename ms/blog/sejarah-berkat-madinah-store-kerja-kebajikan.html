@@ -102,7 +102,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Kebaikan</a></li>
@@ -115,7 +115,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/berkat-madinah-store-history-charity-work">EN</a> | <a href="/ms/blog/sejarah-berkat-madinah-store-kerja-kebajikan" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/berkat-madinah-store-history-charity-work">EN</a></li>
+          <li><a href="/ar/blog/berkat-madinah-store-history-charity-work">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -159,10 +167,10 @@
         menyediakan perkhidmatan bermutu tinggi.</p>
 
       <h2>Apakah yang diperjuangkan oleh Berkat Madinah Store?</h2>
-      <p>Syarikat ini menggambarkan misinya sebagai menyediakan <em>makanan Arab yang tulen dan pelbagai dengan
+      <p>Syarikat ini menggambarkan misinya sebagai menyediakan <em>makanan Arab yang pelbagai dengan
         kualiti tertinggi — memenuhi jangkaan penduduk Asia Tenggara dan dunia Islam</em>, dibina di atas dua nilai
         teras: <strong>kualiti dan kredibiliti</strong>. Tujuannya melangkah lebih jauh — membawa <em>cita rasa
-        tulen Arab ke setiap bandar di dunia, kepada semua yang menghargai tradisi dan keaslian</em>.</p>
+        Arab ke setiap bandar di dunia, kepada semua yang menghargai tradisi</em>.</p>
 
       <h2>Sejauh mana Berkat Madinah Store berkembang sejak 2010?</h2>
       <p>Daripada kedai pertama di Ampang itu, perniagaan ini kini melaporkan lebih <strong>500,000 pelanggan
@@ -204,10 +212,10 @@
 
       <div class="blog-inline-cta">
         <h3>Beli Gam Arab Sihatree</h3>
-        <p>Serbuk Gam Arab berperisa, disahkan Halal — dibekalkan oleh Berkat Madinah Store.</p>
+        <p>Serbuk Gam Arab berperisa, mesra Halal — dibekalkan oleh Berkat Madinah Store.</p>
         <div class="footer-cta-group">
           <a href="/ms/products" class="btn btn-primary">Lihat Produk</a>
-          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Kedai Rasmi</a>
+          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Kedai Madinah Store</a>
         </div>
       </div>
 
@@ -224,8 +232,8 @@
 
       <h2>Apa maksudnya bagi pelanggan Sihatree?</h2>
       <p><strong>Sihatree ialah jenama dan rumah kandungan bagi rangkaian Serbuk Gam Arab berperisa, dan Berkat
-        Madinah Store — perniagaan yang bermula di Ampang dalam kisah ini — ialah pembekal rasminya</strong>,
-        menguruskan sumber, pensijilan Halal, dan penghantaran. Ketahui lebih lanjut tentang hubungan ini dalam <a
+        Madinah Store — perniagaan yang bermula di Ampang dalam kisah ini — ialah pembekalnya</strong>,
+        menguruskan sumber, garis panduan Halal, dan penghantaran. Ketahui lebih lanjut tentang hubungan ini dalam <a
         href="/blog/best-arabic-gum-provider-malaysia">panduan pembekal</a> kami, atau lihat di mana kisah ini
         bermula secara fizikal dalam <a href="/blog/arabic-grocery-ampang-berkat-madinah-store">panduan kedai
         Ampang</a> kami.</p>
@@ -315,7 +323,7 @@
         <h3>Hubungi Kami</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -325,7 +333,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/berkat-madinah-store-history-charity-work">EN</a> | <a href="/ms/blog/sejarah-berkat-madinah-store-kerja-kebajikan" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/berkat-madinah-store-history-charity-work">EN</a> | <a href="/ms/blog/sejarah-berkat-madinah-store-kerja-kebajikan" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/berkat-madinah-store-history-charity-work">Arabic</a>
         </div>
       </div>
     </div>
@@ -339,6 +347,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

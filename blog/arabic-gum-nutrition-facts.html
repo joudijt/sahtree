@@ -106,7 +106,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -119,7 +119,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-nutrition-facts" class="lang-current">EN</a> | <a href="/ms/blog/fakta-pemakanan-gam-arab">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/blog/fakta-pemakanan-gam-arab">BM</a></li>
+          <li><a href="/ar/blog/arabic-gum-nutrition-facts">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -213,7 +221,7 @@
 
       <div class="blog-inline-cta">
         <h3>Check the Label, Try the Product</h3>
-        <p>Halal-certified Arabic Gum Powder in 5 flavours — full nutrition panel printed on every pack.</p>
+        <p>Halal-friendly Arabic Gum Powder in 5 flavours — full nutrition panel printed on every pack.</p>
         <div class="footer-cta-group">
           <a href="/products" class="btn btn-primary">Shop Products</a>
           <a href="/retail" class="btn btn-outline">Retail Info</a>
@@ -234,9 +242,9 @@
 
       <h2>Buying genuine, correctly labelled Arabic gum</h2>
       <p>Accurate labelling starts with a genuine, properly manufactured product — confirm it's <a
-        href="/blog/is-arabic-gum-halal-malaysia">Halal-certified</a> and buy through <a
-        href="/blog/best-arabic-gum-provider-malaysia">a trusted, verified provider</a>. See our <a
-        href="/blog/where-to-buy-arabic-gum-malaysia">buying guide</a> for official retail and wholesale channels
+        href="/blog/is-arabic-gum-halal-malaysia">Halal-friendly</a> and buy through <a
+        href="/blog/best-arabic-gum-provider-malaysia">a Halal-focused provider</a>. See our <a
+        href="/blog/where-to-buy-arabic-gum-malaysia">buying guide</a> for retail and wholesale channels
         across Malaysia.</p>
 
       <p class="blog-quote">The label on your own pack is always the most accurate nutrition source — general
@@ -327,7 +335,7 @@
         <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -337,7 +345,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-nutrition-facts" class="lang-current">EN</a> | <a href="/ms/blog/fakta-pemakanan-gam-arab">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-nutrition-facts" class="lang-current">EN</a> | <a href="/ms/blog/fakta-pemakanan-gam-arab">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-nutrition-facts">Arabic</a>
         </div>
       </div>
     </div>
@@ -351,6 +359,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

@@ -76,7 +76,7 @@
       {
         "@type": "Question",
         "name": "Are all Arabic Gum products the same quality?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Certification, sourcing, and batch consistency vary between sellers, which is why checking for verifiable Halal certification and buying from official channels matters." }
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Halal status, sourcing, and batch consistency vary between sellers, which is why checking a product's Halal status and buying through a clear, traceable channel matters." }
       },
       {
         "@type": "Question",
@@ -101,7 +101,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -114,7 +114,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-myths" class="lang-current">EN</a> | <a href="/ms/blog/mitos-gam-arab">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/blog/mitos-gam-arab">BM</a></li>
+          <li><a href="/ar/blog/arabic-gum-myths">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -179,7 +187,7 @@
         <div class="blog-benefit-card">
           <i class="fas fa-certificate" aria-hidden="true"></i>
           <h3>"All Products Are the Same"</h3>
-          <p>No — certification and sourcing vary between sellers.</p>
+          <p>No — Halal status and sourcing vary between sellers.</p>
         </div>
         <div class="blog-benefit-card">
           <i class="fas fa-bolt" aria-hidden="true"></i>
@@ -195,18 +203,18 @@
 
       <div class="blog-inline-cta">
         <h3>Shop Sihatree Arabic Gum</h3>
-        <p>Halal-certified, flavoured Arabic Gum Powder — supplied by Berkat Madinah Store.</p>
+        <p>Halal-friendly, flavoured Arabic Gum Powder — supplied by Berkat Madinah Store.</p>
         <div class="footer-cta-group">
           <a href="/products" class="btn btn-primary">View Products</a>
-          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Official Store</a>
+          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Shop the Store</a>
         </div>
       </div>
 
       <h2>Myth: Every Arabic Gum product on the market is the same quality</h2>
-      <p><strong>Fact:</strong> Certification, sourcing, and batch consistency vary between sellers — some sell
-        raw, unverified crystals, others sell certified, ready-to-mix powder. Checking for verifiable Halal
-        certification and buying from an official channel is how to tell the difference; our <a
-        href="/blog/how-to-verify-genuine-arabic-gum">verification guide</a> covers this in detail.</p>
+      <p><strong>Fact:</strong> Halal status, sourcing, and batch consistency vary between sellers — some sell
+        raw crystals with no stated Halal status, others sell ready-to-mix powder that carries one. Checking a
+        product's Halal status and buying through a clear, traceable channel is how to tell the difference; our <a
+        href="/blog/how-to-verify-genuine-arabic-gum">guide to spotting genuine Arabic gum</a> covers this in detail.</p>
 
       <h2>Myth: Arabic Gum is just a new social media trend</h2>
       <p><strong>Fact:</strong> The ingredient itself has been used traditionally for generations across the
@@ -234,7 +242,7 @@
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Are all Arabic Gum products the same quality? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">No. Certification, sourcing, and batch consistency vary between sellers, which is why checking for verifiable Halal certification and buying from official channels matters.</div>
+        <div class="faq-answer">No. Halal status, sourcing, and batch consistency vary between sellers, which is why checking a product's Halal status and buying through a clear, traceable channel matters.</div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Is Arabic Gum just a passing trend? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
@@ -297,7 +305,7 @@
         <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -307,7 +315,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-myths" class="lang-current">EN</a> | <a href="/ms/blog/mitos-gam-arab">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-myths" class="lang-current">EN</a> | <a href="/ms/blog/mitos-gam-arab">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-myths">Arabic</a>
         </div>
       </div>
     </div>
@@ -321,6 +329,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

@@ -106,7 +106,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -119,7 +119,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-side-effects-safety-malaysia" class="lang-current">EN</a> | <a href="/ms/blog/kesan-sampingan-gam-arab-keselamatan-malaysia">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/blog/kesan-sampingan-gam-arab-keselamatan-malaysia">BM</a></li>
+          <li><a href="/ar/blog/arabic-gum-side-effects-safety-malaysia">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -204,7 +212,7 @@
 
       <div class="blog-inline-cta">
         <h3>Start With a Gentle Daily Dose</h3>
-        <p>Halal-certified Arabic Gum Powder in 5 flavours, sized for a comfortable daily routine.</p>
+        <p>Halal-friendly Arabic Gum Powder in 5 flavours, sized for a comfortable daily routine.</p>
         <div class="footer-cta-group">
           <a href="/products" class="btn btn-primary">Shop Products</a>
           <a href="/retail" class="btn btn-outline">Retail Info</a>
@@ -213,10 +221,10 @@
 
       <h2>Buying safe, genuine Arabic gum in Malaysia</h2>
       <p>Side-effect risk goes up with unverified or adulterated products, not just dosage — another reason
-        certification and sourcing matter. Confirm any product is <a
-        href="/blog/is-arabic-gum-halal-malaysia">Halal-certified</a>, buy only through <a
-        href="/blog/best-arabic-gum-provider-malaysia">a trusted, verified provider</a>, and see our <a
-        href="/blog/where-to-buy-arabic-gum-malaysia">buying guide</a> for official retail and wholesale channels
+        Halal status and sourcing matter. Confirm any product is <a
+        href="/blog/is-arabic-gum-halal-malaysia">Halal-friendly</a>, buy only through <a
+        href="/blog/best-arabic-gum-provider-malaysia">a Halal-focused provider</a>, and see our <a
+        href="/blog/where-to-buy-arabic-gum-malaysia">buying guide</a> for retail and wholesale channels
         across Malaysia.</p>
 
       <p class="blog-quote">Most Arabic gum side effects come down to one thing: starting too fast. Slow down the
@@ -269,10 +277,10 @@
         <article class="blog-card">
           <a class="blog-card-link" href="/blog/is-arabic-gum-halal-malaysia">
             <div class="blog-card-thumb">
-              <img src="/images/acacia-tree.webp" alt="Acacia tree, the natural source of halal-certified Arabic Gum" loading="lazy">
+              <img src="/images/acacia-tree.webp" alt="Acacia tree, the natural source of Halal-friendly Arabic Gum" loading="lazy">
             </div>
             <div class="blog-card-body">
-              <span class="blog-card-tag">Halal &amp; Certification</span>
+              <span class="blog-card-tag">Halal &amp; Guidelines</span>
               <h3 class="blog-card-title">Is Arabic Gum Halal? Complete Guide for Malaysian Buyers</h3>
             </div>
           </a>
@@ -307,7 +315,7 @@
         <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -317,7 +325,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-side-effects-safety-malaysia" class="lang-current">EN</a> | <a href="/ms/blog/kesan-sampingan-gam-arab-keselamatan-malaysia">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-side-effects-safety-malaysia" class="lang-current">EN</a> | <a href="/ms/blog/kesan-sampingan-gam-arab-keselamatan-malaysia">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-side-effects-safety-malaysia">Arabic</a>
         </div>
       </div>
     </div>
@@ -331,6 +339,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

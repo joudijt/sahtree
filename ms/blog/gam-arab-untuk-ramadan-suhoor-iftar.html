@@ -86,7 +86,7 @@
       {
         "@type": "Question",
         "name": "Di mana saya boleh beli gam Arab sebelum Ramadan?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Stok sebelum bulan tersebut melalui Berkat Madinah Store, pembekal rasmi, atau storefront TikTok Shop dan Shopee Sihatree." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Stok sebelum bulan tersebut melalui Berkat Madinah Store, atau storefront TikTok Shop dan Shopee Sihatree." }
       }
     ]
   }
@@ -106,7 +106,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Faedah</a></li>
@@ -119,7 +119,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-for-ramadan-suhoor-iftar">EN</a> | <a href="/ms/blog/gam-arab-untuk-ramadan-suhoor-iftar" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/arabic-gum-for-ramadan-suhoor-iftar">EN</a></li>
+          <li><a href="/ar/blog/arabic-gum-for-ramadan-suhoor-iftar">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -217,7 +225,7 @@
 
       <div class="blog-inline-cta">
         <h3>Stok Sebelum Ramadan</h3>
-        <p>Tempah Serbuk Gam Arab bersijil Halal anda daripada Berkat Madinah Store rasmi sebelum bulan tersebut.</p>
+        <p>Tempah Serbuk Gam Arab Halal anda daripada Berkat Madinah Store sebelum bulan tersebut.</p>
         <div class="footer-cta-group">
           <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-primary">Beli di Berkat Madinah Store</a>
           <a href="/ms/products" class="btn btn-outline">Lihat Produk</a>
@@ -253,7 +261,7 @@
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Di mana saya boleh beli gam Arab sebelum Ramadan? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">Stok sebelum bulan tersebut melalui Berkat Madinah Store, pembekal rasmi, atau storefront TikTok Shop dan Shopee Sihatree.</div>
+        <div class="faq-answer">Stok sebelum bulan tersebut melalui Berkat Madinah Store, atau storefront TikTok Shop dan Shopee Sihatree.</div>
       </div>
     </section>
 
@@ -312,7 +320,7 @@
         <h3>Hubungkan</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -322,7 +330,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-for-ramadan-suhoor-iftar">EN</a> | <a href="/ms/blog/gam-arab-untuk-ramadan-suhoor-iftar" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-for-ramadan-suhoor-iftar">EN</a> | <a href="/ms/blog/gam-arab-untuk-ramadan-suhoor-iftar" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-for-ramadan-suhoor-iftar">Arabic</a>
         </div>
       </div>
     </div>
@@ -336,6 +344,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

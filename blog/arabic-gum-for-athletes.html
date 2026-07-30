@@ -101,7 +101,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -114,7 +114,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-for-athletes" class="lang-current">EN</a> | <a href="/ms/blog/gam-arab-untuk-atlet">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/blog/gam-arab-untuk-atlet">BM</a></li>
+          <li><a href="/ar/blog/arabic-gum-for-athletes">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -186,17 +194,17 @@
         </div>
         <div class="blog-benefit-card">
           <i class="fas fa-check-circle" aria-hidden="true"></i>
-          <h3>Halal-Certified</h3>
-          <p>JAKIM Halal certification on every flavour.</p>
+          <h3>Halal-Friendly</h3>
+          <p>Naturally suitable for Halal consumers, on every flavour.</p>
         </div>
       </div>
 
       <div class="blog-inline-cta">
         <h3>Shop Sihatree Arabic Gum</h3>
-        <p>Halal-certified, flavoured Arabic Gum Powder — supplied by Berkat Madinah Store.</p>
+        <p>Halal-friendly, flavoured Arabic Gum Powder — supplied by Berkat Madinah Store.</p>
         <div class="footer-cta-group">
           <a href="/products" class="btn btn-primary">View Products</a>
-          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Official Store</a>
+          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Visit Store</a>
         </div>
       </div>
 
@@ -207,8 +215,8 @@
         that: one small, optional part of a daily fibre routine, not a fitness product.</p>
 
       <h2>How does this connect to Sihatree's product?</h2>
-      <p><strong>Sihatree's Arabic Gum Powder is supplied by Berkat Madinah Store</strong> and carries JAKIM Halal
-        certification across all five flavours. For general serving guidance, see our <a
+      <p><strong>Sihatree's Arabic Gum Powder is supplied by Berkat Madinah Store</strong> and is naturally suitable for Halal consumers
+        across all five flavours. Sihatree does not currently hold a formal JAKIM Halal certificate. For general serving guidance, see our <a
         href="/blog/what-is-arabic-gum-benefits-uses-dosage">benefits and dosage guide</a>.</p>
 
       <p class="blog-quote">The best fitness habit is the one that's honest about what it is — Arabic Gum is a
@@ -295,7 +303,7 @@
         <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -305,7 +313,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-for-athletes" class="lang-current">EN</a> | <a href="/ms/blog/gam-arab-untuk-atlet">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-for-athletes" class="lang-current">EN</a> | <a href="/ms/blog/gam-arab-untuk-atlet">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-for-athletes">Arabic</a>
         </div>
       </div>
     </div>
@@ -319,6 +327,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

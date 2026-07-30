@@ -11,6 +11,7 @@
   <link rel="canonical" href="https://sihatree.com/contact" />
   <link rel="alternate" hreflang="en-MY" href="https://sihatree.com/contact" />
   <link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/contact" />
+  <link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/contact" />
   <link rel="alternate" hreflang="x-default" href="https://sihatree.com/contact" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sihatree" />
@@ -45,7 +46,7 @@
       "name": "Sihatree",
       "email": "hello@sihatree.com",
       "url": "https://sihatree.com/",
-      "sameAs": ["https://wa.me/yournumber"]
+      "sameAs": ["https://wa.me/601111119912"]
     }
   }
   </script>
@@ -57,7 +58,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -70,7 +71,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact" class="active">Contact</a></li>
-      <li class="lang-switch"><a href="/contact" class="lang-current">EN</a> | <a href="/ms/contact">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/contact">BM</a></li>
+          <li><a href="/ar/contact">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -101,7 +110,7 @@
           <i class="fab fa-whatsapp"></i>
           <div>
             <h4>WhatsApp</h4>
-            <a href="https://wa.me/yournumber">Message us directly</a>
+            <a href="https://wa.me/601111119912">Message us directly</a>
             <p>Fastest way to reach our team.</p>
           </div>
         </div>
@@ -187,7 +196,7 @@
         <h4>Connect</h4>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -197,7 +206,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/contact" class="lang-current">EN</a> | <a href="/ms/contact">Bahasa Malaysia</a>
+          <a href="/contact" class="lang-current">EN</a> | <a href="/ms/contact">Bahasa Malaysia</a> | <a href="/ar/contact">Arabic</a>
         </div>
       </div>
     </div>
@@ -210,29 +219,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       window.AOS && AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 100 });
-      const form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          if (!form.checkValidity()) { form.reportValidity(); return; }
-          const btn = form.querySelector('button');
-          const originalText = btn.innerText;
-          btn.innerText = 'Sending...';
-          btn.disabled = true;
-          setTimeout(() => {
-            btn.innerText = 'Thanks — our team will be in touch soon.';
-            btn.style.background = '#7FBC3B';
-            form.reset();
-            setTimeout(() => {
-              btn.innerText = originalText;
-              btn.style.background = '';
-              btn.disabled = false;
-            }, 5000);
-          }, 1500);
-        });
-      }
     });
   </script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

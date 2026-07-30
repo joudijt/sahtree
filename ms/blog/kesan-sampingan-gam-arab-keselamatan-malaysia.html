@@ -107,7 +107,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Kebaikan</a></li>
@@ -120,7 +120,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-side-effects-safety-malaysia">EN</a> | <a href="/ms/blog/kesan-sampingan-gam-arab-keselamatan-malaysia" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/arabic-gum-side-effects-safety-malaysia">EN</a></li>
+          <li><a href="/ar/blog/arabic-gum-side-effects-safety-malaysia">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -208,20 +216,20 @@
 
       <div class="blog-inline-cta">
         <h3>Mulakan dengan Dos Harian yang Lembut</h3>
-        <p>Serbuk Gam Arab disahkan Halal dalam 5 perisa, bersaiz untuk rutin harian yang selesa.</p>
+        <p>Serbuk Gam Arab mesra Halal dalam 5 perisa, bersaiz untuk rutin harian yang selesa.</p>
         <div class="footer-cta-group">
           <a href="/ms/products" class="btn btn-primary">Lihat Produk</a>
           <a href="/ms/retail" class="btn btn-outline">Info Runcit</a>
         </div>
       </div>
 
-      <h2>Membeli gam Arab yang selamat dan tulen di Malaysia</h2>
-      <p>Risiko kesan sampingan meningkat dengan produk yang tidak disahkan atau dicemari, bukan sekadar dos —
-        satu lagi sebab pensijilan dan sumber penting. Sahkan mana-mana produk <a
-        href="/ms/blog/gam-arab-halal-panduan-malaysia">disahkan Halal</a>, beli hanya melalui <a
-        href="/ms/blog/pembekal-gam-arab-terbaik-malaysia">pembekal yang dipercayai dan disahkan</a>, dan lihat <a
+      <h2>Membeli gam Arab dengan selamat di Malaysia</h2>
+      <p>Risiko kesan sampingan meningkat dengan produk yang tidak diketahui status atau dicemari, bukan sekadar dos —
+        satu lagi sebab garis panduan Halal dan sumber penting. Sahkan mana-mana produk <a
+        href="/ms/blog/gam-arab-halal-panduan-malaysia">mengikut garis panduan Halal</a>, beli hanya melalui <a
+        href="/ms/blog/pembekal-gam-arab-terbaik-malaysia">pembekal Gam Arab</a>, dan lihat <a
         href="/ms/blog/di-mana-beli-gam-arab-malaysia">panduan membeli</a> kami untuk saluran runcit dan borong
-        rasmi di seluruh Malaysia.</p>
+        yang disenaraikan di seluruh Malaysia.</p>
 
       <p class="blog-quote">Kebanyakan kesan sampingan gam Arab berpunca daripada satu perkara: bermula terlalu
         pantas. Perlahankan peningkatan dos, dan ketidakselesaan hampir selalu hilang.</p>
@@ -273,10 +281,10 @@
         <article class="blog-card">
           <a class="blog-card-link" href="/ms/blog/gam-arab-halal-panduan-malaysia">
             <div class="blog-card-thumb">
-              <img src="/images/acacia-tree.webp" alt="Pokok Akasia, sumber semula jadi Gam Arab yang disahkan Halal" loading="lazy">
+              <img src="/images/acacia-tree.webp" alt="Pokok Akasia, sumber semula jadi Gam Arab yang mesra Halal" loading="lazy">
             </div>
             <div class="blog-card-body">
-              <span class="blog-card-tag">Halal &amp; Pensijilan</span>
+              <span class="blog-card-tag">Halal &amp; Piawaian</span>
               <h3 class="blog-card-title">Adakah Gam Arab Halal? Panduan Lengkap</h3>
             </div>
           </a>
@@ -311,7 +319,7 @@
         <h3>Hubungi Kami</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -321,7 +329,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-side-effects-safety-malaysia">EN</a> | <a href="/ms/blog/kesan-sampingan-gam-arab-keselamatan-malaysia" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-side-effects-safety-malaysia">EN</a> | <a href="/ms/blog/kesan-sampingan-gam-arab-keselamatan-malaysia" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-side-effects-safety-malaysia">Arabic</a>
         </div>
       </div>
     </div>
@@ -335,6 +343,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

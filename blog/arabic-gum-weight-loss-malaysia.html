@@ -106,7 +106,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -119,7 +119,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-weight-loss-malaysia" class="lang-current">EN</a> | <a href="/ms/blog/gam-arab-turun-berat-badan-malaysia">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/blog/gam-arab-turun-berat-badan-malaysia">BM</a></li>
+          <li><a href="/ar/blog/arabic-gum-weight-loss-malaysia">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -188,7 +196,7 @@
 
       <div class="blog-inline-cta">
         <h3>Add It to Your Daily Routine</h3>
-        <p>Halal-certified Arabic Gum Powder in 5 flavours — easy to mix before any meal.</p>
+        <p>Halal-friendly Arabic Gum Powder in 5 flavours — easy to mix before any meal.</p>
         <div class="footer-cta-group">
           <a href="/products" class="btn btn-primary">Shop Products</a>
           <a href="/retail" class="btn btn-outline">Retail Info</a>
@@ -208,8 +216,8 @@
 
       <h2>Buying Arabic gum for a weight-management routine</h2>
       <p>If you're adding Arabic gum to a diet routine, the same buying basics apply as any other use: confirm it's
-        <a href="/blog/is-arabic-gum-halal-malaysia">Halal-certified</a>, buy through <a
-        href="/blog/best-arabic-gum-provider-malaysia">a trusted, verified provider</a>, and check our <a
+        <a href="/blog/is-arabic-gum-halal-malaysia">Halal-friendly</a>, buy through <a
+        href="/blog/best-arabic-gum-provider-malaysia">a Halal-focused provider</a>, and check our <a
         href="/blog/arabic-gum-side-effects-safety-malaysia">side-effects and safety guide</a> before starting,
         especially if you're combining it with a calorie-restricted diet.</p>
 
@@ -301,7 +309,7 @@
         <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -311,7 +319,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-weight-loss-malaysia" class="lang-current">EN</a> | <a href="/ms/blog/gam-arab-turun-berat-badan-malaysia">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-weight-loss-malaysia" class="lang-current">EN</a> | <a href="/ms/blog/gam-arab-turun-berat-badan-malaysia">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-weight-loss-malaysia">Arabic</a>
         </div>
       </div>
     </div>
@@ -325,6 +333,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

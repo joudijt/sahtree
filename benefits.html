@@ -11,6 +11,7 @@
   <link rel="canonical" href="https://sihatree.com/benefits" />
   <link rel="alternate" hreflang="en-MY" href="https://sihatree.com/benefits" />
   <link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/benefits" />
+  <link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/benefits" />
   <link rel="alternate" hreflang="x-default" href="https://sihatree.com/benefits" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sihatree" />
@@ -57,7 +58,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits" class="active">Benefits</a></li>
@@ -70,7 +71,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/benefits" class="lang-current">EN</a> | <a href="/ms/benefits">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/benefits">BM</a></li>
+          <li><a href="/ar/benefits">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -122,7 +131,7 @@
           ingredient, just making an old one easier to use daily.</p>
         <div class="sp-chip-row">
           <span class="sp-chip"><i class="fas fa-leaf"></i> Naturally Sourced</span>
-          <span class="sp-chip"><i class="fas fa-certificate"></i> Halal Certified</span>
+          <span class="sp-chip"><i class="fas fa-certificate"></i> Halal-Friendly</span>
         </div>
       </div>
     </div>
@@ -220,7 +229,7 @@
   <!-- Quick facts -->
   <section class="sp-section sp-section--tight">
     <div class="sp-stat-strip" data-aos="fade-up">
-      <div class="sp-stat"><strong>5</strong><span>Halal-certified flavours</span></div>
+      <div class="sp-stat"><strong>5</strong><span>Halal-friendly flavours</span></div>
       <div class="sp-stat"><strong>150g</strong><span>Per pack</span></div>
       <div class="sp-stat"><strong>100%</strong><span>Arabic Gum base</span></div>
       <div class="sp-stat"><strong>MY</strong><span>Nationwide delivery</span></div>
@@ -296,7 +305,7 @@
         <h4>Connect</h4>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -306,7 +315,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/benefits" class="lang-current">EN</a> | <a href="/ms/benefits">Bahasa Malaysia</a>
+          <a href="/benefits" class="lang-current">EN</a> | <a href="/ms/benefits">Bahasa Malaysia</a> | <a href="/ar/benefits">Arabic</a>
         </div>
       </div>
     </div>
@@ -329,6 +338,7 @@
       });
     });
   </script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

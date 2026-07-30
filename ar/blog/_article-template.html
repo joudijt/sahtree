@@ -1,0 +1,266 @@
+<!--
+  قالب المقال بالعربية — انسخ هذا الملف لكل مقال جديد.
+  1. أعد تسمية النسخة بنفس الرابط (slug) الإنجليزي، مثال: ar/blog/your-article-slug
+  2. استبدل كل {{PLACEHOLDER}} أدناه بترجمة عربية فصيحة (وليست ترجمة حرفية) للمقال الإنجليزي المقابل
+  3. أضف البطاقة المطابقة إلى شبكة صفحة المدونة (ar/blog.html) مع رابط لهذا الملف
+  4. أضف إدخال BlogPosting مطابق في مصفوفة "blogPost" ضمن بيانات Blog JSON-LD لصفحة المدونة
+  5. حدّث اسم "BreadcrumbList" أدناه بالعنوان المختصر للمقال
+  6. انسخ بطاقات "مقالات ذات صلة" من مقال منشور ووجّهها إلى المقالات الشقيقة الحقيقية (2-3 مقالات)
+  7. جدول المحتويات تلقائي (src/blog.js) عند وجود 4+ عناوين h2 — لا حاجة لإضافة شيء هنا
+  8. قسم الأسئلة الشائعة: اجعل بيانات FAQPage JSON-LD مطابقة لما يظهر في .faq-item المرئي
+  9. عناصر المحتوى (.blog-highlight / .blog-tip / .blog-caution / .blog-quote / .blog-benefit-grid)
+     تُستخدم فقط عندما تفيد القائمة أو الحقيقة الأساسية من هذا الأسلوب — لا تفرضها في كل قسم
+  10. الشعار وقائمة اللغات في الأعلى يبقيان بنفس الموضع (dir="ltr" على <nav>) رغم أن باقي الصفحة
+      تصبح RTL بالكامل — لا تُغيّر هذا السلوك
+-->
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{العنوان}} | Sihatree</title>
+  <meta name="description" content="{{وصف تعريفي — 140-160 حرفًا}}" />
+  <link rel="canonical" href="https://sihatree.com/ar/blog/{{SLUG}}" />
+  <link rel="alternate" hreflang="en-MY" href="https://sihatree.com/blog/{{SLUG}}" />
+  <link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/blog/{{MS_SLUG}}" />
+  <link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/blog/{{SLUG}}" />
+  <link rel="alternate" hreflang="x-default" href="https://sihatree.com/blog/{{SLUG}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{العنوان}}" />
+  <meta property="og:description" content="{{وصف تعريفي}}" />
+  <meta property="og:image" content="https://sihatree.com/images/{{IMAGE}}.png" />
+  <meta property="og:image:width" content="{{IMAGE_WIDTH}}" />
+  <meta property="og:image:height" content="{{IMAGE_HEIGHT}}" />
+  <meta property="og:locale" content="ar_MY" />
+  <meta property="og:locale:alternate" content="en_MY" />
+  <meta property="article:published_time" content="{{YYYY-MM-DD}}" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <noscript><style>[data-aos]{opacity:1 !important;transform:none !important}</style></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{العنوان}}",
+    "url": "https://sihatree.com/ar/blog/{{SLUG}}",
+    "inLanguage": "ar-MY",
+    "datePublished": "{{YYYY-MM-DD}}",
+    "dateModified": "{{YYYY-MM-DD}}",
+    "image": "https://sihatree.com/images/{{IMAGE}}.png",
+    "author": { "@type": "Organization", "name": "Sihatree", "url": "https://sihatree.com" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sihatree",
+      "logo": { "@type": "ImageObject", "url": "https://sihatree.com/images/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sihatree.com/ar/blog/{{SLUG}}" },
+    "description": "{{وصف تعريفي}}"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "inLanguage": "ar-MY",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sihatree.com/ar/" },
+      { "@type": "ListItem", "position": 2, "name": "المدونة", "item": "https://sihatree.com/ar/blog" },
+      { "@type": "ListItem", "position": 3, "name": "{{العنوان_المختصر}}", "item": "https://sihatree.com/ar/blog/{{SLUG}}" }
+    ]
+  }
+  </script>
+
+  <!-- اختياري: احتفظ به إذا كان المقال يجيب عن سؤالين أو أكثر مباشرة، احذفه إن لم يكن كذلك -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ar-MY",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "{{السؤال_1}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{الجواب_1}}" }
+      },
+      {
+        "@type": "Question",
+        "name": "{{السؤال_2}}",
+        "acceptedAnswer": { "@type": "Answer", "text": "{{الجواب_2}}" }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="main-nav" dir="ltr">
+    <ul class="nav-links nav-left">
+      <li><a href="/ar/products">المنتجات</a></li>
+      <li><a href="/ar/benefits">الفوائد</a></li>
+    </ul>
+
+    <div class="logo">
+      <a href="/ar/"><img src="/images/logo.webp" alt="شعار سيهاتري" id="nav-logo"></a>
+    </div>
+
+    <ul class="nav-links nav-right">
+      <li><a href="/ar/retail">البيع بالتجزئة</a></li>
+      <li><a href="/ar/contact">اتصل بنا</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">AR</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/{{SLUG}}">EN</a></li>
+          <li><a href="/ms/blog/{{MS_SLUG}}">BM</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <article class="blog-post">
+      <header class="blog-post-header" data-aos="fade-up">
+        <p class="blog-post-breadcrumb"><a href="/ar/blog">المدونة</a> / {{العنوان_المختصر}}</p>
+        <span class="blog-post-tag">{{وسم_التصنيف}}</span>
+        <h1>{{العنوان}}</h1>
+        <div class="blog-card-meta">
+          <time datetime="{{YYYY-MM-DD}}">{{اليوم شهر سنة}}</time>
+          <span class="blog-dot" aria-hidden="true">&middot;</span>
+          <span>{{N}} دقائق قراءة</span>
+          <span class="blog-dot" aria-hidden="true">&middot;</span>
+          <span>بقلم سيهاتري</span>
+        </div>
+      </header>
+
+      <div class="blog-post-hero-img" data-aos="fade-up">
+        <img src="/images/{{IMAGE}}.webp" alt="{{نص_بديل_وصفي}}">
+      </div>
+      <p class="blog-post-hero-caption">{{تعليق_الصورة_الرئيسية}}</p>
+
+      <div class="blog-post-body" data-aos="fade-up">
+
+        <!--
+          الفقرة الأولى: أجب عن السؤال الأساسي مباشرة في جملة أو جملتين.
+          هذا المقطع الذي تستخرجه أنظمة الذكاء الاصطناعي (ChatGPT/Perplexity/AI Overviews)
+          كاقتباس قابل للاستشهاد — اجعله مستقلًا بذاته، بحدود 40-60 كلمة.
+        -->
+        <p class="blog-post-lede"><strong>{{جملة_الإجابة_المباشرة_الافتتاحية}}</strong> {{جملة سياق داعمة.}}</p>
+
+        <h2>{{عنوان H2 بصيغة سؤال، مثال: "كيف يعمل كذا؟"}}</h2>
+        <p>{{نص المحتوى.}}</p>
+
+        <h2>{{عنوان H2 آخر بصيغة سؤال}}</h2>
+        <ul>
+          <li><strong>{{نقطة}}</strong> — {{التفصيل.}}</li>
+          <li><strong>{{نقطة}}</strong> — {{التفصيل.}}</li>
+        </ul>
+
+        <!-- دعوة لإجراء ضمن المقال — تبقى في منتصف المقال، وليست مكدسة مع المقالات ذات الصلة في النهاية -->
+        <div class="blog-inline-cta">
+          <h3>هل أنت مستعد لتجربة سيهاتري؟</h3>
+          <p>مسحوق الصمغ العربي المتوافق مع الحلال بخمس نكهات — تسوّق بالتجزئة أو استفسر عن الجملة.</p>
+          <div class="footer-cta-group">
+            <a href="/ar/products" class="btn btn-primary">تسوّق المنتجات</a>
+            <a href="/ar/retail" class="btn btn-outline">معلومات التجزئة</a>
+          </div>
+        </div>
+
+        <h2>{{عنوان H2 آخر بصيغة سؤال}}</h2>
+        <p>{{نص المحتوى، أدرج إحصائية أو مصدرًا حيثما أمكن — يرفع بشكل ملموس من معدل الاستشهاد بالذكاء الاصطناعي.}}</p>
+
+      </div>
+
+      <!-- الأسئلة الشائعة — يجب أن تطابق بيانات FAQPage JSON-LD أعلاه؛ احذف هذا القسم بالكامل
+           إذا حُذفت بيانات FAQPage الاختيارية أيضًا. -->
+      <section class="blog-faq" data-aos="fade-up">
+        <h2>الأسئلة الشائعة</h2>
+        <div class="faq-item">
+          <button type="button" class="faq-question">{{السؤال_1}} <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="faq-answer">{{الجواب_1}}</div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-question">{{السؤال_2}} <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="faq-answer">{{الجواب_2}}</div>
+        </div>
+      </section>
+
+      <!-- مقالات ذات صلة — انسخ 2-3 بطاقات من مقال منشور ووجّهها إلى المقالات الشقيقة الحقيقية لهذا المقال -->
+      <section class="blog-related" data-aos="fade-up">
+        <h2>مقالات ذات صلة</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <a class="blog-card-link" href="/ar/blog/{{RELATED_SLUG_1}}">
+              <div class="blog-card-thumb">
+                <img src="/images/{{RELATED_IMAGE_1}}.webp" alt="{{نص_بديل_ذو_صلة_1}}" loading="lazy">
+              </div>
+              <div class="blog-card-body">
+                <span class="blog-card-tag">{{وسم_ذو_صلة_1}}</span>
+                <h3 class="blog-card-title">{{عنوان_ذو_صلة_1}}</h3>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-layout">
+      <div class="footer-col brand-col">
+        <img src="/images/logo.webp" alt="شعار سيهاتري" class="footer-logo">
+        <p class="footer-desc">نجلب خيرات الصمغ العربي الطبيعية إلى روتينك اليومي. بسيط ومنعش
+          وسهل الاستمتاع به.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>روابط سريعة</h3>
+        <ul class="footer-links">
+          <li><a href="/ar/products">المنتجات</a></li>
+          <li><a href="/ar/benefits">الفوائد</a></li>
+          <li><a href="/ar/wholesale">الجملة</a></li>
+          <li><a href="/ar/retail">البيع بالتجزئة</a></li>
+          <li><a href="/ar/contact">اتصل بنا</a></li>
+          <li><a href="/ar/blog">المدونة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>تواصل معنا</h3>
+        <div class="social-links-footer">
+          <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-contact">
+          <p>أسئلة؟ راسلنا عبر البريد الإلكتروني:</p>
+          <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
+        </div>
+        <div class="footer-lang-switch">
+          <a href="/blog/{{SLUG}}">EN</a> | <a href="/ms/blog/{{MS_SLUG}}">Bahasa Malaysia</a> | <a href="/ar/blog/{{SLUG}}" class="lang-current">العربية</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sihatree. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
+  </script>
+  <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
+</body>
+
+</html>

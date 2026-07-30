@@ -11,6 +11,7 @@
   <link rel="canonical" href="https://sihatree.com/wholesale" />
   <link rel="alternate" hreflang="en-MY" href="https://sihatree.com/wholesale" />
   <link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/wholesale" />
+  <link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/wholesale" />
   <link rel="alternate" hreflang="x-default" href="https://sihatree.com/wholesale" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sihatree" />
@@ -57,7 +58,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -70,7 +71,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/wholesale" class="lang-current">EN</a> | <a href="/ms/wholesale">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/wholesale">BM</a></li>
+          <li><a href="/ar/wholesale">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -82,10 +91,10 @@
       <p class="sp-breadcrumb"><a href="/">Home</a> / Wholesale</p>
       <h1>Bring Sihatree to Your Shelves</h1>
       <p class="sp-hero-sub">We partner with retailers, cafes, distributors, and corporate buyers across Malaysia
-        — with bulk pricing, marketing support, and a Halal-certified product built to move.</p>
+        — with bulk pricing, marketing support, and a Halal-friendly product built to move.</p>
       <div class="sp-hero-actions">
         <a href="#wholesale-form" class="btn btn-primary">Submit an Inquiry</a>
-        <a href="https://wa.me/yournumber" class="btn btn-outline" style="background:white;">WhatsApp Us</a>
+        <a href="https://wa.me/601111119912" class="btn btn-outline" style="background:white;">WhatsApp Us</a>
       </div>
     </div>
   </header>
@@ -97,7 +106,7 @@
         packaging, pack size, and flavour range were all designed with a shelf and a checkout counter in mind, not
         just a factory carton — which is why bringing it into a new store or menu tends to be a straightforward
         conversation rather than a lengthy negotiation over formats and minimums.</p>
-      <p>Every flavour carries the same Halal certification, recognised by JAKIM, so there's no separate approval
+      <p>Every flavour is naturally suitable for Halal consumers, so there's no separate approval
         process to manage across different SKUs. And because the range already has an established retail presence
         through TikTok Shop and Shopee, wholesale partners aren't introducing an unknown product to their
         customers — in many cases, it's one they may already recognise from social media or word of mouth.</p>
@@ -301,7 +310,7 @@
         <h4>Connect</h4>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -311,7 +320,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/wholesale" class="lang-current">EN</a> | <a href="/ms/wholesale">Bahasa Malaysia</a>
+          <a href="/wholesale" class="lang-current">EN</a> | <a href="/ms/wholesale">Bahasa Malaysia</a> | <a href="/ar/wholesale">Arabic</a>
         </div>
       </div>
     </div>
@@ -333,30 +342,9 @@
           item.setAttribute('aria-expanded', String(isActive));
         });
       });
-
-      const form = document.getElementById('wholesaleForm');
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          if (!form.checkValidity()) { form.reportValidity(); return; }
-          const btn = form.querySelector('button');
-          const originalText = btn.innerText;
-          btn.innerText = 'Sending...';
-          btn.disabled = true;
-          setTimeout(() => {
-            btn.innerText = 'Thanks — our team will be in touch soon.';
-            btn.style.background = '#7FBC3B';
-            form.reset();
-            setTimeout(() => {
-              btn.innerText = originalText;
-              btn.style.background = '';
-              btn.disabled = false;
-            }, 5000);
-          }, 1500);
-        });
-      }
     });
   </script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

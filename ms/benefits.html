@@ -11,6 +11,7 @@
   <link rel="canonical" href="https://sihatree.com/ms/benefits" />
   <link rel="alternate" hreflang="en-MY" href="https://sihatree.com/benefits" />
   <link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/benefits" />
+  <link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/benefits" />
   <link rel="alternate" hreflang="x-default" href="https://sihatree.com/benefits" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sihatree" />
@@ -55,7 +56,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits" class="active">Kebaikan</a></li>
@@ -68,7 +69,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/benefits">EN</a> | <a href="/ms/benefits" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/benefits">EN</a></li>
+          <li><a href="/ar/benefits">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -122,7 +131,7 @@
           Sihatree bukan memperkenalkan bahan baharu, hanya memudahkan penggunaan bahan lama secara harian.</p>
         <div class="sp-chip-row">
           <span class="sp-chip"><i class="fas fa-leaf"></i> Sumber Semula Jadi</span>
-          <span class="sp-chip"><i class="fas fa-certificate"></i> Bersijil Halal</span>
+          <span class="sp-chip"><i class="fas fa-certificate"></i> Mesra Halal</span>
         </div>
       </div>
     </div>
@@ -223,7 +232,7 @@
   <!-- Quick facts -->
   <section class="sp-section sp-section--tight">
     <div class="sp-stat-strip" data-aos="fade-up">
-      <div class="sp-stat"><strong>5</strong><span>Perisa bersijil Halal</span></div>
+      <div class="sp-stat"><strong>5</strong><span>Perisa mesra Halal</span></div>
       <div class="sp-stat"><strong>150g</strong><span>Setiap pek</span></div>
       <div class="sp-stat"><strong>100%</strong><span>Asas Gam Arab</span></div>
       <div class="sp-stat"><strong>MY</strong><span>Penghantaran seluruh negara</span></div>
@@ -299,7 +308,7 @@
         <h4>Ikuti Kami</h4>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -309,7 +318,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/benefits">EN</a> | <a href="/ms/benefits" class="lang-current">Bahasa Malaysia</a>
+          <a href="/benefits">EN</a> | <a href="/ms/benefits" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/benefits">Arabic</a>
         </div>
       </div>
     </div>
@@ -332,6 +341,7 @@
       });
     });
   </script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

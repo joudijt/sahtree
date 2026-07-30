@@ -62,7 +62,7 @@
       {
         "@type": "Question",
         "name": "Berapa harga Gam Arab di Malaysia?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Harga berbeza mengikut saiz bungkusan, perisa, dan promosi peruncit, jadi lebih baik semak penyenaraian langsung di kedai rasmi berbanding bergantung pada angka tetap." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Harga berbeza mengikut saiz bungkusan, perisa, dan promosi peruncit, jadi lebih baik semak penyenaraian langsung di kedai berbanding bergantung pada angka tetap." }
       },
       {
         "@type": "Question",
@@ -77,17 +77,17 @@
       {
         "@type": "Question",
         "name": "Kenapa anda tidak menyenaraikan harga tetap?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Harga berubah mengikut promosi platform dan tawaran bundle, jadi angka tetap akan cepat lapuk — penyenaraian langsung di kedai rasmi sentiasa sumber yang tepat." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Harga berubah mengikut promosi platform dan tawaran bundle, jadi angka tetap akan cepat lapuk — penyenaraian langsung di kedai sentiasa sumber yang tepat." }
       },
       {
         "@type": "Question",
         "name": "Adakah harga yang sangat murah tanda amaran?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ia boleh jadi. Harga yang jauh lebih rendah daripada penyenaraian rasmi wajar dilayan dengan berhati-hati, kerana ia mungkin menunjukkan stok tidak rasmi, palsu, atau dicemari berbanding tawaran tulen." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Ia boleh jadi. Harga yang jauh lebih rendah daripada penyenaraian biasa wajar dilayan dengan berhati-hati, kerana ia mungkin menunjukkan stok yang meragukan, palsu, atau dicemari." }
       },
       {
         "@type": "Question",
         "name": "Di mana saya boleh semak harga semasa?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Semak penyenaraian rasmi Berkat Madinah Store, atau kedai TikTok Shop dan Shopee rasmi Sihatree, untuk harga yang tepat dan terkini." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Semak penyenaraian Berkat Madinah Store, atau kedai TikTok Shop dan Shopee Sihatree, untuk harga yang tepat dan terkini." }
       }
     ]
   }
@@ -107,7 +107,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Kebaikan</a></li>
@@ -120,7 +120,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-price-malaysia">EN</a> | <a href="/ms/blog/harga-gam-arab-malaysia" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/arabic-gum-price-malaysia">EN</a></li>
+          <li><a href="/ar/blog/arabic-gum-price-malaysia">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -147,7 +155,7 @@
     <div class="blog-post-body" data-aos="fade-up">
 
       <p class="blog-post-lede"><strong>Harga Gam Arab di Malaysia berbeza mengikut saiz bungkusan, perisa, dan
-        promosi peruncit, jadi penyenaraian langsung di kedai rasmi sentiasa lebih tepat berbanding sebarang angka
+        promosi peruncit, jadi penyenaraian langsung di kedai sentiasa lebih tepat berbanding sebarang angka
         tetap.</strong> Berikut apa yang sebenarnya membentuk harga, dan cara menyemak harga semasa dengan
         selamat.</p>
 
@@ -174,12 +182,12 @@
 
       <h2>Kenapa anda tidak akan jumpa harga tetap di mana-mana</h2>
       <p>Harga berubah mengikut promosi platform, tawaran bermusim, dan tawaran bundle, jadi angka tetap yang
-        dicetak di mana-mana akan cepat lapuk. Penyenaraian langsung di kedai rasmi sentiasa sumber yang tepat dan
+        dicetak di mana-mana akan cepat lapuk. Penyenaraian langsung di kedai sentiasa sumber yang tepat dan
         terkini.</p>
 
       <div class="blog-inline-cta">
         <h3>Semak Harga Semasa di Sumbernya</h3>
-        <p>Lihat harga langsung dan tepat untuk Serbuk Gam Arab disahkan Halal Sihatree di kedai rasmi.</p>
+        <p>Lihat harga langsung dan tepat untuk Serbuk Gam Arab mesra Halal Sihatree di kedai.</p>
         <div class="footer-cta-group">
           <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-primary">Semak Harga di Berkat Madinah Store</a>
           <a href="/ms/products" class="btn btn-outline">Lihat Produk</a>
@@ -189,21 +197,21 @@
       <h2>Adakah harga yang sangat murah tanda amaran?</h2>
       <div class="blog-caution">
         <p class="blog-caution-label"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> Terlalu bagus untuk jadi benar wajar disemak semula</p>
-        <p>Harga yang jauh lebih rendah daripada penyenaraian rasmi wajar dilayan dengan berhati-hati berbanding
-          teruja — ia boleh menunjukkan stok tidak rasmi, palsu, atau dicemari berbanding tawaran tulen. Lihat <a
-          href="/ms/blog/cara-sahkan-gam-arab-tulen">panduan mengesahkan Gam Arab tulen</a> kami untuk senarai
+        <p>Harga yang jauh lebih rendah daripada penyenaraian biasa wajar dilayan dengan berhati-hati berbanding
+          teruja — ia boleh menunjukkan stok yang meragukan, palsu, atau dicemari. Lihat <a
+          href="/ms/blog/cara-sahkan-gam-arab-tulen">panduan menyemak Gam Arab</a> kami untuk senarai
           semak penuh.</p>
       </div>
 
       <h2>Membeli pada harga yang betul dengan selamat</h2>
-      <p>Cara paling selamat untuk mendapatkan harga tepat dan produk tulen pada masa yang sama ialah membeli
+      <p>Cara paling selamat untuk mendapatkan harga tepat dan produk yang betul pada masa yang sama ialah membeli
         terus melalui <a href="https://madinah.com.my/en/" target="_blank" rel="noopener">Berkat Madinah
-        Store</a>, pembekal rasmi — lihat <a href="/ms/blog/pembekal-gam-arab-terbaik-malaysia">panduan
+        Store</a> — lihat <a href="/ms/blog/pembekal-gam-arab-terbaik-malaysia">panduan
         pembekal</a> dan <a href="/ms/blog/di-mana-beli-gam-arab-malaysia">panduan membeli</a> kami untuk setiap
-        saluran rasmi.</p>
+        saluran runcit dan borong.</p>
 
       <p class="blog-quote">Harga paling rendah bukan sentiasa tawaran terbaik — harga yang betul ialah daripada
-        sumber yang disahkan dan rasmi.</p>
+        sumber yang tepat.</p>
 
     </div>
 
@@ -211,7 +219,7 @@
       <h2>Soalan Lazim</h2>
       <div class="faq-item">
         <button type="button" class="faq-question">Berapa harga Gam Arab di Malaysia? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">Harga berbeza mengikut saiz bungkusan, perisa, dan promosi peruncit, jadi lebih baik semak penyenaraian langsung di kedai rasmi berbanding bergantung pada angka tetap.</div>
+        <div class="faq-answer">Harga berbeza mengikut saiz bungkusan, perisa, dan promosi peruncit, jadi lebih baik semak penyenaraian langsung di kedai berbanding bergantung pada angka tetap.</div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Adakah harga berbeza mengikut perisa? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
@@ -223,15 +231,15 @@
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Kenapa anda tidak menyenaraikan harga tetap? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">Harga berubah mengikut promosi platform dan tawaran bundle, jadi angka tetap akan cepat lapuk — penyenaraian langsung di kedai rasmi sentiasa sumber yang tepat.</div>
+        <div class="faq-answer">Harga berubah mengikut promosi platform dan tawaran bundle, jadi angka tetap akan cepat lapuk — penyenaraian langsung di kedai sentiasa sumber yang tepat.</div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Adakah harga yang sangat murah tanda amaran? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">Ia boleh jadi. Harga yang jauh lebih rendah daripada penyenaraian rasmi wajar dilayan dengan berhati-hati, kerana ia mungkin menunjukkan stok tidak rasmi, palsu, atau dicemari berbanding tawaran tulen.</div>
+        <div class="faq-answer">Ia boleh jadi. Harga yang jauh lebih rendah daripada penyenaraian biasa wajar dilayan dengan berhati-hati, kerana ia mungkin menunjukkan stok yang meragukan, palsu, atau dicemari.</div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Di mana saya boleh semak harga semasa? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">Semak penyenaraian rasmi Berkat Madinah Store, atau kedai TikTok Shop dan Shopee rasmi Sihatree, untuk harga yang tepat dan terkini.</div>
+        <div class="faq-answer">Semak penyenaraian Berkat Madinah Store, atau kedai TikTok Shop dan Shopee Sihatree, untuk harga yang tepat dan terkini.</div>
       </div>
     </section>
 
@@ -244,8 +252,8 @@
               <img src="/images/arabic-gum-verify-genuine-package.jpg" alt="Tangan membuka dengan berhati-hati bungkusan penghantaran yang tertutup rapat" loading="lazy">
             </div>
             <div class="blog-card-body">
-              <span class="blog-card-tag">Panduan Ketulenan</span>
-              <h3 class="blog-card-title">Cara Sahkan Gam Arab Anda Tulen (Bukan Palsu)</h3>
+              <span class="blog-card-tag">Panduan Semakan Produk</span>
+              <h3 class="blog-card-title">Cara Kenal Pasti Gam Arab Yang Sebenar (Bukan Palsu)</h3>
             </div>
           </a>
         </article>
@@ -290,7 +298,7 @@
         <h3>Hubungi Kami</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -300,7 +308,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-price-malaysia">EN</a> | <a href="/ms/blog/harga-gam-arab-malaysia" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-price-malaysia">EN</a> | <a href="/ms/blog/harga-gam-arab-malaysia" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-price-malaysia">Arabic</a>
         </div>
       </div>
     </div>
@@ -314,6 +322,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

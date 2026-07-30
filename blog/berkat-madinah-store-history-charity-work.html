@@ -101,7 +101,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -114,7 +114,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/blog/berkat-madinah-store-history-charity-work" class="lang-current">EN</a> | <a href="/ms/blog/sejarah-berkat-madinah-store-kerja-kebajikan">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/blog/sejarah-berkat-madinah-store-kerja-kebajikan">BM</a></li>
+          <li><a href="/ar/blog/berkat-madinah-store-history-charity-work">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -149,16 +157,16 @@
       <p>The business opened its doors in Ampang, Selangor in 2010, at a scale far smaller than what it's grown
         into today. What started as one shop serving the local Arab and Middle Eastern community has since
         expanded into a business spanning three sectors: wholesale distribution, retail branches, and restaurants
-        and cafés serving authentic Syrian and Yemeni cuisine.</p>
+        and cafés serving traditional Syrian and Yemeni cuisine.</p>
       <p>The company is led by founder <strong>Dr. Mohammed Ibrahim Abu Zaid</strong>, with <strong>Dr. Ibrahim Abu
         Zaid</strong> serving as Chairman. In the company's own words: <em>"Your partnership and support are the
         foundation of our success, and we pledge to continue providing services of the highest quality."</em></p>
 
       <h2>What does Berkat Madinah Store stand for?</h2>
-      <p>The company describes its mission as providing <em>"authentic, diverse Arab food of the highest quality —
+      <p>The company describes its mission as providing <em>"diverse Arab food of the highest quality —
         meeting the expectations of Southeast Asia's population and the Islamic world,"</em> built around two core
         values: <strong>quality and credibility</strong>. Its stated purpose goes a step further — bringing
-        <em>"the authentic flavors of Arabia to every city in the world, to all those who cherish tradition and
+        <em>"the traditional flavors of Arabia to every city in the world, to all those who cherish tradition and
         originality."</em></p>
 
       <h2>How much has Berkat Madinah Store grown since 2010?</h2>
@@ -201,10 +209,10 @@
 
       <div class="blog-inline-cta">
         <h3>Shop Sihatree Arabic Gum</h3>
-        <p>Halal-certified, flavoured Arabic Gum Powder — supplied by Berkat Madinah Store.</p>
+        <p>Flavoured Arabic Gum Powder made under Halal guidelines — supplied by Berkat Madinah Store.</p>
         <div class="footer-cta-group">
           <a href="/products" class="btn btn-primary">View Products</a>
-          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Official Store</a>
+          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Visit Store</a>
         </div>
       </div>
 
@@ -220,8 +228,8 @@
 
       <h2>What does this mean for Sihatree customers?</h2>
       <p><strong>Sihatree is the brand and content home for a flavoured Arabic Gum Powder range, and Berkat Madinah
-        Store — the Ampang-founded business behind this story — is its official supplier</strong>, handling
-        sourcing, Halal certification, and fulfilment. Learn more about that relationship in our <a
+        Store — the Ampang-founded business behind this story — is its supplier</strong>, handling
+        sourcing, Halal compliance, and fulfilment. Learn more about that relationship in our <a
         href="/blog/best-arabic-gum-provider-malaysia">supplier guide</a>, or see where the story physically began
         in our <a href="/blog/arabic-grocery-ampang-berkat-madinah-store">Ampang store guide</a>.</p>
 
@@ -309,7 +317,7 @@
         <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -319,7 +327,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/berkat-madinah-store-history-charity-work" class="lang-current">EN</a> | <a href="/ms/blog/sejarah-berkat-madinah-store-kerja-kebajikan">Bahasa Malaysia</a>
+          <a href="/blog/berkat-madinah-store-history-charity-work" class="lang-current">EN</a> | <a href="/ms/blog/sejarah-berkat-madinah-store-kerja-kebajikan">Bahasa Malaysia</a> | <a href="/ar/blog/berkat-madinah-store-history-charity-work">Arabic</a>
         </div>
       </div>
     </div>
@@ -333,6 +341,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

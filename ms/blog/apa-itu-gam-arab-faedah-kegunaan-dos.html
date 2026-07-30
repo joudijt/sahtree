@@ -80,7 +80,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Kebaikan</a></li>
@@ -93,7 +93,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/what-is-arabic-gum-benefits-uses-dosage">EN</a> | <a href="/ms/blog/apa-itu-gam-arab-faedah-kegunaan-dos" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/what-is-arabic-gum-benefits-uses-dosage">EN</a></li>
+          <li><a href="/ar/blog/what-is-arabic-gum-benefits-uses-dosage">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -180,7 +188,7 @@
 
       <div class="blog-inline-cta">
         <h3>Sedia untuk Cuba Sihatree?</h3>
-        <p>Serbuk Gam Arab disahkan Halal dalam 5 perisa — beli runcit atau buat pertanyaan borong.</p>
+        <p>Serbuk Gam Arab mesra Halal dalam 5 perisa — beli runcit atau buat pertanyaan borong.</p>
         <div class="footer-cta-group">
           <a href="/ms/products" class="btn btn-primary">Beli Produk</a>
           <a href="/ms/retail" class="btn btn-outline">Info Runcit</a>
@@ -234,7 +242,7 @@
 
       <h2>Adakah Gam Arab halal dan tersedia di Malaysia?</h2>
       <p>Ya — Gam Arab ialah <strong>serat berasaskan tumbuhan tanpa isu halal</strong>, dan Serbuk Gam Arab
-        Sihatree disahkan Halal untuk pasaran Malaysia. Baca panduan penuh kami tentang
+        Sihatree mesra Halal untuk pasaran Malaysia. Baca panduan penuh kami tentang
         <a href="/ms/blog/gam-arab-halal-panduan-malaysia">status halal Gam Arab</a> atau lihat
         <a href="/ms/blog/di-mana-beli-gam-arab-malaysia">di mana untuk membelinya di Malaysia</a>.</p>
 
@@ -258,7 +266,7 @@
         <article class="blog-card">
           <a class="blog-card-link" href="/ms/blog/gam-arab-halal-panduan-malaysia">
             <div class="blog-card-thumb">
-              <img src="/images/acacia-tree.webp" alt="Pokok Akasia, sumber semula jadi Gam Arab yang disahkan Halal" loading="lazy">
+              <img src="/images/acacia-tree.webp" alt="Pokok Akasia, sumber semula jadi Gam Arab yang mesra Halal" loading="lazy">
             </div>
             <div class="blog-card-body">
               <span class="blog-card-tag">Halal &amp; Pensijilan</span>
@@ -307,7 +315,7 @@
         <h3>Hubungi Kami</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -317,7 +325,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/what-is-arabic-gum-benefits-uses-dosage">EN</a> | <a href="/ms/blog/apa-itu-gam-arab-faedah-kegunaan-dos" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/what-is-arabic-gum-benefits-uses-dosage">EN</a> | <a href="/ms/blog/apa-itu-gam-arab-faedah-kegunaan-dos" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/what-is-arabic-gum-benefits-uses-dosage">Arabic</a>
         </div>
       </div>
     </div>
@@ -331,6 +339,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

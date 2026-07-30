@@ -60,7 +60,7 @@
     "inLanguage": "ms-MY",
     "mainEntity": [
       { "@type": "Question", "name": "Adakah Gam Arab halal?", "acceptedAnswer": { "@type": "Answer", "text": "Ya. Gam Arab ialah serat berasaskan tumbuhan daripada pokok Akasia tanpa sebarang komponen berasaskan haiwan atau alkohol, menjadikannya halal secara semula jadi. Pensijilan mengesahkan keseluruhan proses pengeluaran — bukan sekadar bahan mentah — memenuhi piawaian halal." } },
-      { "@type": "Question", "name": "Adakah Sihatree disahkan Halal?", "acceptedAnswer": { "@type": "Answer", "text": "Ya, Serbuk Gam Arab Sihatree memegang pensijilan Halal (no. sijil JAKIM {{JAKIM_CERT_NO}}) untuk pasaran Malaysia." } },
+      { "@type": "Question", "name": "Adakah Serbuk Gam Arab Sihatree Bersijil Halal?", "acceptedAnswer": { "@type": "Answer", "text": "Sihatree tidak memegang sijil Halal JAKIM rasmi buat masa ini. Bahan Gam Arab itu sendiri berasaskan tumbuhan tanpa alkohol atau komponen berasaskan haiwan, menjadikannya sesuai secara semula jadi untuk pengguna Halal, tetapi ini bukan sama dengan pensijilan rasmi JAKIM." } },
       { "@type": "Question", "name": "Bagaimana cara mengesahkan sijil Halal di Malaysia?", "acceptedAnswer": { "@type": "Answer", "text": "Semak nombor sijil di portal rasmi MyeHalal JAKIM, atau cari logo Halal JAKIM pada kemasan produk berserta nombor sijil yang sah." } }
     ]
   }
@@ -81,7 +81,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Kebaikan</a></li>
@@ -94,7 +94,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/is-arabic-gum-halal-malaysia">EN</a> | <a href="/ms/blog/gam-arab-halal-panduan-malaysia" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/is-arabic-gum-halal-malaysia">EN</a></li>
+          <li><a href="/ar/blog/is-arabic-gum-halal-malaysia">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -114,9 +122,9 @@
     </header>
 
     <div class="blog-post-hero-img" data-aos="fade-up">
-      <img src="/images/acacia-tree.webp" alt="Pokok Akasia, sumber semula jadi Gam Arab yang disahkan Halal">
+      <img src="/images/acacia-tree.webp" alt="Pokok Akasia, sumber semula jadi Gam Arab yang mesra Halal">
     </div>
-    <p class="blog-post-hero-caption">Pokok Akasia — sumber semula jadi di sebalik Gam Arab Sihatree yang disahkan Halal.</p>
+    <p class="blog-post-hero-caption">Pokok Akasia — sumber semula jadi di sebalik Gam Arab Sihatree yang mesra Halal.</p>
 
     <div class="blog-post-body" data-aos="fade-up">
 
@@ -151,6 +159,11 @@
 
       <p class="blog-quote">Jika ragu-ragu, produk tanpa nombor JAKIM yang boleh disemak harus dianggap syubhah,
         bukan diandaikan halal.</p>
+
+      <p><strong>Kedudukan Sihatree:</strong> Serbuk Gam Arab Sihatree tidak memegang sijil Halal JAKIM rasmi buat
+        masa ini. Apa yang boleh kami sahkan dengan jujur ialah bahan itu sendiri — gam Akasia berasaskan tumbuhan,
+        tanpa alkohol atau komponen berasaskan haiwan — sesuai secara semula jadi untuk pengguna Halal. Pembeli yang
+        memerlukan produk bersijil JAKIM secara khusus perlu mengambil kira perkara ini dalam keputusan mereka.</p>
 
       <h2>Adakah bahan Gam Arab itu sendiri halal?</h2>
       <p>Gam Arab (juga dikenali sebagai gam akasia atau gam arabic) ialah getah kering dan ditulenkan daripada pokok
@@ -197,15 +210,16 @@
       <p>Baca lebih lanjut mengenai rangka kerja pensijilan terus daripada
         <a href="https://www.halal.gov.my/" target="_blank" rel="noopener">portal rasmi Halal JAKIM</a>.</p>
 
-      <h2>Adakah Serbuk Gam Arab Sihatree disahkan Halal?</h2>
-      <p>Ya — Serbuk Gam Arab Sihatree memegang pensijilan Halal JAKIM (no. sijil {{JAKIM_CERT_NO}}) untuk pasaran
-        Malaysia, merangkumi kesemua lima perisa dalam julat produk. Ini meliputi produk yang anda temui melalui
-        <a href="/ms/#products">julat perisa runcit kami</a> dan sebarang pesanan melalui
-        <a href="/ms/#wholesale">program borong kami</a> untuk peruncit dan pengedar.</p>
+      <h2>Adakah Serbuk Gam Arab Sihatree Bersijil Halal?</h2>
+      <p>Serbuk Gam Arab Sihatree tidak memegang sijil Halal JAKIM rasmi buat masa ini. Apa yang boleh kami katakan
+        ialah bahan itu — gam Akasia berasaskan tumbuhan, tanpa alkohol atau komponen berasaskan haiwan — sesuai
+        secara semula jadi untuk pengguna Halal, merangkumi kesemua lima perisa dalam julat produk. Ini meliputi
+        produk yang anda temui melalui <a href="/ms/#products">julat perisa runcit kami</a> dan sebarang pesanan
+        melalui <a href="/ms/#wholesale">program borong kami</a> untuk peruncit dan pengedar.</p>
 
       <div class="blog-inline-cta">
-        <h3>Cuba Gam Arab Sihatree yang Disahkan Halal</h3>
-        <p>Lima perisa, disahkan Halal JAKIM — beli runcit atau buat pertanyaan borong.</p>
+        <h3>Cuba Gam Arab Sihatree</h3>
+        <p>Lima perisa, sesuai secara semula jadi untuk pengguna Halal — beli runcit atau buat pertanyaan borong.</p>
         <div class="footer-cta-group">
           <a href="/ms/products" class="btn btn-primary">Beli Produk</a>
           <a href="/ms/retail" class="btn btn-outline">Info Runcit</a>
@@ -217,7 +231,7 @@
       <ul>
         <li>Semak logo Halal JAKIM tercetak pada kemasan, bukan sekadar didakwa dalam bahan pemasaran.</li>
         <li>Semak nombor sijil di portal MyeHalal JAKIM untuk mengesahkan ia aktif dan sepadan dengan pengeluar.</li>
-        <li>Berhati-hati dengan label "mesra halal" atau "tiada khinzir/alkohol" yang tidak disokong oleh sijil JAKIM sebenar — ini istilah pemasaran, bukan pensijilan.</li>
+        <li>Berhati-hati dengan label "mesra halal" atau "tiada khinzir/alkohol" yang tidak disokong oleh sijil JAKIM sebenar — ini istilah pemasaran, bukan pensijilan. Sihatree turut termasuk dalam kategori ini: penerangan "sesuai secara semula jadi untuk pengguna Halal" kami berdasarkan bahan, bukan pensijilan JAKIM.</li>
       </ul>
 
       <h2>Berapa kerap pensijilan Halal diperbaharui?</h2>
@@ -236,8 +250,8 @@
         "mesra Muslim" tanpa nombor sijil JAKIM yang boleh disahkan secara berasingan perlu dilayan dengan kehati-hatian
         yang sama seperti mana-mana dakwaan kesihatan yang tidak disahkan.</p>
 
-      <h2>Di mana untuk membeli Gam Arab yang disahkan Halal di Malaysia</h2>
-      <p>Serbuk Gam Arab Sihatree yang disahkan Halal boleh didapati melalui rakan runcit rasmi kami — lihat panduan
+      <h2>Di mana untuk membeli Gam Arab yang mesra Halal di Malaysia</h2>
+      <p>Serbuk Gam Arab Sihatree yang mesra Halal boleh didapati melalui rakan runcit kami — lihat panduan
         kami mengenai <a href="/ms/blog/di-mana-beli-gam-arab-malaysia">di mana untuk membeli serbuk Gam Arab di
         Malaysia</a> untuk senarai penuh pilihan runcit dan borong, atau baca
         <a href="/ms/blog/apa-itu-gam-arab-faedah-kegunaan-dos">panduan faedah dan dos Gam Arab</a> jika anda masih
@@ -252,8 +266,8 @@
         <div class="faq-answer">Ya. Gam Arab ialah serat berasaskan tumbuhan daripada pokok Akasia tanpa sebarang komponen berasaskan haiwan atau alkohol, menjadikannya halal secara semula jadi. Pensijilan mengesahkan keseluruhan proses pengeluaran — bukan sekadar bahan mentah — memenuhi piawaian halal.</div>
       </div>
       <div class="faq-item">
-        <button type="button" class="faq-question">Adakah Sihatree disahkan Halal? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">Ya, Serbuk Gam Arab Sihatree memegang pensijilan Halal (no. sijil JAKIM belum disahkan) untuk pasaran Malaysia.</div>
+        <button type="button" class="faq-question">Adakah Serbuk Gam Arab Sihatree Bersijil Halal? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="faq-answer">Sihatree tidak memegang sijil Halal JAKIM rasmi buat masa ini. Bahan Gam Arab itu sendiri berasaskan tumbuhan tanpa alkohol atau komponen berasaskan haiwan, menjadikannya sesuai secara semula jadi untuk pengguna Halal, tetapi ini bukan sama dengan pensijilan rasmi JAKIM.</div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Bagaimana cara mengesahkan sijil Halal di Malaysia? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
@@ -316,7 +330,7 @@
         <h3>Hubungi Kami</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -326,7 +340,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/is-arabic-gum-halal-malaysia">EN</a> | <a href="/ms/blog/gam-arab-halal-panduan-malaysia" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/is-arabic-gum-halal-malaysia">EN</a> | <a href="/ms/blog/gam-arab-halal-panduan-malaysia" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/is-arabic-gum-halal-malaysia">Arabic</a>
         </div>
       </div>
     </div>
@@ -340,6 +354,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

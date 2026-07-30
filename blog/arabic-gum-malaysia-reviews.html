@@ -81,7 +81,7 @@
       {
         "@type": "Question",
         "name": "Where can Malaysian buyers see reviews before buying?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Retail platforms like Shopee and TikTok Shop carry buyer ratings and comments directly on the product listing, alongside the official storefront at madinah.com.my." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Retail platforms like Shopee and TikTok Shop carry buyer ratings and comments directly on the product listing, alongside Berkat Madinah Store's storefront at madinah.com.my." }
       }
     ]
   }
@@ -101,7 +101,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/products">Products</a></li>
       <li><a href="/benefits">Benefits</a></li>
@@ -114,7 +114,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/retail">Retail</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-malaysia-reviews" class="lang-current">EN</a> | <a href="/ms/blog/ulasan-gam-arab-malaysia">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/ms/blog/ulasan-gam-arab-malaysia">BM</a></li>
+          <li><a href="/ar/blog/arabic-gum-malaysia-reviews">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -191,10 +199,10 @@
 
       <div class="blog-inline-cta">
         <h3>Shop Sihatree Arabic Gum</h3>
-        <p>Halal-certified, flavoured Arabic Gum Powder — supplied by Berkat Madinah Store.</p>
+        <p>Halal-friendly, flavoured Arabic Gum Powder — supplied by Berkat Madinah Store.</p>
         <div class="footer-cta-group">
           <a href="/products" class="btn btn-primary">View Products</a>
-          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Official Store</a>
+          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Shop the Store</a>
         </div>
       </div>
 
@@ -208,10 +216,10 @@
       <h2>Where can you see real reviews before buying?</h2>
       <p>Rather than take any single source's word for it, the most direct way to see genuine buyer feedback is on
         the retail platforms themselves — Shopee and TikTok Shop both carry ratings and comments directly on the
-        product listing. The official storefront at <a href="https://madinah.com.my/en/" target="_blank"
+        product listing. Berkat Madinah Store's storefront at <a href="https://madinah.com.my/en/" target="_blank"
         rel="noopener">madinah.com.my</a> is the other place to buy with confidence that the product matches what's
-        described. Our <a href="/blog/best-arabic-gum-provider-malaysia">supplier guide</a> covers how to verify
-        you're buying from an official channel.</p>
+        described. Our <a href="/blog/best-arabic-gum-provider-malaysia">supplier guide</a> covers how to tell
+        you're buying through the right channel.</p>
 
       <p class="blog-quote">The most honest pattern in Malaysian feedback isn't a dramatic transformation — it's a
         simple habit that sticks, one spoonful at a time.</p>
@@ -238,7 +246,7 @@
       </div>
       <div class="faq-item">
         <button type="button" class="faq-question">Where can Malaysian buyers see reviews before buying? <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
-        <div class="faq-answer">Retail platforms like Shopee and TikTok Shop carry buyer ratings and comments directly on the product listing, alongside the official storefront at madinah.com.my.</div>
+        <div class="faq-answer">Retail platforms like Shopee and TikTok Shop carry buyer ratings and comments directly on the product listing, alongside Berkat Madinah Store's storefront at madinah.com.my.</div>
       </div>
     </section>
 
@@ -297,7 +305,7 @@
         <h3>Connect</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -307,7 +315,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-malaysia-reviews" class="lang-current">EN</a> | <a href="/ms/blog/ulasan-gam-arab-malaysia">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-malaysia-reviews" class="lang-current">EN</a> | <a href="/ms/blog/ulasan-gam-arab-malaysia">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-malaysia-reviews">Arabic</a>
         </div>
       </div>
     </div>
@@ -321,6 +329,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

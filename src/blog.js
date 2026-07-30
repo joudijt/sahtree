@@ -27,7 +27,8 @@ function buildToc() {
     h2.id = unique;
   });
 
-  const isMs = document.documentElement.lang === 'ms';
+  const lang = document.documentElement.lang;
+  const tocLabel = lang === 'ms' ? 'Kandungan' : lang === 'ar' ? 'جدول المحتويات' : 'Table of Contents';
 
   // Native <details> disclosure — collapsed on mobile, open on desktop,
   // no extra JS needed for the toggle itself.
@@ -37,7 +38,7 @@ function buildToc() {
 
   const summary = document.createElement('summary');
   summary.className = 'blog-toc-title';
-  summary.innerHTML = `<span>${isMs ? 'Kandungan' : 'Table of Contents'}</span><i class="fas fa-chevron-down blog-toc-chevron" aria-hidden="true"></i>`;
+  summary.innerHTML = `<span>${tocLabel}</span><i class="fas fa-chevron-down blog-toc-chevron" aria-hidden="true"></i>`;
   toc.appendChild(summary);
 
   const list = document.createElement('ol');

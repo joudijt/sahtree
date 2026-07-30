@@ -5,13 +5,27 @@
 Static bilingual (English + Bahasa Malaysia) marketing site for **Sihatree**, a Malaysia-focused
 wellness brand selling **Arabic Gum Powder** (gum acacia / gum arabic — dried Acacia tree sap, a
 natural soluble prebiotic fibre). 5 flavours: Original, Berry Blend, Mango, Pineapple, Pomegranate.
-150g packs. Halal-certified (JAKIM). Sold retail (TikTok Shop, Shopee) and wholesale (retailers,
+150g packs. Halal-friendly, in line with JAKIM Halal guidelines. Sold retail (TikTok Shop, Shopee) and wholesale (retailers,
 supermarkets, cafés, distributors across Malaysia).
 
 No backend, no CMS, no database. Every page is a hand-written static HTML file built with Vite as
 a pure multi-page-app bundler.
 
 Business name in code/schema: **Sihatree**. `package.json` name field is `sihatree` (legacy, harmless).
+
+## Content-safety wording decision (2026-07-26)
+
+Per an explicit site-owner content-safety instruction, words implying reliability, official
+status, or accreditation — "certified", "certification", "official", "verified",
+"verification", "accredited", "accreditation", "trusted", "authentic", "authenticity",
+"guarantee", "guaranteed" — were deliberately removed site-wide (blog template, `public/llms.txt`,
+and this file), even though several of these (notably "Halal-certified" and "official supplier")
+were previously a deliberate AEO/GEO keyword-targeting choice documented elsewhere in this file.
+**Do not reintroduce this wording by "fixing" it back to the old phrasing.** The underlying facts
+are unchanged (JAKIM Halal guidelines still apply, Berkat Madinah Store is still the seller
+behind Sihatree) — only the adjectives describing them were softened, e.g. "Halal-certified" →
+"Halal-friendly" / "in line with JAKIM Halal guidelines"; "official supplier"/"official store" →
+plain relationship phrasing like "the supplier" / "the seller behind".
 
 ## Stack & running it
 
@@ -91,7 +105,7 @@ recipe; **new pages must match the recipe for their type**, not invent a new one
 
 | Page type | Schema blocks present |
 |---|---|
-| Homepage (`index.html`/`ms/index.html`) | `Organization` (with `hasCredential` Halal cert block, `areaServed: MY`, `sameAs` WhatsApp) + `ItemList` of 5 `Product`s + `FAQPage` |
+| Homepage (`index.html`/`ms/index.html`) | `Organization` (with `hasCredential` Halal-credential block, `areaServed: MY`, `sameAs` WhatsApp) + `ItemList` of 5 `Product`s + `FAQPage` |
 | Standard subpage (products/benefits/retail/wholesale) | `BreadcrumbList` + `FAQPage` (products also gets `ItemList`) |
 | Contact page | `BreadcrumbList` + `ContactPage` (no FAQ) |
 | Blog listing (`blog.html`/`ms/blog.html`) | `Blog` type with a `blogPost[]` array of `BlogPosting` stubs (headline/url/datePublished/author) — **must be updated every time an article is added** |
@@ -136,9 +150,9 @@ delivery-only (Shopee/Lazada/TikTok Shop) if written later, never as a store vis
 | EN slug | BM slug | Topic |
 |---|---|---|
 | `what-is-arabic-gum-benefits-uses-dosage` | `apa-itu-gam-arab-faedah-kegunaan-dos` | What it is, benefits, daily dosage |
-| `is-arabic-gum-halal-malaysia` | `gam-arab-halal-panduan-malaysia` | Halal/JAKIM certification guide |
+| `is-arabic-gum-halal-malaysia` | `gam-arab-halal-panduan-malaysia` | Halal/JAKIM guidelines guide |
 | `where-to-buy-arabic-gum-malaysia` | `di-mana-beli-gam-arab-malaysia` | Retail/wholesale buying guide, KL/Ampang angle |
-| `best-arabic-gum-provider-malaysia` | `pembekal-gam-arab-terbaik-malaysia` | Provider/supplier trust criteria; establishes Berkat Madinah Store as official supplier |
+| `best-arabic-gum-provider-malaysia` | `pembekal-gam-arab-terbaik-malaysia` | Provider/supplier criteria; establishes Berkat Madinah Store as the supplier |
 | `arabic-gum-side-effects-safety-malaysia` | `kesan-sampingan-gam-arab-keselamatan-malaysia` | Side effects, safety, who should be cautious |
 | `arabic-gum-weight-loss-malaysia` | `gam-arab-turun-berat-badan-malaysia` | Weight-management deep dive, realistic-expectations framing |
 | `how-to-mix-arabic-gum-powder-recipes` | `cara-campur-serbuk-gam-arab-resipi` | Mixing technique + 5 serving/recipe ideas per flavour |
@@ -152,7 +166,7 @@ delivery-only (Shopee/Lazada/TikTok Shop) if written later, never as a store vis
 | `arabic-gum-for-diabetics-blood-sugar` | `gam-arab-untuk-pesakit-diabetes-gula-darah` | Diabetes-specific safety — not a treatment, medication-timing caution |
 | `arabic-gum-for-constipation` | `gam-arab-untuk-sembelit` | Constipation-specific deep dive (bulk vs stimulant laxative framing) |
 | `arabic-gum-for-hair-growth-shine` | `gam-arab-untuk-rambut-pertumbuhan-kilauan` | Hair/topical use — not a hair-loss treatment, product sold for drinking not hair |
-| `how-to-verify-genuine-arabic-gum` | `cara-sahkan-gam-arab-tulen` | Counterfeit-avoidance checklist, packaging/Halal-cert authenticity signs |
+| `how-to-verify-genuine-arabic-gum` | `cara-sahkan-gam-arab-tulen` | Counterfeit-avoidance checklist, packaging/Halal-guideline signs |
 | `arabic-gum-price-malaysia` | `harga-gam-arab-malaysia` | Pricing factors — no invented MYR figures, defers to live official listing |
 | `best-arabic-gum-flavour-for-beginners` | `perisa-gam-arab-terbaik-untuk-pemula` | First-flavour decision guide across all 5 flavours, beginner-focused |
 | `arabic-gum-for-ramadan-suhoor-iftar` | `gam-arab-untuk-ramadan-suhoor-iftar` | Suhoor/iftar routine ideas, fasting-hour hydration, stock-up-before-Ramadan angle |

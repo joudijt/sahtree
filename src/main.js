@@ -147,66 +147,8 @@ faqTabs.forEach(tab => {
     });
 });
 
-// Wholesale Form + Confetti
-const form = document.getElementById('wholesaleForm');
-if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
-        const btn = form.querySelector('button');
-        const originalText = btn.innerText;
-        btn.innerText = 'Sending...';
-        btn.disabled = true;
-
-        setTimeout(() => {
-            btn.innerText = 'Thanks — our team will be in touch soon.';
-            btn.style.background = '#7FBC3B';
-
-            // "Brand Shape" Confetti Burst
-            createConfetti();
-
-            form.reset();
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-            }, 5000);
-        }, 1500);
-    });
-}
-
-function createConfetti() {
-    const colors = ['#7FBC3B', '#F9AB40', '#BA347E', '#C8343C', '#2D294E'];
-    for (let i = 0; i < 30; i++) {
-        const confetti = document.createElement('div');
-        confetti.style.position = 'fixed';
-        confetti.style.width = '12px';
-        confetti.style.height = '12px';
-        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-        confetti.style.left = '50%';
-        confetti.style.top = '50%';
-        confetti.style.zIndex = '3000';
-        confetti.style.borderRadius = i % 2 === 0 ? '50%' : '2px';
-        confetti.style.pointerEvents = 'none';
-
-        const destinationX = (Math.random() - 0.5) * 400;
-        const destinationY = (Math.random() - 0.5) * 400;
-
-        document.body.appendChild(confetti);
-
-        confetti.animate([
-            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-            { transform: `translate(${destinationX}px, ${destinationY}px) scale(0)`, opacity: 0 }
-        ], {
-            duration: 1000,
-            easing: 'cubic-bezier(0, .9, .57, 1)',
-            fill: 'forwards'
-        }).onfinish = () => confetti.remove();
-    }
-}
+// Contact + Wholesale forms and the lang-switch dropdown / floating WhatsApp
+// button are handled by src/nav-whatsapp.js, shared with every other page.
 
 document.addEventListener('DOMContentLoaded', () => {
     createParticles();

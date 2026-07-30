@@ -107,7 +107,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Kebaikan</a></li>
@@ -120,7 +120,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/is-arabic-gum-safe-for-kids">EN</a> | <a href="/ms/blog/adakah-gam-arab-selamat-untuk-kanak-kanak" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/is-arabic-gum-safe-for-kids">EN</a></li>
+          <li><a href="/ar/blog/is-arabic-gum-safe-for-kids">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -190,8 +198,8 @@
         dan sebarang keadaan sedia ada anak anda sebelum menasihati sama ada dan bila untuk memperkenalkannya.</p>
 
       <div class="blog-inline-cta">
-        <h3>Disahkan Halal, Sedia untuk Keluarga</h3>
-        <p>Serbuk Gam Arab Sihatree disahkan Halal dalam 5 perisa — sentiasa sahkan dengan doktor kanak-kanak
+        <h3>Mesra Halal, Sedia untuk Keluarga</h3>
+        <p>Serbuk Gam Arab Sihatree mesra Halal dalam 5 perisa — sentiasa sahkan dengan doktor kanak-kanak
           sebelum memberikannya kepada kanak-kanak.</p>
         <div class="footer-cta-group">
           <a href="/ms/products" class="btn btn-primary">Lihat Produk</a>
@@ -213,12 +221,12 @@
         teknik, dengan mengingati jumlah yang digunakan perlu mengikut nasihat perubatan untuk kanak-kanak, bukan
         jumlah dewasa yang diterangkan di sana.</p>
 
-      <h2>Membeli Gam Arab yang selamat dan tulen untuk keluarga</h2>
+      <h2>Membeli Gam Arab yang selamat untuk keluarga</h2>
       <p>Sama ada untuk diri sendiri atau, dengan kelulusan doktor, untuk kanak-kanak, beli hanya produk <a
-        href="/ms/blog/gam-arab-halal-panduan-malaysia">disahkan Halal</a> melalui <a
-        href="/ms/blog/pembekal-gam-arab-terbaik-malaysia">pembekal yang dipercayai dan disahkan</a> — lihat <a
+        href="/ms/blog/gam-arab-halal-panduan-malaysia">mesra Halal</a> melalui <a
+        href="/ms/blog/pembekal-gam-arab-terbaik-malaysia">pembekal Serbuk Gam Arab Sihatree</a> — lihat <a
         href="/ms/blog/di-mana-beli-gam-arab-malaysia">panduan membeli</a> kami untuk saluran runcit dan borong
-        rasmi di seluruh Malaysia. Latar belakang status keselamatan makanan gam Arab didokumenkan di <a
+        di seluruh Malaysia. Latar belakang status keselamatan makanan gam Arab didokumenkan di <a
         href="https://en.wikipedia.org/wiki/Gum_arabic" target="_blank" rel="noopener">gambaran keseluruhan gam
         Arab di Wikipedia</a>.</p>
 
@@ -310,7 +318,7 @@
         <h3>Hubungi Kami</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -320,7 +328,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/is-arabic-gum-safe-for-kids">EN</a> | <a href="/ms/blog/adakah-gam-arab-selamat-untuk-kanak-kanak" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/is-arabic-gum-safe-for-kids">EN</a> | <a href="/ms/blog/adakah-gam-arab-selamat-untuk-kanak-kanak" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/is-arabic-gum-safe-for-kids">Arabic</a>
         </div>
       </div>
     </div>
@@ -334,6 +342,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

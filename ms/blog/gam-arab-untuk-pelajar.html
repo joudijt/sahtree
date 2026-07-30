@@ -102,7 +102,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav id="main-nav">
+  <nav id="main-nav" dir="ltr">
     <ul class="nav-links nav-left">
       <li><a href="/ms/products">Produk</a></li>
       <li><a href="/ms/benefits">Kebaikan</a></li>
@@ -115,7 +115,15 @@
     <ul class="nav-links nav-right">
       <li><a href="/ms/retail">Runcit</a></li>
       <li><a href="/ms/contact">Hubungi</a></li>
-      <li class="lang-switch"><a href="/blog/arabic-gum-for-students">EN</a> | <a href="/ms/blog/gam-arab-untuk-pelajar" class="lang-current">BM</a></li>
+      <li class="lang-switch">
+        <button type="button" class="lang-switch-toggle" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-label">BM</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-switch-menu">
+          <li><a href="/blog/arabic-gum-for-students">EN</a></li>
+          <li><a href="/ar/blog/arabic-gum-for-students">AR</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -187,17 +195,17 @@
         </div>
         <div class="blog-benefit-card">
           <i class="fas fa-check-circle" aria-hidden="true"></i>
-          <h3>Disahkan Halal</h3>
-          <p>Pensijilan Halal JAKIM merentasi setiap perisa.</p>
+          <h3>Mesra Halal</h3>
+          <p>Sesuai secara semula jadi untuk pengguna Halal merentasi setiap perisa.</p>
         </div>
       </div>
 
       <div class="blog-inline-cta">
         <h3>Beli Gam Arab Sihatree</h3>
-        <p>Serbuk Gam Arab berperisa, disahkan Halal — dibekalkan oleh Berkat Madinah Store.</p>
+        <p>Serbuk Gam Arab berperisa, mesra Halal — dibekalkan oleh Berkat Madinah Store.</p>
         <div class="footer-cta-group">
           <a href="/ms/products" class="btn btn-primary">Lihat Produk</a>
-          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Kedai Rasmi</a>
+          <a href="https://madinah.com.my/en/" target="_blank" rel="noopener" class="btn btn-outline">Madinah Store</a>
         </div>
       </div>
 
@@ -296,7 +304,7 @@
         <h3>Hubungi Kami</h3>
         <div class="social-links-footer">
           <a href="#" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://wa.me/yournumber" class="social-circle" aria-label="WhatsApp"><i
+          <a href="https://wa.me/601111119912" class="social-circle" aria-label="WhatsApp"><i
               class="fab fa-whatsapp"></i></a>
           <a href="#" class="social-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -306,7 +314,7 @@
           <a href="mailto:hello@sihatree.com" class="footer-email">hello@sihatree.com</a>
         </div>
         <div class="footer-lang-switch">
-          <a href="/blog/arabic-gum-for-students">EN</a> | <a href="/ms/blog/gam-arab-untuk-pelajar" class="lang-current">Bahasa Malaysia</a>
+          <a href="/blog/arabic-gum-for-students">EN</a> | <a href="/ms/blog/gam-arab-untuk-pelajar" class="lang-current">Bahasa Malaysia</a> | <a href="/ar/blog/arabic-gum-for-students">Arabic</a>
         </div>
       </div>
     </div>
@@ -320,6 +328,7 @@
     document.addEventListener('DOMContentLoaded', () => window.AOS && AOS.init());
   </script>
   <script type="module" src="/src/blog.js"></script>
+  <script type="module" src="/src/nav-whatsapp.js"></script>
 </body>
 
 </html>

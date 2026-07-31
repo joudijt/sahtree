@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap');
 
 :root {
+    /* Canonical page frame: every top-level content block caps its content at
+       --page-max and keeps --page-gutter of breathing room either side, so all
+       content edges line up at the same x on every page. The fixed nav bar is
+       deliberately excluded — it keeps its own centred cluster layout. */
+    --page-max: 1200px;
+    --page-gutter: 5%;
+    /* For blocks that cap themselves instead of sitting inside a padded parent:
+       same result as parent-padding + inner max-width, without a wrapper element. */
+    --page-width: min(var(--page-max), calc(100% - var(--page-gutter) * 2));
     --primary-color: #2D294E;
     /* Deep Purple */
     --secondary-color: #7FBC3B;
@@ -28,6 +37,16 @@
     box-sizing: border-box;
 }
 
+/* body already carried overflow-x: hidden, but the scroll container is <html>,
+   so a transform that briefly sticks out (an AOS reveal) could still pan the
+   page sideways once the framed sections stopped clipping. Clipping here stops
+   that without creating a scroll container — and unlike clipping on the
+   sections themselves, it never cuts a card's box-shadow, which sits far
+   inside the viewport. */
+html {
+    overflow-x: clip;
+}
+
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--light-bg);
@@ -46,6 +65,16 @@ header,
 section,
 footer {
     overflow-x: clip;
+}
+
+/* Sections that carry the page frame are exactly as wide as their content, so
+   a card sitting flush against the frame edge had its side box-shadow cut off
+   by the clip above. These are not full-bleed and hold no bleeding decoration
+   (the hero blobs live in .sp-hero, which keeps clipping), so they opt out. */
+.sp-section,
+.se-benefits,
+.se-trust-section {
+    overflow-x: visible;
 }
 
 h1,
@@ -80,7 +109,7 @@ a {
 
 .section-title p {
     font-size: 1.25rem;
-    max-width: 700px;
+    max-width: var(--page-max);
     margin: 0 auto;
 }
 
@@ -234,7 +263,7 @@ nav.scrolled .nav-links {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    max-width: 1400px;
+    max-width: var(--page-max);
     margin: 0 auto;
     z-index: 10;
 }
@@ -248,7 +277,7 @@ nav.scrolled .nav-links {
 .hero-content p {
     font-size: 1.25rem;
     margin-bottom: 2.5rem;
-    max-width: 600px;
+    max-width: var(--page-max);
 }
 
 .hero-actions {
@@ -541,7 +570,7 @@ nav.scrolled .nav-links {
 }
 
 .product-carousel {
-    max-width: 1400px;
+    max-width: var(--page-max);
     margin: 0 auto;
     position: relative;
     padding: 0 4.25rem;
@@ -698,7 +727,7 @@ nav.scrolled .nav-links {
     grid-template-areas: "copy product";
     gap: 5rem;
     align-items: center;
-    max-width: 1400px;
+    max-width: var(--page-max);
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -913,9 +942,13 @@ nav.scrolled .nav-links {
 
 .wholesale-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* minmax(0, 1fr) rather than 1fr: a bare 1fr track refuses to shrink below
+       its content's min-content width, and the form card (4.5rem padding plus
+       its inputs) is wide enough to blow the grid past the page frame on the
+       standalone wholesale page. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 6rem;
-    max-width: 1400px;
+    max-width: var(--page-max);
     margin: 0 auto;
     align-items: center;
 }
@@ -931,7 +964,7 @@ nav.scrolled .nav-links {
     line-height: 1.7;
     color: #71717A;
     margin-bottom: 3.5rem;
-    max-width: 600px;
+    max-width: var(--page-max);
 }
 
 .wholesale-benefits {
@@ -1191,7 +1224,8 @@ nav.scrolled .nav-links {
 .final-cta p {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.15rem;
-    max-width: 600px;
+    width: 100%;
+    max-width: var(--page-max);
     margin: 0 auto 2rem;
 }
 
@@ -1230,7 +1264,7 @@ nav.scrolled .nav-links {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 4rem;
-    max-width: 1400px;
+    max-width: var(--page-max);
     margin: 0 auto;
 }
 
@@ -1296,6 +1330,28 @@ nav.scrolled .nav-links {
     transform: translateY(-3px);
 }
 
+/* Berkat Madinah is the official store, not a social account — it gets a
+   readable label instead of a bare glyph in the circle row above. */
+.footer-madinah {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid #E2E8F0;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.footer-madinah:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
 .footer-contact p {
     font-size: 0.95rem;
     color: #94A3B8;
@@ -1313,7 +1369,7 @@ nav.scrolled .nav-links {
     padding-top: 2rem;
     border-top: 1px solid #F1F5F9;
     text-align: left;
-    max-width: 1400px;
+    max-width: var(--page-max);
     margin-left: auto;
     margin-right: auto;
 }
@@ -1338,7 +1394,8 @@ nav.scrolled .nav-links {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     margin: 0 auto 5rem;
-    max-width: 900px;
+    width: 100%;
+    max-width: var(--page-max);
 }
 
 .faq-tab {
@@ -1377,7 +1434,7 @@ nav.scrolled .nav-links {
 }
 
 .faq-container {
-    max-width: 900px;
+    max-width: var(--page-max);
     margin: 0 auto;
 }
 
@@ -1979,8 +2036,13 @@ nav.scrolled .nav-links {
         transform: none !important;
         opacity: 1 !important;
         padding: 40px 20px !important;
-        width: calc(100% + 10%) !important;
-        margin-left: -5% !important;
+        /* Deliberately edge-to-edge on phones (hence radius 0). The old
+           `100% + 10%` / `-5%` pair assumed the parent still carried a 5%
+           padding; now that the parent is the page frame it overshot left and
+           fell short right. Bleeding off the element's own centre reaches the
+           real viewport edges whatever the parent width is. */
+        width: 100vw !important;
+        margin-inline: calc(50% - 50vw) !important;
         border-radius: 0 !important;
         box-shadow: none !important;
     }
@@ -2110,16 +2172,16 @@ nav.scrolled .nav-links {
 }
 
 .blog-hero p {
-    max-width: 560px;
+    max-width: var(--page-max);
     margin: 0 auto;
     color: var(--text-light);
     font-size: 1.1rem;
 }
 
 .blog-list {
-    max-width: 1360px;
+    width: var(--page-width);
     margin: 0 auto;
-    padding: 3rem 5% 6rem;
+    padding: 3rem 0 6rem;
     box-sizing: border-box;
 }
 
@@ -2235,9 +2297,9 @@ html:has(.blog-post) {
 }
 
 .blog-post {
-    max-width: 900px;
+    width: var(--page-width);
     margin: 0 auto;
-    padding: 10rem 5% 6rem;
+    padding: 10rem 0 6rem;
     box-sizing: border-box;
 }
 
@@ -2440,6 +2502,19 @@ html:has(.blog-post) {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
     margin: 1.5rem 0 2rem;
+}
+
+/* A six-card grid auto-fits to 5 + 1 orphan at full content width. Two even
+   rows of three read far better, so pin the column count once a sixth card
+   exists (`:has()` is already used elsewhere in this file). */
+.blog-benefit-grid:has(> :nth-child(6)) {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+    .blog-benefit-grid:has(> :nth-child(6)) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .blog-benefit-card {
@@ -2754,7 +2829,8 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
         padding-left: 1.8rem;
     }
 
-    .blog-benefit-grid {
+    .blog-benefit-grid,
+    .blog-benefit-grid:has(> :nth-child(6)) {
         grid-template-columns: 1fr;
     }
 
@@ -2903,7 +2979,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
    ============================================================ */
 
 .se-section-title {
-    max-width: 720px;
+    max-width: var(--page-max);
     margin: 0 0 2rem;
 }
 
@@ -2992,7 +3068,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     grid-template-columns: 1fr;
     gap: 3rem;
     align-items: center;
-    max-width: 1400px;
+    max-width: var(--page-max);
     margin: 0 auto;
     width: 100%;
 }
@@ -3049,7 +3125,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 .se-hero-sub {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.78);
-    max-width: 520px;
+    max-width: var(--page-max);
     margin: 0 0 2.2rem;
     line-height: 1.6;
 }
@@ -3145,7 +3221,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 }
 
 .se-story-inner {
-    max-width: 1200px;
+    max-width: var(--page-max);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -3248,8 +3324,8 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 
 /* --- SE Benefits (stat cards) --- */
 .se-benefits {
-    padding: 3.5rem 5%;
-    max-width: 1300px;
+    padding: 3.5rem 0;
+    width: var(--page-width);
     margin: 0 auto;
 }
 
@@ -3318,7 +3394,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 }
 
 .se-flavors-inner {
-    max-width: 1400px;
+    max-width: var(--page-max);
     margin: 0 auto;
 }
 
@@ -3388,8 +3464,8 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 
 /* --- SE Trust (Halal & Malaysia) --- */
 .se-trust-section {
-    padding: 3.5rem 5% 5rem;
-    max-width: 1300px;
+    padding: 3.5rem 0 5rem;
+    width: var(--page-width);
     margin: 0 auto;
 }
 
@@ -3419,6 +3495,29 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     z-index: 1;
 }
 
+/* Two columns from tablet up. DOM order is content then media, and grid
+   placement is direction-aware, so the photo lands on the reading-end side by
+   itself: right for en/ms, left for ar. No per-language markup. */
+@media (min-width: 900px) {
+    .se-trust-panel {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 3.5rem;
+    }
+}
+
+.se-trust-media {
+    position: relative;
+    z-index: 1;
+}
+
+.se-trust-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
 .se-trust-content h2 {
     font-size: clamp(1.9rem, 3.5vw, 2.6rem);
     margin: 0 0 1.2rem;
@@ -3431,7 +3530,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.7;
     margin: 0 0 2rem;
-    max-width: 520px;
+    max-width: var(--page-max);
 }
 
 .se-trust-stats {
@@ -3560,59 +3659,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     }
 }
 
-/* --- SE Motion: flavour marquee + idle image float --- */
-.se-marquee {
-    overflow: hidden;
-    background: var(--primary-color);
-    padding: 0.85rem 0;
-}
-
-.se-marquee-track {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    width: max-content;
-    animation: seMarquee 40s linear infinite;
-}
-
-.se-marquee:hover .se-marquee-track {
-    animation-play-state: paused;
-}
-
-.se-marquee-track img {
-    height: 52px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
-    animation: seBobSmall 3s ease-in-out infinite;
-}
-
-.se-marquee-track img:nth-child(even) {
-    animation-delay: -1.5s;
-}
-
-@keyframes seMarquee {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-@keyframes seBobSmall {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(-3deg);
-    }
-
-    50% {
-        transform: translateY(-5px) rotate(3deg);
-    }
-}
-
+/* --- SE Motion: idle image float --- */
 @keyframes seBob {
 
     0%,
@@ -3681,12 +3728,6 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     animation-delay: -3.2s;
 }
 
-@media (max-width: 968px) {
-    .se-marquee-track img {
-        height: 44px;
-    }
-}
-
 /* =========================================================
    SUB-PAGE SYSTEM — Products / Benefits / Wholesale / Retail / Contact
    ========================================================= */
@@ -3723,7 +3764,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 .sp-hero-inner {
     position: relative;
     z-index: 1;
-    max-width: 760px;
+    max-width: var(--page-max);
     margin: 0 auto;
 }
 
@@ -3743,7 +3784,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 
 .sp-hero-sub {
     font-size: 1.15rem;
-    max-width: 620px;
+    max-width: var(--page-max);
     margin: 0 auto 2rem;
 }
 
@@ -3755,31 +3796,38 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 }
 
 .sp-section {
-    padding: 5rem 5%;
-    max-width: 1200px;
+    padding: 5rem 0;
+    width: var(--page-width);
     margin: 0 auto;
 }
 
-.sp-section--tight { max-width: 960px; }
+.sp-section--tight { width: var(--page-width); }
 
-/* --alt sections need a full-bleed background band, but .sp-section itself
-   carries the max-width/centering used for layout — so the alt variant
-   drops its own width constraint and padding, and an inner wrapper
-   (added in markup) re-applies both so content still lines up. */
+/* --alt sections paint a background, so the band itself must run the full
+   width of the viewport; only its content sits on the page frame. The frame
+   therefore lives on .sp-section-inner here, never on the element that paints.
+   `width: auto` is what releases it — `max-width: none` alone cannot undo the
+   `width` that .sp-section sets. */
 .sp-section--alt {
     background: var(--white);
+    width: auto;
     max-width: none;
     padding-left: 0;
     padding-right: 0;
 }
 
-.sp-section-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
+.sp-section--alt .sp-section-inner {
+    width: var(--page-width);
+    margin-inline: auto;
 }
 
-.sp-section--alt.sp-section--tight .sp-section-inner { max-width: 960px; }
+.sp-section-inner {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sp-section--alt.sp-section--tight .sp-section-inner { max-width: var(--page-max); }
 
 /* Alternating image/copy row (used on Products + Benefits) */
 .sp-row {
@@ -3793,6 +3841,26 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 .sp-row:last-child { margin-bottom: 0; }
 
 .sp-row--reverse .sp-row-img { order: 2; }
+
+/* The five-flavour lineup needs more room than a single pack shot, so this row
+   gives the image column the larger share and lets the photo fill the card. */
+@media (min-width: 900px) {
+    .sp-row--wide-img {
+        grid-template-columns: 1.35fr 1fr;
+    }
+}
+
+.sp-row--wide-img .sp-row-img {
+    padding: 1rem;
+}
+
+/* Single pack shots are capped at 320px tall, which letterboxes the wider
+   five-flavour lineup and shrinks the packs. Let this one fill the column. */
+.sp-row--wide-img .sp-row-img img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+}
 .sp-row--reverse .sp-row-copy { order: 1; }
 
 .sp-row-img {
@@ -3942,6 +4010,21 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     text-align: center;
     box-shadow: var(--shadow);
     transition: transform 0.25s ease;
+    /* Grid already equalises the card heights; making each card a column and
+       pushing the button down with margin-top:auto lines the three buttons up
+       even though the descriptions differ in length. */
+    display: flex;
+    flex-direction: column;
+}
+
+.rt-store-card .btn {
+    margin-top: auto;
+    /* Stretch so all three are the same width, and trim the inline padding:
+       the longest label ("Lawati Berkat Madinah", 216px) overflowed the 215px
+       card interior by a single pixel and wrapped to two lines, which left one
+       button taller than the others. */
+    align-self: stretch;
+    padding-inline: 1rem;
 }
 
 .rt-store-card:hover { transform: translateY(-8px); }
@@ -3960,6 +4043,26 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 
 .rt-store-icon--tiktok { background: #010101; }
 .rt-store-icon--shopee { background: #EE4D2D; }
+.rt-store-icon--madinah { background: var(--primary-color); }
+
+/* Centred illustration between prose sections. It introduces the section that
+   follows, so drop its own bottom padding instead of stacking two full section
+   paddings between the photo and that heading. */
+.sp-section:has(> .sp-figure) {
+    padding-bottom: 0;
+}
+
+.sp-figure {
+    margin: 0 auto;
+    max-width: 760px;
+}
+
+.sp-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+}
 
 .rt-store-card h3 { margin-bottom: 0.6rem; }
 .rt-store-card p { margin-bottom: 1.4rem; }
@@ -4033,7 +4136,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     color: var(--text-color);
     line-height: 1.75;
     font-size: 1.05rem;
-    max-width: 780px;
+    max-width: var(--page-max);
     margin: 0 auto;
 }
 
@@ -4055,7 +4158,10 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 @media (max-width: 480px) {
     .sp-hero { padding: 9rem 5% 3.5rem; }
     .sp-hero h1 { font-size: 2rem; }
-    .sp-section { padding: 3.5rem 5%; }
+    /* Horizontal gutter already comes from --page-width; adding 5% here would
+       double it (and on --alt sections it also re-clipped the content inside
+       an already full-bleed band). Vertical padding only. */
+    .sp-section { padding: 3.5rem 0; }
     .ct-form-card { padding: 1.6rem; }
 }
 

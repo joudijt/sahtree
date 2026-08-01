@@ -4173,3 +4173,155 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     min-height: auto;
     padding: 6rem 5%;
 }
+
+/* --- Mobile navigation ---------------------------------------------------
+   Below 968px the desktop `.nav-links` / `.nav-cta` are hidden, which left the
+   site with no navigation and no language switcher at all. The burger button
+   and the panel are both injected by src/nav-whatsapp.js (the nav markup is
+   duplicated into 152 HTML files, so this stays in one place).
+
+   The button is absolutely positioned rather than being laid out as a nav flex
+   child on purpose: `nav` is a centred cluster (`justify-content: center`) and
+   changing that to space-between was tried before and explicitly reverted, so
+   the logo has to keep its exact centred position. `nav` is `position: fixed`,
+   which makes it the containing block. `right` is a physical property here
+   because `nav` carries `dir="ltr"` in every locale, Arabic included. */
+.nav-burger {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2;
+}
+
+.nav-burger-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--primary-color);
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* `--mobile-nav-top` is written by the script on open, from the live nav
+   height — the bar shrinks on scroll via `nav.scrolled`, so a fixed value
+   would leave a gap or overlap depending on scroll position. */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: var(--mobile-nav-top, 72px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: var(--light-bg);
+    padding: 2.5rem 5% 3rem;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.75rem);
+    /* Visibility flips instantly on open (so the first link is focusable right
+       away) and is delayed to the end of the fade on close. Transitioning it
+       like the other properties would leave the panel unfocusable for 250ms. */
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 0.9rem 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a:focus-visible {
+    color: var(--secondary-color);
+}
+
+.mobile-nav-langs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.mobile-nav-langs a,
+.mobile-nav-langs span {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+    padding: 0.5rem 0.25rem;
+}
+
+.mobile-nav-langs .is-current {
+    color: var(--secondary-color);
+}
+
+/* Set while the panel is open so the page behind it can't scroll. */
+body.mobile-nav-open {
+    overflow: hidden;
+}
+
+@media (max-width: 968px) {
+    .nav-burger {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobile-nav,
+    .nav-burger-bar {
+        transition: none;
+    }
+}

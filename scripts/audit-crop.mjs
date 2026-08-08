@@ -49,6 +49,36 @@ for (const vp of VIEWPORTS) {
           shown: r.width / r.height, natural: sources[file],
         });
       }
+      // querySelectorAll('*') can never return a ::before/::after — they aren't
+      // nodes. Without this pass, any cover-painted image moved onto a pseudo
+      // element (as the mobile hero was) is invisible to the audit: it prints
+      // a clean run not because nothing is cropped, but because it never looked.
+      // getComputedStyle(el, pseudo) does return the pseudo's real used styles,
+      // including a resolved width/height in px — but only when the pseudo
+      // actually generates a box (content set, not display:none). When it
+      // doesn't, width/height come back as 'auto', '0px', or '' depending on
+      // the property, so the same positive-number-above-threshold guard used
+      // for real elements also filters out pseudos that don't exist.
+      for (const el of document.querySelectorAll('*')) {
+        for (const pseudo of ['::before', '::after']) {
+          const pcs = getComputedStyle(el, pseudo);
+          if (!pcs.backgroundImage.includes('url(') || !pcs.backgroundSize.startsWith('cover')) continue;
+          const w = parseFloat(pcs.width);
+          const h = parseFloat(pcs.height);
+          if (!(w > 100) || !(h > 100)) continue;
+          const file = Object.keys(sources).find((f) => pcs.backgroundImage.includes(f));
+          if (!file) continue;
+          const base = el.className && el.className.toString().trim()
+            ? '.' + el.className.toString().trim().split(/\s+/).join('.')
+            : el.tagName.toLowerCase();
+          out.push({
+            kind: 'pseudo', file,
+            sel: base + pseudo,
+            box: Math.round(w) + 'x' + Math.round(h),
+            shown: w / h, natural: sources[file],
+          });
+        }
+      }
       for (const img of document.querySelectorAll('img')) {
         const r = img.getBoundingClientRect();
         if (r.width < 20 || r.height < 20) continue;

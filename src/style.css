@@ -3301,11 +3301,19 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     margin: 0;
 }
 
+/* The six-point strip used to be nested inside .se-story-inner and inherited
+   the page frame from it. Standing alone, it has to carry the frame itself. */
+.se-highlights-band {
+    padding: 3rem 0 1rem;
+    width: var(--page-width);
+    margin: 0 auto;
+}
+
 .se-story-highlights {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem;
-    margin-top: 2rem;
+    margin-top: 0;
 }
 
 .se-highlight {

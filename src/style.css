@@ -3037,16 +3037,16 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 }
 
 .se-hero--photo-en {
-    background-image: linear-gradient(90deg, rgba(15, 13, 36, 0.86) 0%, rgba(15, 13, 36, 0.58) 38%, rgba(15, 13, 36, 0.22) 62%, rgba(15, 13, 36, 0.4) 100%), url('/images/hero-bg-mango-tree-en.webp');
+    background-image: linear-gradient(90deg, rgba(15, 13, 36, 1) 0%, rgba(15, 13, 36, 0.83) 42%, rgba(15, 13, 36, 0.65) 66%, rgba(15, 13, 36, 0.7) 100%), url('/images/hero-bg-mango-tree-en.webp');
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     background-repeat: no-repeat;
 }
 
 .se-hero--photo-ar {
-    background-image: linear-gradient(270deg, rgba(15, 13, 36, 0.86) 0%, rgba(15, 13, 36, 0.58) 38%, rgba(15, 13, 36, 0.22) 62%, rgba(15, 13, 36, 0.4) 100%), url('/images/hero-bg-mango-tree-ar.webp');
+    background-image: linear-gradient(270deg, rgba(15, 13, 36, 1) 0%, rgba(15, 13, 36, 0.83) 42%, rgba(15, 13, 36, 0.65) 66%, rgba(15, 13, 36, 0.7) 100%), url('/images/hero-bg-mango-tree-ar.webp');
     background-size: cover;
-    background-position: center;
+    background-position: left center;
     background-repeat: no-repeat;
 }
 
@@ -3059,6 +3059,16 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 .se-hero--photo-ar::before {
     -webkit-mask-image: linear-gradient(to left, black 0%, black 55%, transparent 75%);
     mask-image: linear-gradient(to left, black 0%, black 55%, transparent 75%);
+}
+
+/* The blurred blob overlay paints above the background scrim; at full strength
+   it washes the text half out. Photo variants get a calmer version. */
+.se-hero--photo-en::before,
+.se-hero--photo-ar::before {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(127, 188, 59, 0.16), transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(249, 171, 64, 0.14), transparent 40%),
+        radial-gradient(circle at 75% 85%, rgba(186, 52, 126, 0.14), transparent 45%);
 }
 
 .se-hero-layout {
@@ -3582,8 +3592,46 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 /* --- SE Mobile --- */
 @media (max-width: 968px) {
     .se-hero {
-        padding: 8rem 5% 3rem;
+        padding: 7rem 5% 3rem;
         min-height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    /* Below 968px the photo stops being a background crop and becomes its own
+       band at the source's native 16/9, so cover discards nothing. */
+    .se-hero--photo-en,
+    .se-hero--photo-ar {
+        background-image: linear-gradient(135deg, var(--primary-color) 0%, #241f42 55%, var(--primary-color) 100%);
+    }
+
+    .se-hero--photo-en::after,
+    .se-hero--photo-ar::after {
+        content: "";
+        order: -1;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .se-hero--photo-en::after {
+        background-image: url('/images/hero-bg-mango-tree-en.webp');
+    }
+
+    .se-hero--photo-ar::after {
+        background-image: url('/images/hero-bg-mango-tree-ar.webp');
+    }
+
+    /* The blurred radials exist to decorate a photo backdrop. There is no
+       photo backdrop here, and they wash out the band. */
+    .se-hero::before {
+        display: none;
     }
 
     .se-hero-layout {

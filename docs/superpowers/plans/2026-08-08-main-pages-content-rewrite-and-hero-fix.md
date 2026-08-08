@@ -646,7 +646,11 @@ Delete the hero buttons. `Perisa 01`…`05` → `Rasa 01`…`05`. Then clear eve
       <p class="sp-hero-sub">كل عبوة تحتوي على الصمغ العربي نفسه من شجرة الأكاسيا. اختر النكهة التي تتطلّع إليها فعلًا.</p>
 ```
 
-Delete the hero buttons. `النكهة 01`…`05` → `النكهة 01`…`05` if already correct; otherwise align to the same pattern. Keep `متوافق مع الحلال` untouched — it appears 12× in this file and is the canonical AR phrasing.
+Delete the hero buttons.
+
+**The AR eyebrows already read `النكهة 01`…`النكهة 05` (lines 173, 198, 222, 246, 270) and must be left exactly as they are.** Arabic `نكهة` carries no additive or synthetic connotation the way English "flavour" does, so the AR page needs no per-item rename — only the section-level label changes to `نكهات فاكهية طبيعية`. Do not invent a longer construction like `النكهة الفاكهية 01`.
+
+Keep `متوافق مع الحلال` untouched — it appears 12× in this file and is the canonical AR phrasing.
 
 - [ ] **Step 6: Verify**
 

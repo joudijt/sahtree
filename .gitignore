@@ -42,3 +42,6 @@ src/javascript.svg
 *.njsproj
 *.sln
 *.sw?
+
+# Subagent-driven-development scratch workspace
+.superpowers/

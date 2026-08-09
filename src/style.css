@@ -3317,9 +3317,14 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 }
 
 /* Four cards auto-fit to 3 + 1 orphan with the three-column rule above.
-   Pin a 2x2 grid once a fourth card exists and there's no fifth. */
-.se-story-highlights:has(> :nth-child(4)):not(:has(> :nth-child(5))) {
-    grid-template-columns: repeat(2, 1fr);
+   Pin a 2x2 grid once a fourth card exists and there's no fifth.
+   Scoped to min-width so it never outranks the mobile 1-column collapse
+   below (media queries add no specificity, so without this guard the
+   (0,3,0) :has() selector always beat the bare (0,1,0) mobile rule). */
+@media (min-width: 481px) {
+    .se-story-highlights:has(> :nth-child(4)):not(:has(> :nth-child(5))) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .se-highlight {

@@ -254,7 +254,7 @@ function wireForms() {
       { name: 'companyName', label: 'Company' },
       { name: 'email', label: 'Email' },
       { name: 'phone', label: 'Phone' },
-      { name: 'flavours', label: 'Flavours', multi: true },
+      { name: 'tastes', label: 'Tastes', multi: true },
       { name: 'message', label: 'Message' }
     ]
   );

@@ -3316,6 +3316,12 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     margin-top: 0;
 }
 
+/* Four cards auto-fit to 3 + 1 orphan with the three-column rule above.
+   Pin a 2x2 grid once a fourth card exists and there's no fifth. */
+.se-story-highlights:has(> :nth-child(4)):not(:has(> :nth-child(5))) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .se-highlight {
     min-width: 0;
     display: flex;

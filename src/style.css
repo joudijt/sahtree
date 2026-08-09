@@ -3013,6 +3013,7 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 /* --- SE Hero --- */
 .se-hero {
     position: relative;
+    margin-top: 5rem;
     min-height: 92vh;
     display: flex;
     align-items: center;

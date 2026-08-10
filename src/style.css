@@ -3038,14 +3038,14 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
 }
 
 .se-hero--photo-en {
-    background-image: linear-gradient(90deg, rgba(15, 13, 36, 1) 0%, rgba(15, 13, 36, 0.83) 42%, rgba(15, 13, 36, 0.65) 66%, rgba(15, 13, 36, 0.7) 100%), url('/images/hero-bg-mango-tree-en.webp');
+    background-image: linear-gradient(90deg, rgba(15, 13, 36, 0.8) 0%, rgba(15, 13, 36, 0.58) 42%, rgba(15, 13, 36, 0.4) 66%, rgba(15, 13, 36, 0.45) 100%), url('/images/hero-bg-desert-mango-en.webp');
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
 }
 
 .se-hero--photo-ar {
-    background-image: linear-gradient(270deg, rgba(15, 13, 36, 1) 0%, rgba(15, 13, 36, 0.83) 42%, rgba(15, 13, 36, 0.65) 66%, rgba(15, 13, 36, 0.7) 100%), url('/images/hero-bg-mango-tree-ar.webp');
+    background-image: linear-gradient(270deg, rgba(15, 13, 36, 0.8) 0%, rgba(15, 13, 36, 0.58) 42%, rgba(15, 13, 36, 0.4) 66%, rgba(15, 13, 36, 0.45) 100%), url('/images/hero-bg-desert-mango-ar.webp');
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
@@ -3641,11 +3641,11 @@ body:has(.blog-post) footer.main-footer .footer-bottom p {
     }
 
     .se-hero--photo-en::after {
-        background-image: url('/images/hero-bg-mango-tree-en.webp');
+        background-image: url('/images/hero-bg-desert-mango-en.webp');
     }
 
     .se-hero--photo-ar::after {
-        background-image: url('/images/hero-bg-mango-tree-ar.webp');
+        background-image: url('/images/hero-bg-desert-mango-ar.webp');
     }
 
     /* The blurred radials exist to decorate a photo backdrop. There is no

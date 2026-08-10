@@ -10,8 +10,8 @@ const VIEWPORTS = [
 const TOLERANCE = 0.12;
 
 const SOURCES = {
-  'hero-bg-mango-tree-en.webp': 1671 / 941,
-  'hero-bg-mango-tree-ar.webp': 1376 / 768,
+  'hero-bg-desert-mango-en.webp': 1671 / 941,
+  'hero-bg-desert-mango-ar.webp': 1671 / 941,
 };
 
 const browser = await chromium.launch();

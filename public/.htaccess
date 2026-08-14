@@ -28,3 +28,15 @@ Options -Indexes
 # llms files. Keep both lines.
 AddCharset UTF-8 .txt
 AddType "text/plain; charset=UTF-8" .txt
+
+# Neither of the two lines above reliably changes the wire format on this host —
+# one recheck showed "charset=UTF-8" and later requests went back to bare
+# "text/plain" (not a cache: a cache-busting query string returns bare too, and
+# the response carries "vary: User-Agent", so an edge layer is involved).
+# mod_headers rewrites the response header after the type is chosen, which is the
+# one place that layer cannot undo. Verify with: curl -sI https://sihatree.com/llms.txt
+<IfModule mod_headers.c>
+  <FilesMatch "\.txt$">
+    Header set Content-Type "text/plain; charset=UTF-8"
+  </FilesMatch>
+</IfModule>

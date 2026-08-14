@@ -2,11 +2,23 @@
 
 ## What this is
 
-Static bilingual (English + Bahasa Malaysia) marketing site for **Sihatree**, a Malaysia-focused
-wellness brand selling **Arabic Gum Powder** (gum acacia / gum arabic — dried Acacia tree sap, a
-natural soluble prebiotic fibre). 5 flavours: Original, Berry Blend, Mango, Pineapple, Pomegranate.
-150g packs. Halal-friendly, in line with JAKIM Halal guidelines. Sold retail (TikTok Shop, Shopee) and wholesale (retailers,
+Static **trilingual** (English + Bahasa Malaysia `ms/` + Arabic `ar/`) marketing site for **Sihatree**,
+a Malaysia-focused wellness brand selling **Arabic Gum Powder** (gum acacia / gum arabic — dried
+Acacia tree sap, a natural soluble prebiotic fibre). 5 flavours: Original, Berry Blend, Mango,
+Pineapple, Pomegranate. 150g packs. Sold retail (TikTok Shop, Shopee) and wholesale (retailers,
 supermarkets, cafés, distributors across Malaysia).
+
+**Halal wording (owner instruction, 2026-08-14):** the product is described as plant-derived — no
+alcohol, no animal-derived ingredients — and **there is no JAKIM certificate**. Never write a cert
+number, "JAKIM certified", "in line with JAKIM Halal guidelines", or the Arabic «متوافق مع الحلال»
+(that phrase asserts compliance and is stronger than the EN/BM wording — it was found on `ar/` pages
+and is being retired). The no-certificate sentence must appear in the same block as any Halal claim.
+
+**Seller relationship:** Sihatree Arabic Gum Powder is sold only through **Berkat Madinah Store**
+(founded 2010, 6,000+ products, 5 Klang Valley branches) and the channels it operates — its TikTok
+Shop, its Shopee storefront (trading name *Arabian Village Malaysia*), madinah.com.my and WhatsApp.
+Do not reframe TikTok/Shopee as independent Sihatree storefronts; that framing was corrected in
+`retail.html`, `ms/retail.html` and `ar/retail.html` (FAQ JSON-LD **and** the visible twin).
 
 No backend, no CMS, no database. Every page is a hand-written static HTML file built with Vite as
 a pure multi-page-app bundler.
@@ -69,7 +81,13 @@ public/
                        Google-Extended/Bingbot; explicit Disallow for CCBot (training-only, no
                        citation value); Sitemap: line.
   sitemap.xml        — every EN+BM URL pair, each with inline <xhtml:link> hreflang alternates.
-  llms.txt           — AI-crawler summary of the brand in EN/BM/Arabic, key pages, Malaysia search
+  llms.txt           — EN master brief (product, 5 flavours, seller dossier, 65+ Q&A, page index)
+  ms/llms.txt        — the same depth written natively in Bahasa Malaysia (not a translation)
+  ar/llms.txt        — the same depth written natively in Arabic (not a translation)
+                       NOTE: Vite copies public/ into dist/ at renderStart, BEFORE Rollup writes.
+                       A public/** file whose path matches a Rollup output is silently overwritten,
+                       so never add public/ms/index.html or public/ar/index.html.
+  (legacy note)      — AI-crawler summary of the brand in EN/BM/Arabic, key pages, Malaysia search
                        terms in EN+BM+Arabic. Read this file for the canonical keyword list.
   images/            — product shots, flavour images, acacia-tree/gum-crystals story images.
 docs/superpowers/specs/  — design decision docs from prior work sessions (homepage redesign,
@@ -133,7 +151,11 @@ every `{{PLACEHOLDER}}`, then:
    for the BM version).
 2. Add a matching `BlogPosting` stub to `blog.html`'s `Blog` JSON-LD `blogPost[]` array.
 3. Add both new URLs (EN + BM) to `public/sitemap.xml` with reciprocal `hreflang` alternates.
-4. Add both new pages to `public/llms.txt`'s "Key Pages" list.
+4. Add the new pages to the page index in **all three** llms files — `public/llms.txt` (EN),
+   `public/ms/llms.txt` (BM), `public/ar/llms.txt` (AR). They are separate files with no shared
+   source; miss one and that language's index silently desyncs.
+   Then run `node scripts/check-llms.mjs` — it gates prohibited wording, prices, phantom branches,
+   the banned-adjective list and the Q&A/exclusivity structure. `--selftest` proves it can fail.
 5. Register both new files in `vite.config.js` `rollupOptions.input`.
 
 **Current inventory: 43 EN + 43 BM articles** (first 3 published 2026-07-11, next 20 on 2026-07-16,

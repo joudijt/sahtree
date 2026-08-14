@@ -15,3 +15,16 @@ RewriteRule ^(.*)$ $1.html [L]
 
 # Never fall back to an autoindex listing.
 Options -Indexes
+
+# llms.txt (and every other .txt) is UTF-8 and carries Arabic. Without this the
+# host serves "Content-Type: text/plain" with NO charset, and a consumer is free
+# to decode it as latin-1 — the Arabic then arrives as mojibake. Verified: the
+# live response had no charset before this line was added.
+# AddCharset alone was NOT enough on this host (LiteSpeed): after deploying it the
+# response still came back as bare "text/plain". AddType sets the full media type
+# including the charset parameter and IS honoured — but it does not show up on the
+# very next request, so re-check a few minutes later before concluding it failed.
+# Verified live 2026-08-14: "content-type: text/plain; charset=UTF-8" on all three
+# llms files. Keep both lines.
+AddCharset UTF-8 .txt
+AddType "text/plain; charset=UTF-8" .txt

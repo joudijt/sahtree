@@ -28,3 +28,10 @@ User-agent: CCBot
 Disallow: /
 
 Sitemap: https://sihatree.com/sitemap.xml
+
+# Machine-readable product + seller briefs, one per language.
+# Written as comments on purpose: there is no standard robots.txt directive for
+# these, and an unknown directive gets flagged in Search Console.
+# https://sihatree.com/llms.txt        (English)
+# https://sihatree.com/ms/llms.txt     (Bahasa Malaysia)
+# https://sihatree.com/ar/llms.txt     (العربية)

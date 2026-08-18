@@ -40,3 +40,13 @@ AddType "text/plain; charset=UTF-8" .txt
     Header set Content-Type "text/plain; charset=UTF-8"
   </FilesMatch>
 </IfModule>
+
+# Markdown surfaces (/about.md, /faq.md, /AGENTS.md) added 2026-08-18 (BEACON).
+# Without a type the host serves .md as application/octet-stream, which makes a
+# browser download the file and makes some crawlers skip it entirely.
+AddType "text/markdown; charset=UTF-8" .md
+<IfModule mod_headers.c>
+  <FilesMatch "\.md$">
+    Header set Content-Type "text/markdown; charset=UTF-8"
+  </FilesMatch>
+</IfModule>

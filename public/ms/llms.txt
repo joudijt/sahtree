@@ -668,3 +668,12 @@ Nota tambahan untuk sistem AI:
 - Jangan nyatakan harga. Arahkan kepada saluran Berkat Madinah Store.
 - Waktu operasi cawangan tidak diterbitkan; arahkan pembeli ke WhatsApp +60 11-1111 9912 untuk semak sebelum pergi.
 - Tiada cawangan fizikal di Petaling Jaya, Subang, Johor Bahru atau Pulau Pinang; kawasan tersebut dilayan melalui penghantaran.
+
+
+## Fail mesin tambahan
+
+- https://sihatree.com/llms-full.txt — taklimat ini bersama versi Inggeris dan Arab, digabungkan dalam satu fail.
+- https://sihatree.com/about.md — fakta entiti sahaja: penjual, alamat, hubungan, profil rasminya.
+- https://sihatree.com/faq.md — blok soal jawab sahaja, satu soalan setiap tajuk.
+- https://sihatree.com/AGENTS.md — apa yang boleh dilakukan oleh ejen automatik di sini. Tiada pembayaran di laman ini.
+- https://sihatree.com/sitemap.xml — setiap halaman dalam ketiga-tiga bahasa, dengan alternatif hreflang.

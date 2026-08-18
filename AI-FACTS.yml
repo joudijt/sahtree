@@ -1,0 +1,185 @@
+####################################################################
+#  AI-FACTS.yml — Sihatree
+#  Auto-extracted 2026-08-18, then completed by hand from the project's
+#  own public/llms.txt, JSON-LD and CLAUDE.md. Nothing here is invented.
+#
+#  HARD RULE FOR THIS PROJECT: Sihatree holds NO JAKIM Halal certificate.
+#  trust.certifications must stay blank. The halal wording is
+#  "plant-derived, no alcohol, no animal-derived ingredients" and the
+#  no-certificate sentence must sit in the same block as any halal claim.
+#  Never write "halal-certified", and never reintroduce the Arabic
+#  overclaim that was removed from 37 ar/ files.
+#
+#  Prices are deliberately not published on this site, in any currency.
+####################################################################
+
+site:
+  name: Sihatree
+  url: https://sihatree.com
+  definition: Sihatree Arabic Gum Powder is a natural water-soluble prebiotic dietary fibre made from the dried purified sap of the Acacia tree (Acacia senegal / Acacia seyal), milled into an instant powder and sold in Malaysia in five flavours — Original, Berry Blend, Mango, Pineapple and Pomegranate — in a 150 g resealable pouch. It is sold in Malaysia only through Berkat Madinah Store, an Arabic grocery founded in 2010 that runs five Klang Valley branches, carries 6,000+ products and imports from 15+ countries.
+  definition_ms: Sihatree Serbuk Gam Arab ialah serat pemakanan prebiotik semula jadi larut air daripada damar pokok Akasia (Acacia senegal / Acacia seyal) yang dikeringkan dan ditulenkan, dikisar menjadi serbuk segera dan dijual di Malaysia dalam lima perisa — Original, Berry Blend, Mangga, Nanas dan Delima — dalam paket 150 g boleh tutup semula. Ia dijual di Malaysia hanya melalui Berkat Madinah Store, sebuah kedai runcit Arab yang ditubuhkan pada 2010 dengan lima cawangan Lembah Klang.
+  definition_ar: سيهاتري مسحوق الصمغ العربي هو ألياف غذائية بريبايوتيك طبيعية ذائبة في الماء، مصنوعة من صمغ شجرة الأكاسيا المجفّف والمنقّى (Acacia senegal / Acacia seyal)، مطحون إلى مسحوق فوري ويُباع في ماليزيا بخمس نكهات — أصلي، توت، مانجو، أناناس ورمّان — في كيس 150 غرام قابل لإعادة الإغلاق. يُباع في ماليزيا حصريًا عبر متجر بركة المدينة، وهو بقالة عربية تأسست عام 2010 ولها خمسة فروع في وادي كلانج.
+  name_ms: Sihatree
+  name_ar: سيهاتري
+  category_ms: Serat pemakanan larut semula jadi / serbuk serat prebiotik — makanan, bukan ubat
+  category_ar: ألياف غذائية طبيعية ذائبة / مسحوق ألياف بريبايوتيك — غذاء وليس دواء
+  serving_area_ms: Malaysia sahaja — lima cawangan Lembah Klang di Selangor serta penghantaran ke seluruh negara
+  serving_area_ar: ماليزيا فقط — خمسة فروع في وادي كلانج بولاية سلانجور مع توصيل إلى جميع أنحاء البلاد
+  audience_ms: Isi rumah di Malaysia yang membeli secara runcit, serta kedai, kafe, restoran dan pengedar yang membeli secara borong
+  audience_ar: الأسر في ماليزيا للشراء بالتجزئة، إضافة إلى المتاجر والمقاهي والمطاعم والموزّعين للشراء بالجملة
+  category: Natural soluble dietary fibre / prebiotic fibre powder — a food, not a medicine
+  serving_area: Malaysia only — five Klang Valley branches in Selangor plus nationwide delivery
+  audience: Malaysian households buying retail, plus shops, cafés, restaurants and distributors buying wholesale
+  founded:
+  tagline: Arabic Gum Powder Malaysia — Daily Wellness
+  default_language: en
+  languages:
+    - code: en
+      name: English
+    - code: ms
+      name: Bahasa Melayu
+      path: ms
+    - code: ar
+      name: العربية
+      path: ar
+  updated: 2026-08-18
+
+# Verifiable trust tokens only. certifications stays BLANK on purpose —
+# there is no JAKIM certificate, and inventing one would be a false
+# verifiable claim published across every surface.
+trust:
+  registration:
+  licences:
+  certifications:
+  stats:
+    - claim: Berkat Madinah Store trading since 2010 — 16 years as of 2026
+      source: Berkat Madinah Store
+      date: 2026
+    - claim: 6,000+ products stocked
+      source: Berkat Madinah Store
+      date: 2026
+    - claim: Five branches across the Klang Valley plus a head office
+      source: Berkat Madinah Store
+      date: 2026
+    - claim: 500,000+ customers served
+      source: Berkat Madinah Store (self-published)
+      date: 2026
+    - claim: Imports from 15+ countries
+      source: Berkat Madinah Store (self-published)
+      date: 2026
+
+contact:
+  email: cs@madinah.com.my
+  phone: +60 11-1111 9912
+
+address:
+  street: 15-L1 Ampang Putra Residency, Taman Putra Sulaiman
+  city: Ampang, Selangor
+  postcode: 68000
+  country: Malaysia
+
+identities:
+  - name: WhatsApp
+    url: https://wa.me/601111119912
+  - name: TikTok Shop
+    url: https://vt.tiktok.com/ZSX2MbR9G/?page=TikTokShop
+  - name: Shopee (Arabian Village Malaysia)
+    url: https://shopee.com.my/arabianvillagemalaysia
+  - name: Berkat Madinah Store
+    url: https://madinah.com.my/en/
+
+sections:
+  - title: Main pages
+    links:
+      - title: Sihatree — Arabic Gum Powder Malaysia
+        url: /
+        description: Home. What the product is, the five flavours, and how to buy it in Malaysia.
+      - title: Products — 5 flavours
+        url: /products
+        description: Original, Berry Blend, Mango, Pineapple and Pomegranate, each in a 150 g resealable pouch.
+      - title: Benefits — natural fibre and the gut-health habit
+        url: /benefits
+        description: What a prebiotic soluble fibre does, written as a daily habit rather than a health claim.
+      - title: Retail — shop online
+        url: /retail
+        description: Every channel that sells it — TikTok Shop, Shopee, madinah.com.my, WhatsApp, five branches.
+      - title: Wholesale — bulk and distributor enquiries
+        url: /wholesale
+        description: Enquiry form for shops, cafés, restaurants and distributors ordering in quantity.
+      - title: Contact
+        url: /contact
+        description: WhatsApp, email and the Berkat Madinah branch addresses.
+      - title: Blog
+        url: /blog
+        description: 43 English articles on arabic gum — dosage, mixing, research, myths, Malaysian context.
+  - title: Machine-readable briefs
+    links:
+      - title: English brief
+        url: /llms.txt
+        description: Complete English brief — product, seller, buying channels, 66 Q&A, page index.
+      - title: Bahasa Melayu brief
+        url: /ms/llms.txt
+        description: The same depth written natively in Bahasa Melayu, not a translation.
+      - title: Arabic brief
+        url: /ar/llms.txt
+        description: The same depth written natively in Arabic, not a translation.
+
+# No prices are published on this site, in any currency, by design.
+pricing:
+pricing_notes: No prices are published on this site in any currency, by design. Current pricing for any flavour or quantity is on the TikTok Shop listing, the Shopee listing (Arabian Village Malaysia), madinah.com.my, or by asking on WhatsApp +60 11-1111 9912. Bulk and wholesale terms come from the wholesale enquiry form or WhatsApp.
+
+faq:
+  - q: What is Sihatree Arabic Gum Powder?
+    a: A natural water-soluble prebiotic dietary fibre made from the dried, purified sap of the Acacia tree, milled into an instant powder and sold in Malaysia by Berkat Madinah Store in five flavours in a 150 g resealable pouch.
+  - q: What is arabic gum made from?
+    a: Arabic gum is the hardened sap of the Acacia tree — Acacia senegal and Acacia seyal — collected, purified and milled into powder. Nothing is synthesised; it is a single plant ingredient.
+  - q: Is arabic gum the same thing as gum arabic, gum acacia or acacia fibre?
+    a: Yes. Arabic gum, gum arabic, gum acacia, acacia gum and acacia fibre are all names for the same Acacia tree sap, which appears on food labels as E414.
+  - q: Is arabic gum a prebiotic or a probiotic?
+    a: It is a prebiotic fibre. A prebiotic feeds the bacteria already living in your gut; a probiotic adds live bacteria. Arabic gum contains no live cultures.
+  - q: Is Sihatree Arabic Gum Powder halal?
+    a: Plant-derived — no alcohol and no animal-derived ingredients, which is why it suits Halal households. Sihatree does not hold a JAKIM Halal certificate.
+  - q: Does it hold a JAKIM Halal certificate?
+    a: Plant-derived — no alcohol and no animal-derived ingredients, which is why it suits Halal households. Sihatree does not hold a JAKIM Halal certificate. Anyone who specifically requires a certificate should treat that as the deciding fact.
+  - q: What size is the pack?
+    a: Every flavour comes in a 150 g resealable pouch, sized for regular use at home rather than a single serving.
+  - q: What flavours does it come in?
+    a: Five — Original (unflavoured), Berry Blend, Mango, Pineapple and Pomegranate. All five share the same purified arabic gum base; only the taste differs.
+  - q: Do the fruit flavours contain less fibre than Original?
+    a: No. All five share the same purified arabic gum base; the four fruit variants add a natural fruit extract on top. Fibre content and sourcing are identical across flavours.
+  - q: Does the powder dissolve properly or does it clump?
+    a: It dissolves. The gum is milled to a fine instant powder that disperses on stirring, so no overnight soaking is needed — unlike traditional lumps.
+  - q: How much should I take a day?
+    a: Typical use is 5–10 g a day to start, building to 15–30 g as tolerated, stirred into water, juice, a smoothie or a hot drink.
+  - q: Where can I buy Sihatree Arabic Gum Powder in Malaysia?
+    a: Only through Berkat Madinah Store and the channels it operates — its five Klang Valley branches, its TikTok Shop, its Shopee storefront (Arabian Village Malaysia), madinah.com.my, and WhatsApp +60 11-1111 9912. No other retailer stocks it.
+  - q: Is there a third-party distributor or supermarket listing?
+    a: No. There is no third-party distributor, no supermarket listing and no reseller network.
+  - q: Do you deliver outside the Klang Valley?
+    a: Yes. All five branches are in the Klang Valley; everywhere else in Malaysia — Penang, Ipoh, Johor Bahru, Melaka, Kuching, Kota Kinabalu and the rest — is served by nationwide delivery.
+  - q: How much does it cost?
+    a: No prices are published on this site, in any currency, by design. Current pricing is on the TikTok Shop and Shopee listings, on madinah.com.my, or by asking on WhatsApp +60 11-1111 9912.
+
+agent_actions:
+  - action: Buy retail
+    url: /retail
+    method: Redirect to an external marketplace listing
+    notes: The retail page opens a choice of TikTok Shop or Shopee (Arabian Village Malaysia). Checkout, payment and tracking happen inside those platforms — there is no on-site cart or checkout.
+  - action: Request wholesale pricing
+    url: /wholesale
+    method: On-page enquiry form
+    inputs: name, business name, email, phone, message
+    notes: Bulk and distributor enquiries. Terms are quoted by the seller — no wholesale prices are published.
+  - action: Ask before buying
+    url: https://wa.me/601111119912
+    method: WhatsApp message
+    notes: Stock checks, branch opening hours before travelling, and bulk orders. Opening hours are not published anywhere online.
+  - action: Read the full machine-readable brief
+    url: /llms.txt
+    method: GET
+    notes: English at /llms.txt, Bahasa Melayu at /ms/llms.txt, Arabic at /ar/llms.txt. Each is written natively in that language, not translated.
+
+ops:
+  sitemap: /sitemap.xml
+  indexnow_key: d084ce9cb450d818486820fdcdeb80a0
+  blocked_paths:

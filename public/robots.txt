@@ -23,6 +23,33 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# Added 2026-08-18 (BEACON): answer-engine crawlers that were not named
+# explicitly. `User-agent: *` already allows them; naming them makes the
+# permission unambiguous to operators who read the file literally.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 # Training-only crawler, no citation/search value — blocked
 User-agent: CCBot
 Disallow: /
@@ -35,3 +62,7 @@ Sitemap: https://sihatree.com/sitemap.xml
 # https://sihatree.com/llms.txt        (English)
 # https://sihatree.com/ms/llms.txt     (Bahasa Malaysia)
 # https://sihatree.com/ar/llms.txt     (العربية)
+# https://sihatree.com/llms-full.txt   (all three, concatenated)
+# https://sihatree.com/about.md        (entity facts — seller, address, profiles)
+# https://sihatree.com/faq.md          (the Q&A block on its own)
+# https://sihatree.com/AGENTS.md       (what an automated agent can do here)

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/ai/surfaces.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "audit:html": "html-validate \"*.html\" \"ms/*.html\" \"blog/*.html\" \"ms/blog/*.html\"",
@@ -17,7 +18,13 @@
     "lint": "eslint src",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "ai:surfaces": "node scripts/ai/surfaces.mjs",
+    "ai:coverage": "node scripts/ai/coverage.mjs --facts AI-FACTS.yml",
+    "ai:gate": "node scripts/ai/gate.mjs --url https://sihatree.com",
+    "ai:indexnow": "node scripts/ai/indexnow.mjs --sitemap",
+    "check:llms": "node scripts/check-llms.mjs",
+    "ai:answers": "node scripts/ai/answer-blocks.mjs --list"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.12.1",

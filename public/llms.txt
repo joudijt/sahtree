@@ -539,3 +539,12 @@ No prices are published on this site in any currency. Current pricing is on the 
 
 **8. Is there an Arabic grocery near me in the Klang Valley?**
 Berkat Madinah Store has five branches, all in Selangor: Ampang (Putra Sulaiman, 17-L1, Persiaran Putra Sulaiman, Taman Putra Sulaiman, 68000 Ampang Jaya), Ampang Cash & Carry (14-L1, Ampang Putra Residency, Jalan Ampang Putra, 68000 Ampang), Kajang (Ground Floor, Unit No. PA-S-17, Pearl Avenue Shop, Jalan Pasir Emas, 43000 Kajang), Shah Alam (No. 46, Jalan Pegaga C U12/C, Desa Alam, Seksyen U12, 40170 Shah Alam) and Sri Gombak (32, Jalan Prima SG 2, Prima Seri Gombak, 68100 Batu Caves). There is no branch in Petaling Jaya, Subang, Johor Bahru or Penang — those areas are served by nationwide delivery. Opening hours are not published; check on WhatsApp +60 11-1111 9912 before travelling.
+
+
+## 15. Companion machine-readable files
+
+- https://sihatree.com/llms-full.txt — this brief plus the Bahasa Melayu and Arabic briefs, concatenated into one file.
+- https://sihatree.com/about.md — the entity facts on their own: seller, address, contact, the profiles it posts from.
+- https://sihatree.com/faq.md — the Q&A block on its own, one question per heading.
+- https://sihatree.com/AGENTS.md — what an automated agent can actually do here, and where. There is no on-site checkout.
+- https://sihatree.com/sitemap.xml — every page in all three languages, with hreflang alternates.

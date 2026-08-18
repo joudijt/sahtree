@@ -4,6 +4,8 @@ Deploys dist/ to the sihatree.com docroot over explicit FTPS.
     set SIHATREE_FTP_PASS=...          (password contains ) - never pass it on
     python scripts/ftp-deploy.py --dry-run    the command line, the shell mangles it)
     python scripts/ftp-deploy.py --clean
+    python scripts/ftp-deploy.py --skip-static  (skips images/SVG/assets whose
+                                                 remote SIZE already matches)
 
 Notes for whoever runs this next:
   * ftp.madinah.com.my does not resolve. The working host is the bare IP
@@ -32,6 +34,19 @@ PROTECTED = {"/cgi-bin", "/.well-known", "/.ftpquota"}
 
 DRY_RUN = "--dry-run" in sys.argv
 CLEAN = "--clean" in sys.argv
+SKIP_STATIC = "--skip-static" in sys.argv
+
+# Directories holding bulk static assets whose filename changes whenever the
+# content does (Vite hashes assets/*) or whose content effectively never changes
+# (images, SVG). With --skip-static, a file under one of these is skipped when the
+# remote SIZE already matches the local byte count.
+#
+# Deliberately NOT applied to html/txt/md/xml: an edit can leave the byte count
+# identical, and silently not shipping an edited page is the worst failure this
+# script can have. dist/ is 35 MB and 31 MB of it is images, so this is where all
+# the wall-clock is anyway — a full run takes ~13 minutes, almost all of it
+# re-sending images that did not change.
+STATIC_DIRS = ("/images/", "/SVG/", "/assets/")
 
 password = os.environ.get("SIHATREE_FTP_PASS")
 if not password:
@@ -85,9 +100,22 @@ def ensure_dir(d):
     made.add(d)
 
 
-uploaded, failed = [], []
+uploaded, failed, skipped = [], [], []
+
+
+def is_static(path):
+    return any(path.startswith(d) for d in STATIC_DIRS)
+
+
 for remote, local in sorted(local_files.items()):
     size = os.path.getsize(local)
+    if SKIP_STATIC and is_static(remote):
+        try:
+            if ftp.size(remote) == size:
+                skipped.append(remote)
+                continue
+        except Exception:
+            pass          # not on the server yet, or SIZE refused - upload it
     if DRY_RUN:
         print("  PUT %-58s %8d" % (remote, size))
         uploaded.append((remote, size))
@@ -193,5 +221,5 @@ try:
 except Exception:
     ftp.close()
 
-print("\nuploaded %d, failed %d" % (len(uploaded), len(failed)))
+print("\nuploaded %d, skipped %d unchanged static, failed %d" % (len(uploaded), len(skipped), len(failed)))
 sys.exit(1 if (failed or mismatch) else 0)

@@ -1085,4 +1085,124 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/blog/arabic-gum-for-students" />
   </url>
 
+  <url>
+    <loc>https://sihatree.com/products</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/products" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/products" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/products" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ms/products</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/products" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/products" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/products" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ar/products</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/products" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/products" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/products" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/benefits</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/benefits" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/benefits" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/benefits" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/benefits" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ms/benefits</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/benefits" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/benefits" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/benefits" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/benefits" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ar/benefits</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/benefits" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/benefits" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/benefits" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/benefits" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/retail</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/retail" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/retail" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/retail" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/retail" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ms/retail</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/retail" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/retail" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/retail" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/retail" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ar/retail</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/retail" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/retail" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/retail" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/retail" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/wholesale</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/wholesale" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/wholesale" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/wholesale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/wholesale" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ms/wholesale</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/wholesale" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/wholesale" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/wholesale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/wholesale" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ar/wholesale</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/wholesale" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/wholesale" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/wholesale" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/wholesale" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/contact" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/contact" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ms/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/contact" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/contact" />
+  </url>
+
+  <url>
+    <loc>https://sihatree.com/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://sihatree.com/contact" />
+    <xhtml:link rel="alternate" hreflang="ms-MY" href="https://sihatree.com/ms/contact" />
+    <xhtml:link rel="alternate" hreflang="ar-MY" href="https://sihatree.com/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sihatree.com/contact" />
+  </url>
+
 </urlset>

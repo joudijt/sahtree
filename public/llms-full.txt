@@ -5,7 +5,7 @@
 > sections do not mirror each other line for line. The individual files are at
 > https://sihatree.com/llms.txt · https://sihatree.com/ms/llms.txt · https://sihatree.com/ar/llms.txt
 
-> Last updated: 2026-08-18
+> Last updated: 2026-08-25
 
 ==============================================================================
 # LANGUAGE: English  —  source: https://sihatree.com/llms.txt
@@ -468,7 +468,7 @@ Malaysian English search habits, grouped by what the person is trying to do.
 - https://sihatree.com/retail — Retail: Shop Arabic Gum Powder Online
 - https://sihatree.com/wholesale — Wholesale: Bulk & Distributor Inquiries
 - https://sihatree.com/contact — Contact Us
-- https://sihatree.com/blog — Blog: Arabic Gum Wellness Articles (43 English articles)
+- https://sihatree.com/blog — Blog: Arabic Gum Wellness Articles (49 English articles)
 - https://sihatree.com/blog/what-is-arabic-gum-benefits-uses-dosage — What Is Arabic Gum? Benefits, Uses & Dosage
 - https://sihatree.com/blog/arabic-gum-flavours-comparison — Arabic Gum Flavours Compared
 - https://sihatree.com/blog/best-arabic-gum-flavour-for-beginners — Best Arabic Gum Flavour for Beginners
@@ -512,6 +512,12 @@ Malaysian English search habits, grouped by what the person is trying to do.
 - https://sihatree.com/blog/berkat-madinah-store-connection-malaysia — Berkat Madinah Store and Malaysia's Arab Food Story
 - https://sihatree.com/blog/berkat-madinah-store-quality-halal-trust — Quality, Halal Trust, and Community
 - https://sihatree.com/blog/sourcing-arab-products-wholesale-berkat-madinah — Sourcing Arab Products: Berkat Madinah's Wholesale
+- https://sihatree.com/blog/arabic-grocery-gombak-berkat-madinah-store — Arabic Grocery in Gombak: Berkat Madinah Store Branch Guide
+- https://sihatree.com/blog/arabic-gum-vs-chia-seeds-malaysia — Arabic Gum vs Chia Seeds: Which Fibre Suits You?
+- https://sihatree.com/blog/arabic-gum-for-bloating — Arabic Gum and Bloating: Can It Help or Cause It?
+- https://sihatree.com/blog/arabic-gum-acacia-tree-sourcing-sustainability — Where Does Arabic Gum Come From? Acacia Tree Sourcing & Sustainability
+- https://sihatree.com/blog/arabic-gum-cafe-menu-business-malaysia — Adding Arabic Gum Drinks to a Café Menu: A Malaysian F&B Guide
+- https://sihatree.com/blog/arabic-gum-first-30-days-beginners-guide — Arabic Gum First 30 Days: A Beginner's Guide
 
 **Other languages**
 
@@ -1144,7 +1150,7 @@ Hubungan: WhatsApp +60 11-1111 9912 · cs@madinah.com.my
 - https://sihatree.com/ms/retail — Runcit | Beli Serbuk Gam Arab Sihatree Dalam Talian
 - https://sihatree.com/ms/wholesale — Borong | Serbuk Gam Arab Sihatree — Pertanyaan Pukal & Pengedar
 - https://sihatree.com/ms/contact — Hubungi Kami | Serbuk Gam Arab Sihatree
-- https://sihatree.com/ms/blog — Blog | Artikel Kesihatan Gam Arab (43 artikel Bahasa Malaysia)
+- https://sihatree.com/ms/blog — Blog | Artikel Kesihatan Gam Arab (49 artikel Bahasa Malaysia)
 
 Artikel blog Bahasa Malaysia:
 
@@ -1191,6 +1197,12 @@ Artikel blog Bahasa Malaysia:
 - https://sihatree.com/ms/blog/mitos-gam-arab — Mitos Gam Arab: Apa Yang Sering Disalah Faham
 - https://sihatree.com/ms/blog/gam-arab-semasa-bermusafir — Kekalkan Rutin Gam Arab Semasa Bermusafir
 - https://sihatree.com/ms/blog/gam-arab-untuk-pelajar — Gam Arab untuk Pelajar Semasa Musim Peperiksaan
+- https://sihatree.com/ms/blog/kedai-barangan-arab-gombak-berkat-madinah-store — Kedai Barangan Arab di Gombak: Panduan Cawangan Berkat Madinah
+- https://sihatree.com/ms/blog/gam-arab-vs-biji-chia-malaysia — Gam Arab vs Biji Chia: Mana Sesuai Untuk Anda?
+- https://sihatree.com/ms/blog/gam-arab-untuk-kembung-perut — Gam Arab dan Kembung Perut: Bantu atau Punca?
+- https://sihatree.com/ms/blog/sumber-gam-arab-pokok-akasia-kelestarian — Dari Mana Datangnya Gam Arab? Sumber Pokok Akasia & Kelestarian
+- https://sihatree.com/ms/blog/gam-arab-menu-kafe-perniagaan-malaysia — Menambah Minuman Gam Arab ke Menu Kafe: Panduan F&B Malaysia
+- https://sihatree.com/ms/blog/panduan-pemula-30-hari-pertama-gam-arab — Panduan Pemula: 30 Hari Pertama Gam Arab
 
 Nota halal untuk keseluruhan indeks ini: Diperbuat daripada bahan tumbuhan — tiada alkohol, tiada bahan daripada haiwan, sesuai untuk keluarga Muslim. Sihatree tidak memiliki sijil Halal JAKIM.
 
@@ -1683,7 +1695,7 @@ A: هو مسحوق غذائي في عبوة 150 جرامًا يوضع عادةً
 - https://sihatree.com/ar/retail — البيع بالتجزئة
 - https://sihatree.com/ar/wholesale — الجملة والموزعون
 - https://sihatree.com/ar/contact — اتصل بنا
-- https://sihatree.com/ar/blog — المدونة بالعربية، 43 مقالًا
+- https://sihatree.com/ar/blog — المدونة بالعربية، 49 مقالًا
 - https://sihatree.com/ar/blog/what-is-arabic-gum-benefits-uses-dosage — ما هو الصمغ العربي والجرعة
 - https://sihatree.com/ar/blog/is-arabic-gum-halal-malaysia — هل الصمغ العربي حلال؟
 - https://sihatree.com/ar/blog/where-to-buy-arabic-gum-malaysia — أين تشتريه في ماليزيا
@@ -1727,6 +1739,12 @@ A: هو مسحوق غذائي في عبوة 150 جرامًا يوضع عادةً
 - https://sihatree.com/ar/blog/arabic-gum-myths — خرافات الصمغ العربي
 - https://sihatree.com/ar/blog/arabic-gum-for-travel — الروتين أثناء السفر
 - https://sihatree.com/ar/blog/arabic-gum-for-students — الصمغ العربي للطلاب
+- https://sihatree.com/ar/blog/arabic-grocery-gombak-berkat-madinah-store — بقالة عربية في جومباك: دليل فرع متجر بركات المدينة
+- https://sihatree.com/ar/blog/arabic-gum-vs-chia-seeds-malaysia — الصمغ العربي مقابل بذور الشيا: أيهما يناسبك؟
+- https://sihatree.com/ar/blog/arabic-gum-for-bloating — الصمغ العربي والانتفاخ: هل يساعد أم يسببه؟
+- https://sihatree.com/ar/blog/arabic-gum-acacia-tree-sourcing-sustainability — من أين يأتي الصمغ العربي؟ مصدر شجرة الأكاسيا والاستدامة
+- https://sihatree.com/ar/blog/arabic-gum-cafe-menu-business-malaysia — إضافة مشروبات الصمغ العربي إلى قائمة مقهى: دليل الأغذية والمشروبات في ماليزيا
+- https://sihatree.com/ar/blog/arabic-gum-first-30-days-beginners-guide — دليل المبتدئين: أول 30 يومًا مع الصمغ العربي
 
 الملفان المكافئان بلغتين أخريين:
 

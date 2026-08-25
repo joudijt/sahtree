@@ -158,9 +158,10 @@ every `{{PLACEHOLDER}}`, then:
    the banned-adjective list and the Q&A/exclusivity structure. `--selftest` proves it can fail.
 5. Register both new files in `vite.config.js` `rollupOptions.input`.
 
-**Current inventory: 43 EN + 43 BM articles** (first 3 published 2026-07-11, next 20 on 2026-07-16,
-20 more on 2026-07-20), all translated (not machine-translated — natural Malaysian search phrasing
-per the localization spec). Each targets a distinct search intent/keyword set — no two articles
+**Current inventory: 49 EN + 49 BM + 49 AR articles** (first 3 published 2026-07-11, next 20 on
+2026-07-16, 20 more on 2026-07-20, +6 per language via PRESS round 1 on 2026-08-25), all natively
+written per language (not machine-translated — natural Malaysian/Arabic search phrasing per the
+localization spec). Each targets a distinct search intent/keyword set — no two articles
 overlap. **Standing rule confirmed 2026-07-20**: only Berkat Madinah Store may be named as a
 grocery/supplier in any article — never mention or imply any other Arabic grocery store or
 supplier, even generically. Location-based articles must not claim a physical branch in a city
@@ -214,6 +215,12 @@ delivery-only (Shopee/Lazada/TikTok Shop) if written later, never as a store vis
 | `arabic-gum-myths` | `mitos-gam-arab` | Myth/Fact format, 6 misconceptions (chewing-gum confusion, disease-cure, more-is-better, product-quality-varies, instant-effect, new-trend) |
 | `arabic-gum-for-travel` | `gam-arab-semasa-bermusafir` | Packing/routine-continuity angle — TSA-liquid-rules caveat framed as "check current regulations," not legal advice |
 | `arabic-gum-for-students` | `gam-arab-untuk-pelajar` | Explicitly disclaims focus/memory/cognitive claims and caffeine-alternative claims — framed strictly as a budget-friendly routine habit, completes the full 8-article round-2 plan approved 2026-07-20 |
+| `arabic-grocery-gombak-berkat-madinah-store` | `kedai-barangan-arab-gombak-berkat-madinah-store` | Real branch guide (289, Jalan Gombak No 95-G, Block E, KL Traders Square, 53100 KL — trades locally as Arabian Village) — PRESS round 1, 2026-08-25, 4th and final real branch article |
+| `arabic-gum-vs-chia-seeds-malaysia` | `gam-arab-vs-biji-chia-malaysia` | Comparison vs chia seeds (dissolves invisibly vs forms a visible gel, fibre-type/nutrient-profile difference) — PRESS round 1, 2026-08-25 |
+| `arabic-gum-for-bloating` | `gam-arab-untuk-kembung-perut` | Bloating-specific angle, distinct from the constipation/gut-health articles — honest "new fibre can itself cause temporary bloating" caveat, low-and-slow dosing guidance — PRESS round 1, 2026-08-25 |
+| `arabic-gum-acacia-tree-sourcing-sustainability` | `sumber-gam-arab-pokok-akasia-kelestarian` | Supply-chain/sustainability angle — Acacia senegal/seyal, African Sahel Gum Belt, hand-harvested without felling the tree — distinct from the traditional-medicine-history article — PRESS round 1, 2026-08-25 |
+| `arabic-gum-cafe-menu-business-malaysia` | `gam-arab-menu-kafe-perniagaan-malaysia` | B2B/café angle — adding Arabic Gum to a drinks menu, distinct from the small-reseller wholesale-sourcing article — no invented MOQs/prices/case studies — PRESS round 1, 2026-08-25 |
+| `arabic-gum-first-30-days-beginners-guide` | `panduan-pemula-30-hari-pertama-gam-arab` | Practical week-by-week 30-day onboarding guide, distinct from the flavour-pick and definitional articles — PRESS round 1, 2026-08-25 |
 
 All EN articles carry the `.lang-switch` nav link and `.footer-lang-switch` consistently.
 

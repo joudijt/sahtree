@@ -82,11 +82,53 @@ def scrape_existing(path):
     }
 
 
+_DIMS: dict[str, str] = {}
+
+
+def dims(src):
+    """Real pixel size of an /images/... asset, read off disk.
+
+    The template must declare the file's ACTUAL size. Hardcoding a nominal
+    1600x900 for a 1024x576 file ships a lie and still shifts the layout.
+    """
+    if src not in _DIMS:
+        p = os.path.join(ROOT, "public", src.lstrip("/").replace("/", os.sep))
+        try:
+            from PIL import Image
+            with Image.open(p) as im:
+                _DIMS[src] = f' width="{im.size[0]}" height="{im.size[1]}"'
+        except Exception:
+            _DIMS[src] = ""
+    return _DIMS[src]
+
+
+def th_scopes(body: str) -> str:
+    """Give every <th> a scope. WCAG H63 / html-validate wcag/h63.
+
+    Adding tables to this design system (they had never been used) introduced 96
+    real accessibility errors in one pass: a <th> with no scope leaves a screen
+    reader guessing which cells a header governs. Applied centrally so no writer
+    has to remember it and no article can ship without it.
+    """
+    def fix(m, scope):
+        inner = m.group(1)
+        return f"<th{inner}>" if "scope=" in inner else f'<th scope="{scope}"{inner}>'
+
+    def section(m):
+        tag, guts = m.group(1), m.group(2)
+        scope = "col" if tag.lower() == "thead" else "row"
+        guts = re.sub(r"<th((?:\s[^>]*)?)>", lambda x: fix(x, scope), guts)
+        return f"<{tag}>{guts}</{tag}>"
+
+    return re.sub(r"<(thead|tbody)>(.*?)</(?:thead|tbody)>", section, body,
+                  flags=re.S | re.I)
+
+
 def card(href, title, tag, img, alt, heading="h3"):
     return f'''        <article class="blog-card">
           <a class="blog-card-link" href="{href}">
             <div class="blog-card-thumb">
-              <img src="{img}" alt="{E(alt)}" loading="lazy">
+              <img src="{img}"{dims(img)} alt="{E(alt)}" loading="lazy">
             </div>
             <div class="blog-card-body">
               <span class="blog-card-tag">{E(tag)}</span>
@@ -240,7 +282,7 @@ def build(aid, wire, drafts):
     </ul>
 
     <div class="logo">
-      <a href="{c['prefix']}/"><img src="/images/logo.webp" alt="{E(c['logo_alt'])}" id="nav-logo"></a>
+      <a href="{c['prefix']}/"><img src="/images/logo.webp"{dims("/images/logo.webp")} alt="{E(c['logo_alt'])}" id="nav-logo"></a>
     </div>
 
     <ul class="nav-links nav-right">
@@ -280,7 +322,7 @@ def build(aid, wire, drafts):
 
       <p class="blog-post-lede">{d['lede']}</p>
 
-{d['bodyHtml']}
+{th_scopes(d['bodyHtml'])}
 
     </div>
 
@@ -301,7 +343,7 @@ def build(aid, wire, drafts):
   <footer class="main-footer">
     <div class="footer-layout">
       <div class="footer-col brand-col">
-        <img src="/images/logo.webp" alt="{E(c['logo_alt'])}" class="footer-logo">
+        <img src="/images/logo.webp"{dims("/images/logo.webp")} alt="{E(c['logo_alt'])}" class="footer-logo">
         <p class="footer-desc">{E(c['foot_desc'])}</p>
       </div>
 
@@ -355,10 +397,13 @@ def build(aid, wire, drafts):
 
 def main():
     wire = json.load(open(os.path.join(RD, "wire-data-r2.json"), encoding="utf-8"))["articles"]
+    only = [a for a in sys.argv[1:] if not a.startswith("--")]
     drafts = {}
     for aid in wire:
         p = os.path.join(RD, f"draft-{aid}.json")
         if not os.path.exists(p):
+            if only:          # partial render: a not-yet-written sibling is fine
+                continue
             raise SystemExit(f"missing draft: {p}")
         drafts[aid] = json.load(open(p, encoding="utf-8"))
         drafts[aid]["id"] = aid
@@ -371,7 +416,10 @@ def main():
             raise SystemExit(f"CANNIBALISATION: {aid} and {seen[k]} share focus {k}")
         seen[k] = aid
 
-    for aid in wire:
+    # Siblings inside this round resolve from `drafts`, so every draft is loaded
+    # even when only a subset is rendered - a partial load makes a sibling look
+    # like a missing file on disk.
+    for aid in (only or list(wire)):
         out, words, read = build(aid, wire, drafts)
         flag = "" if 800 <= words <= 1000 else "  <-- OUT OF BAND"
         print(f"{aid}  {words:5d} words  {read} min  {out}{flag}")

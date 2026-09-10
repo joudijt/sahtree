@@ -1,0 +1,185 @@
+{
+  "date": "2026-09-10",
+  "articles": {
+    "A1": {
+      "hero": "kedai-barangan-arab-berhampiran-saya.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Bakul rotan penuh kurma di gerai pasar, gambaran barangan yang dijual di kedai barangan arab",
+      "related": [
+        "barang-di-kedai-barangan-arab",
+        "kedai-barangan-arab-online-malaysia",
+        "kedai-barangan-arab-ampang-berkat-madinah-store"
+      ],
+      "inboundFrom": "kedai-barangan-arab-ampang-berkat-madinah-store"
+    },
+    "A2": {
+      "hero": "barang-di-kedai-barangan-arab.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Mangkuk kacang badam, pistasio dan gajus bercampur, antara barang di kedai barangan arab",
+      "related": [
+        "kedai-barangan-arab-berhampiran-saya",
+        "kedai-barangan-arab-online-malaysia",
+        "kedai-barangan-arab-shah-alam-berkat-madinah-store"
+      ],
+      "inboundFrom": "kedai-barangan-arab-shah-alam-berkat-madinah-store"
+    },
+    "A3": {
+      "hero": "kedai-barangan-arab-online-malaysia.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Rak palet gudang penuh kotak berbalut, mewakili pesanan dari kedai barangan arab online yang dihantar ke seluruh Malaysia",
+      "related": [
+        "kedai-barangan-arab-berhampiran-saya",
+        "barang-di-kedai-barangan-arab",
+        "di-mana-beli-gam-arab-malaysia"
+      ],
+      "inboundFrom": "di-mana-beli-gam-arab-malaysia"
+    },
+    "B1": {
+      "hero": "khasiat-arabic-gum-untuk-lelaki.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Segelas air jernih di atas meja dalam cahaya tingkap pagi, cara paling biasa serbuk Gam Arab diambil",
+      "related": [
+        "gam-arab-tenaga-stamina-lelaki",
+        "gam-arab-kesuburan-lelaki",
+        "apa-itu-gam-arab-faedah-kegunaan-dos"
+      ],
+      "inboundFrom": "apa-itu-gam-arab-faedah-kegunaan-dos"
+    },
+    "B2": {
+      "hero": "gam-arab-tenaga-stamina-lelaki.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Botol air, tuala dan tali lompat di atas tikar gim, dilihat dari atas",
+      "related": [
+        "khasiat-arabic-gum-untuk-lelaki",
+        "gam-arab-kesuburan-lelaki",
+        "kajian-saintifik-gam-arab"
+      ],
+      "inboundFrom": "gam-arab-untuk-atlet"
+    },
+    "B3": {
+      "hero": "gam-arab-kesuburan-lelaki.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Meja makmal dengan alat kaca, mikroskop dan lembaran rajah molekul",
+      "related": [
+        "khasiat-arabic-gum-untuk-lelaki",
+        "gam-arab-tenaga-stamina-lelaki",
+        "kesan-sampingan-gam-arab-keselamatan-malaysia"
+      ],
+      "inboundFrom": "kesan-sampingan-gam-arab-keselamatan-malaysia"
+    },
+    "C1": {
+      "hero": "kebaikan-gam-arab-untuk-wanita.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Seorang wanita berbaju lengan panjang tersenyum sambil memegang cawan minuman panas di dapur",
+      "related": [
+        "gam-arab-untuk-kolesterol",
+        "kenapa-gam-arab-tak-berkesan",
+        "adakah-gam-arab-selamat-semasa-hamil"
+      ],
+      "inboundFrom": "adakah-gam-arab-selamat-semasa-hamil"
+    },
+    "C2": {
+      "hero": "gam-arab-untuk-kolesterol.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Serbuk putih ditimbang di atas penimbang dapur digital",
+      "related": [
+        "kebaikan-gam-arab-untuk-wanita",
+        "kenapa-gam-arab-tak-berkesan",
+        "gam-arab-untuk-pesakit-diabetes-gula-darah"
+      ],
+      "inboundFrom": "gam-arab-untuk-pesakit-diabetes-gula-darah"
+    },
+    "C3": {
+      "hero": "kenapa-gam-arab-tak-berkesan.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Cawan kopi, jam tangan dan buku perancang di atas meja, dilihat dari atas",
+      "related": [
+        "kebaikan-gam-arab-untuk-wanita",
+        "gam-arab-untuk-kolesterol",
+        "cara-campur-serbuk-gam-arab-resipi"
+      ],
+      "inboundFrom": "panduan-pemula-30-hari-pertama-gam-arab"
+    },
+    "D1": {
+      "hero": "gam-arab-atau-gam-arabic-nama-ejaan.webp",
+      "heroW": 1024,
+      "heroH": 576,
+      "heroAlt": "Hablur gam arab berwarna kuning keemasan bertaburan di atas permukaan putih",
+      "related": [
+        "jenis-gam-arab-hablur-serbuk",
+        "gam-arab-dalam-makanan-harian",
+        "apa-itu-gam-arab-faedah-kegunaan-dos"
+      ],
+      "inboundFrom": "kajian-saintifik-gam-arab"
+    },
+    "D2": {
+      "hero": "jenis-gam-arab-hablur-serbuk.webp",
+      "heroW": 1300,
+      "heroH": 731,
+      "heroAlt": "Lima paket Serbuk Gam Arab Sihatree berbaris dengan buah-buahan segar di sekelilingnya",
+      "related": [
+        "gam-arab-atau-gam-arabic-nama-ejaan",
+        "gam-arab-dalam-makanan-harian",
+        "sumber-gam-arab-pokok-akasia-kelestarian"
+      ],
+      "inboundFrom": "sumber-gam-arab-pokok-akasia-kelestarian"
+    },
+    "D3": {
+      "hero": "gam-arab-dalam-makanan-harian.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "Nanas segar dan beberapa gelas minuman berwarna di atas meja taman",
+      "related": [
+        "gam-arab-atau-gam-arabic-nama-ejaan",
+        "jenis-gam-arab-hablur-serbuk",
+        "kajian-saintifik-gam-arab"
+      ],
+      "inboundFrom": "cara-campur-serbuk-gam-arab-resipi"
+    },
+    "E1": {
+      "hero": "acacia-gum-benefits-evidence.webp",
+      "heroW": 1024,
+      "heroH": 576,
+      "heroAlt": "An acacia tree with a wide flat canopy against a pale sky, the tree acacia gum is tapped from",
+      "related": [
+        "gum-arabic-vs-arabic-gum-naming",
+        "acacia-gum-vs-guar-gum",
+        "arabic-gum-scientific-research"
+      ],
+      "inboundFrom": "arabic-gum-scientific-research"
+    },
+    "E2": {
+      "hero": "gum-arabic-vs-arabic-gum-naming.webp",
+      "heroW": 1402,
+      "heroH": 789,
+      "heroAlt": "A pouch of Sihatree Arabic Gum Powder beside a glass of tea and a jar of honey on a kitchen table",
+      "related": [
+        "acacia-gum-benefits-evidence",
+        "acacia-gum-vs-guar-gum",
+        "what-is-arabic-gum-benefits-uses-dosage"
+      ],
+      "inboundFrom": "what-is-arabic-gum-benefits-uses-dosage"
+    },
+    "E3": {
+      "hero": "acacia-gum-vs-guar-gum.webp",
+      "heroW": 1200,
+      "heroH": 675,
+      "heroAlt": "A spoon stirring powder into a tall glass of water, the powder dissolving in a dark swirl",
+      "related": [
+        "acacia-gum-benefits-evidence",
+        "gum-arabic-vs-arabic-gum-naming",
+        "arabic-gum-vs-psyllium-husk-malaysia"
+      ],
+      "inboundFrom": "arabic-gum-vs-psyllium-husk-malaysia"
+    }
+  }
+}

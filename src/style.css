@@ -2409,6 +2409,75 @@ html:has(.blog-post) {
     margin-bottom: 0.7rem;
 }
 
+/* Comparison tables. Added 2026-09-10 (PRESS round 2): every article in the
+   existing 49-topic corpus failed the "structured block" check because the
+   design system had no table styling at all, so no writer ever used one.
+   Answer engines lift tables preferentially, so the block is worth having.
+   .blog-table-wrap gives the table its own horizontal scroll container - the
+   page body must never scroll sideways at 375px. */
+.blog-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 2rem 0;
+    border: 1px solid rgba(45, 41, 78, 0.12);
+    border-radius: 12px;
+    min-width: 0;
+}
+
+.blog-post-body table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 460px;
+    font-size: 0.97rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.blog-post-body table caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0.9rem 1rem 0.6rem;
+    font-size: 0.92rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.blog-post-body thead th {
+    background: rgba(127, 188, 59, 0.12);
+    color: var(--primary-color);
+    font-weight: 700;
+    text-align: left;
+}
+
+.blog-post-body th,
+.blog-post-body td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(45, 41, 78, 0.1);
+    vertical-align: top;
+}
+
+.blog-post-body tbody tr:last-child th,
+.blog-post-body tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.blog-post-body tbody th {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: left;
+}
+
+.blog-post-body tbody tr:nth-child(even) {
+    background: rgba(248, 250, 248, 0.8);
+}
+
+[dir="rtl"] .blog-post-body thead th,
+[dir="rtl"] .blog-post-body th,
+[dir="rtl"] .blog-post-body td,
+[dir="rtl"] .blog-post-body table caption {
+    text-align: right;
+}
+
 /* Content components: use sparingly, only where they aid understanding */
 .blog-highlight {
     background: rgba(127, 188, 59, 0.08);

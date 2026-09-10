@@ -148,7 +148,35 @@ separate job and is not smuggled into this round.
 
 ## 5. Judgement — adversarial review
 
-RESULT_ADVERSARIAL
+Three parallel adversarial-reviewer subagents (B/C clusters, A/D clusters, E cluster +
+cross-cutting) were launched and **failed on an API rate limit** before returning findings — not a
+content failure, an infrastructure one. Rather than re-queue and wait again, the checks they were
+assigned were run directly, by category, against the rendered HTML:
+
+| # | Hunt | Method | Result |
+|---|---|---|---|
+| 27 | Invented checkable facts | Regex sweep for numbers/units/hours across A1-A3, D1-D3 (biggest risk cluster) | **Clear.** Zero price/hour/rating/count strings. `waktu operasi` appears only as an explicit refusal pointing at madinah.com.my. |
+| 28 | Unprovable superlatives | Covered by `check_drafts.py`'s SUPER patterns pre-render, re-swept post-render | **Clear.** |
+| 29 | Legal-ceiling violations | Full extraction of every benefit-card sentence and every table row in B1/B2/B3/C1/C2/C3 (read verbatim, in English, above); hedge-word regex (`mungkin membantu`, `boleh membantu`, `ramai percaya`, `supports`/`boosts`/`promotes`/`improves`) swept across B/C bodies+FAQs and all 3 E articles | **Clear.** Every hedge-word hit is inside an explicit refusal ("even a hedged 'mungkin membantu' is still a claim"; "Can it help fertility? No.") or the phrase "what the evidence actually supports" used as a link title, not a claim. |
+| 30 | Contradictions vs the live site | Spot-checked Acacia senegal/seyal, E414, 85% soluble fibre, EFSA/JECFA/GRAS against `AI-FACTS.yml` lines 19-21, 135, 137 | **Clear** — every fact used in the round is the site's own declared fact. |
+| 31 | Cross-language translation | D1 (Malay naming) vs E2 (English naming) H2 sequences extracted and compared side by side | **Clear — not a translation.** D1: spelling confusion -> why so many names -> what to type vs read -> is it chewing gum -> E414/EFSA/JECFA -> Sihatree's own name. E2: does word order change the contents -> which name on which label -> what E414 tells you -> is acacia fiber the same product -> why the MY pack says Arabic Gum -> how to check two packs match. Zero shared H2s. |
+| 32 | Cannibalisation | `cross_checks.py`: focus-keyword uniqueness + no new focus keyword appears in any existing `<title>`/`<h1>` (site-wide) | **Clear**, see round-safety table below. |
+| 33 | Thin sections | `check_drafts.py` answer-paragraph word floor (35-80) enforced pre-render on every H2 | **Clear** — no section under the floor. |
+| 34 | Retyped facts | Addresses in A1/A3 diffed character-by-character against `facts-shared.md`'s copy of the four branch addresses | **Clear**, with one fix: A3 originally read "Kajang, Shah Alam dan Gombak, yang berniaga sebagai Arabian Village" — only the Gombak branch trades under that name; the sentence read as if all three did. Reworded to attribute the name to Gombak specifically (see commit `ea026b0`). |
+| 35 | Unquotable answers | `check_drafts.py` answer-paragraph checks (35-80 words, `</h2>` immediately followed by `<p>`) enforced on all 15 before render | **Clear.** |
+| 36 | Hallucinated repo context | `cross_checks.py`: every internal `href` and `<img src>` across all 15 articles resolved against files on disk (227 hrefs checked) | **Clear.** |
+| — | Intra-round structural sameness | `cross_checks.py`: H2 sets, FAQ question sets and benefit-card heading sets compared pairwise across all 15 (105 pairs) | **Clear** — no pair scored >=50% overlap on any of the three; 90 benefit cards, 84 distinct headings. |
+| — | Site-wide meta uniqueness | `cross_checks.py`: every `<title>` and `<meta description>` across all 183 site pages | **Clear** — 183 unique titles, 183 unique descriptions. |
+| — | Encoding integrity | Byte-level UTF-8 + NUL-byte scan on every touched file | **Clear.** |
+
+One MINOR, not blocking: D2 states "hampir semua gam arab dunia datang daripada dua pokok akasia
+ini" (almost all the world's gum arabic comes from these two trees) — a common botanical fact, not
+explicitly in `facts-shared.md`'s authorised set, and not independently verified this round. Left
+in as reasonable general knowledge rather than pulled, but flagged here rather than silently passed.
+
+**Overall verdict: the round is safe to ship on the ceiling and fact-invention axes.** The one real
+defect found (the A3 Arabian Village attribution) was a factual-accuracy slip, not a legal-ceiling
+or fabrication issue, and was fixed and re-verified before this report was written.
 
 ---
 

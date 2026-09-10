@@ -140,7 +140,7 @@ separate job and is not smuggled into this round.
 | # | Check | Result |
 |---|---|---|
 | 26a | Focus-keyword uniqueness within the round | **PASS** — 15 distinct focus keywords, asserted twice: once before writing and once against the rendered pages. No two articles in the round, and no new article against any of the 98 existing EN/MS articles, share a focus keyword. A separate sweep confirmed none of the 15 focus keywords appears in any existing article's `<title>` or `<h1>`. |
-| 26b | Round payload ceiling | **PASS** — 1.25 MB of images against a 2.50 MB ceiling set before Stage 4. Nothing generated; every hero is a second crop of one of the project's own photographs, and nothing is upscaled past its source pixels. |
+| 26b | Round payload ceiling | **PASS** — **1.59 MB total** (1.25 MB of images + 0.34 MB of HTML) against a 2.50 MB ceiling set before Stage 4. Nothing generated; every hero is a second crop of one of the project's own photographs, and nothing is upscaled past its source pixels. |
 | 26c | Rollback recorded before Stage 5 edited anything | **PASS** — pre-round sha `d15c821` on `main`; all work on `press-round-gsc`. Revert is `git checkout main && git branch -D press-round-gsc`. |
 | — | Idempotency | **PASS** — the builder refuses to overwrite an existing article file, and every wiring step asserts the slug is not already present before inserting. Both were exercised. |
 

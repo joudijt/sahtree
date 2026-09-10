@@ -49,7 +49,23 @@ Three things follow, and each changed how this round is gated rather than what i
 
 Run before anything was rendered, so a ceiling breach could never reach an HTML file.
 
-RESULT_DRAFT_PREFLIGHT
+**PASS — 15 drafts, 0 failures, 46 warnings.**
+
+Every warning was read, not counted. All 46 fall into two classes, both benign:
+
+- **CLAIM-PATTERN warnings inside a negation (41 of them).** The checker greps for `merawat`,
+  `mencegah`, `menyembuhkan`, `menurunkan kolesterol` and their English equivalents. Every hit on
+  this round sits inside a *refusal* — "ia tidak mencegah, merawat atau menyembuhkan apa-apa
+  keadaan perubatan" — or inside the statutory sentence itself. That is the compliant pattern the
+  facts sheet prescribes, so the regex firing is the checker working, not a breach. Each one was
+  read in context with 90 characters either side before being cleared.
+- **Town warnings (5).** A1 and A3 name Petaling Jaya, Subang, Klang, Johor Bahru, Pulau Pinang,
+  Ipoh, Kuantan, Kota Kinabalu, Kuching, Sabah and Sarawak. Each mention was read in context and
+  each is an explicit *delivery-only* framing — "Tiada cawangan di ... Jangan memandu ke sana
+  untuk mencari satu."
+
+The checker is deliberately noisy in exactly this way: a claim-shaped string that turns out to be a
+refusal is cheap to clear, and a silent checker on this topic would be worthless.
 
 ### Failures found and fixed during the round
 
@@ -79,7 +95,21 @@ Reconciled by re-measuring after the write settled — both counters then return
 
 ## 2. Mechanical — rendered pages (`bin/press_gate.py`)
 
-RESULT_PRESS_GATE
+**15 articles gated against the rendered HTML.**
+
+| | |
+|---|---|
+| 3 English articles | **30/31 pass** each. Zero failures. |
+| 12 Malay articles | **29/31 pass** each. One failure each, all the same known-benign line. |
+
+The only failing line on any of the 15 is `answer-first: Artikel Berkaitan` on the Malay twelve —
+the boilerplate-heading defect proved by the control run against articles that have been live and
+verified since 2026-08-25. The English pages do not trip it because "Related Articles" **is** in
+the gate's boilerplate list; the Malay heading is not. Nothing about the articles differs.
+
+Rendered word counts were measured, not assumed: a sample across both languages returned 567, 571,
+613, 627 and 642 — all inside the control-calibrated 560-900 band, from drafts of 889-1,000. The
+ratio holds at the 0.64-0.68 the control predicted.
 
 ### Known-benign classes on this project
 
@@ -95,8 +125,8 @@ RESULT_PRESS_GATE
 
 | Gate | Before the round | After the round | Verdict |
 |---|---|---|---|
-| `node scripts/check-llms.mjs` | **exit 0**, 3 files green | RESULT_CHECK_LLMS | |
-| `npx html-validate "*.html" "ms/*.html" "blog/*.html" "ms/blog/*.html"` | **exit 1 — 132 errors ALREADY** (62 `no-raw-characters`, 44 `no-inline-style`, 14 `long-title`, 8 `form-dup-name`, 4 `no-implicit-button-type`) | RESULT_HTMLVALIDATE | |
+| `node scripts/check-llms.mjs` | **exit 0**, 3 files green | **exit 0**, 3 files green. EN index 49 → 52 articles, MS 49 → 61. Brand-mention caps still clear (en 54/59, ms 39/50, ar 34/38). | |
+| `npx html-validate "*.html" "ms/*.html" "blog/*.html" "ms/blog/*.html"` | **exit 1 — 132 errors ALREADY** (62 `no-raw-characters`, 44 `no-inline-style`, 14 `long-title`, 8 `form-dup-name`, 4 `no-implicit-button-type`) | **exit 1 — 132 errors. Identical count, identical rule breakdown.** The round adds **zero**. | |
 
 **`audit:html` was already red before this round started.** Gate 26 asks that a check which was
 green stays green; this one was never green. The measurement that matters is therefore whether the
@@ -109,7 +139,7 @@ separate job and is not smuggled into this round.
 
 | # | Check | Result |
 |---|---|---|
-| 26a | Focus-keyword uniqueness within the round | RESULT_26A |
+| 26a | Focus-keyword uniqueness within the round | **PASS** — 15 distinct focus keywords, asserted twice: once before writing and once against the rendered pages. No two articles in the round, and no new article against any of the 98 existing EN/MS articles, share a focus keyword. A separate sweep confirmed none of the 15 focus keywords appears in any existing article's `<title>` or `<h1>`. |
 | 26b | Round payload ceiling | **PASS** — 1.25 MB of images against a 2.50 MB ceiling set before Stage 4. Nothing generated; every hero is a second crop of one of the project's own photographs, and nothing is upscaled past its source pixels. |
 | 26c | Rollback recorded before Stage 5 edited anything | **PASS** — pre-round sha `d15c821` on `main`; all work on `press-round-gsc`. Revert is `git checkout main && git branch -D press-round-gsc`. |
 | — | Idempotency | **PASS** — the builder refuses to overwrite an existing article file, and every wiring step asserts the slug is not already present before inserting. Both were exercised. |

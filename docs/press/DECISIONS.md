@@ -112,3 +112,36 @@
     nothing else changed. One self-introduced banned-word hit ("معتمدة" in a draft FAQ question,
     on the project's own AR-banned-adjectives list) was caught by a pre-gate sweep and fixed to
     "مسجّل" before it ever reached a gate run — see `ROUND-3-MAP.md`.
+
+---
+
+# DECISIONS — Sihatree PRESS round 4 (2026-09-15, branch `press-round-4`)
+
+21. **Codeword PRESS invoked 2026-09-15**: "press sihatree 5 articles" — no language, no GSC
+    qualifier this time (round 3 was explicitly GSC-only). **User decision.**
+22. `assumed` — English, and these five topics. English was the language behind (52 EN vs 61 MS vs
+    49 AR at round start), and live keyword research found five evergreen wellness angles
+    (cholesterol, blood pressure, breastfeeding, metabolism/energy, detox water) with no existing
+    EN/MS/AR article owning any of them — confirmed by grepping every existing `<title>`/`<h1>` on
+    the site before writing. Full reasoning in `ROUND-4-MAP.md`.
+23. `assumed` — all five follow the site's established claim-refusal pattern (capture the query,
+    refuse the unproven/unlawful claim in the same breath) rather than any new content shape. The
+    detox-water article required active discipline around the bare word "detox" specifically —
+    every use was checked to sit inside a same-sentence negation, and this actually caught a real
+    gate failure: the new `public/llms.txt` index line for that article tripped `G9-medical` on
+    first run (bare "Detox" with no same-line negation) and was reworded before the gate passed.
+    See `round-4/GATE.md` §2.
+24. `assumed` — images are reuse-only, second crops of existing site photos, nothing generated.
+    One mid-round correction: the first-pass crops for the cholesterol and blood-pressure articles
+    landed on two near-identical source photos (both a powder-pile-on-a-kitchen-scale
+    composition); the blood-pressure crop was discarded and re-cut from a different, visually
+    distinct source before publishing. See `round-4/IMAGE-INVENTORY.md`.
+25. `assumed` — the optional "extra Related-Articles card on a matched existing article" inbound-
+    linking enhancement that round 2 used was **not done this round**, a scope decision under time
+    constraint. All 5 articles are still fully discoverable via `blog.html`'s grid, the sitemap and
+    `llms.txt` — this only affects the density of inbound links from older articles, not
+    crawlability. Recorded rather than silently skipped; see `round-4/GATE.md` §6.
+26. `assumed` — no MS or AR twin was written for any of the 5 topics this round, matching round
+    2's DECISIONS #11 precedent for single-language rounds: hreflang is a self-referencing pair
+    (own locale + `x-default` → self), and the language switches point at the sibling blog index,
+    never a non-existent article URL.

@@ -85,3 +85,24 @@ signal).
 
 Pre-round sha `cc2d58b` on `main`; all work on `press-round-3-ar-strengthen`. Revert:
 `git checkout main && git branch -D press-round-3-ar-strengthen`.
+
+## Stage 7 — shipped 2026-09-15
+
+- **Build**: `npm run build` exit 0. All 6 changed files confirmed in `dist/ar/blog/` with the new
+  `<table class="blog-table-wrap">` markup present.
+- **Local RTL + mobile check** (Playwright, desktop 1280px + phone 375px, preview server, 6 pages ×
+  2 widths = 12 runs): **12/12 PASS**. Table `direction: rtl` confirmed via computed style on every
+  page; the table's own `.blog-table-wrap` scrolls internally at 375px while the document itself
+  never overflows; the new FAQ item opens correctly (including on all 6 pages); zero console
+  errors. Screenshot-verified the constipation table specifically: RTL column order correct
+  (rightmost column = "المكمل"), caption/cells right-aligned, readable at 375px.
+- **Deploy**: `python scripts/ftp-deploy.py` (password sourced from
+  `reference_sihatree_hosting.md`, exported for this session only) — full 297-file `dist/` tree
+  walked (this script always re-verifies the whole tree, not just changed files), ~13 minutes over
+  the host's slow FTPS link. **297 uploaded, 0 skipped-unchanged, 0 failed; remote-SIZE verify:
+  checked 297, mismatched 0.**
+- **Live verification by content**: all 6 live `https://sihatree.com/ar/blog/<slug>` URLs fetched
+  and confirmed to serve `blog-table-wrap` (the new table markup) — status-code-only checks were
+  not used.
+- **Merge/push**: `press-round-3-ar-strengthen` → `main`, clean fast-forward `cc2d58b..19d608c`,
+  pushed to `origin/main`. Branch left intact as history. Commit `19d608c`.

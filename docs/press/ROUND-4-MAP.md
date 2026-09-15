@@ -83,3 +83,24 @@ round payload ceiling previously set.
 
 Pre-round sha `98115f5` on `main`; all work on `press-round-4`. Revert:
 `git checkout main && git branch -D press-round-4`.
+
+## Stage 7 — shipped 2026-09-15
+
+- **Build**: `npm run build` exit 0. All 5 new files confirmed in `dist/blog/`.
+- **Local check** (Playwright, desktop 1280px + phone 375px, preview server, 5 pages × 2 widths =
+  10 runs): **10/10 PASS**. No horizontal overflow, hero renders, FAQ accordion (6 items each)
+  toggles, tables render inside their own scroll wrapper only, 3 related-article cards each, zero
+  console errors.
+- **Deploy**: `python scripts/ftp-deploy.py`. **First attempt crashed mid-run** —
+  `FileNotFoundError` on `dist/blog/acacia-gum-benefits-evidence.html`, a file that existed both
+  before and after the crash (confirmed on disk), so a transient filesystem/AV hiccup, not a
+  missing file. The crash landed before any `/blog/*.html` file uploaded, so the 5 new round-4
+  articles were **not** live after the first attempt — verified (`/blog/arabic-gum-cholesterol`
+  served no title) before treating anything as shipped. **Re-ran the deploy**: clean full pass,
+  **307 uploaded, 0 skipped, 0 failed; verify: checked 307, mismatched 0.**
+- **Live verification by content**: all 5 new URLs fetched and confirmed to serve the correct
+  `<title>` — status-code-only checks were not used.
+- **Live browser check**: same 10-run Playwright suite re-run against `sihatree.com` — **10/10
+  PASS**, same criteria as local.
+- **Merge/push**: `press-round-4` → `main`, clean fast-forward `98115f5..fd58c1b`, pushed to
+  `origin/main`. Branch left intact as history. Commits `00a5fd4`, `fd58c1b`.

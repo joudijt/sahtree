@@ -86,3 +86,29 @@
     session with no further scope change; see `PROJECT-PROFILE.md`'s "Stage 7 — shipped
     2026-09-15" section for the full check table. Merged `press-round-gsc` into `main`
     (`d15c821..5a65bc4`, clean fast-forward) and pushed. Branch left in place as history.
+
+---
+
+# DECISIONS — Sihatree PRESS round 3 (2026-09-15, branch `press-round-3-ar-strengthen`)
+
+18. **Codeword PRESS invoked 2026-09-15**: "press sihatree 5 articles based on GSC" — no language
+    or topic specified. **User decision.** Initial framing (this session): biggest GSC gap looked
+    like an Arabic skin/hair/face demand cluster with no AR article covering it — **user approved
+    that direction.**
+19. `assumed`, then corrected before writing anything — a `page,query` GSC pull (not just `query`)
+    showed the "no AR article covers it" premise was wrong: all 72 AR page+query rows already
+    resolve to 6 live AR articles, clustered at position 9-20, zero clicks. Writing 5 new AR
+    articles on the same terms would have cannibalised those 6 live pages, against non-negotiable
+    #8 and the exact pattern round 2 routed around for `/ms/benefits` and the 4 branch pages.
+    Surfaced to the user with the corrected picture. **User decision, 2026-09-15: strengthen the 6
+    existing pages instead of writing 5 new ones.** Full keyword-to-page mapping in
+    `ROUND-3-MAP.md`.
+20. `assumed` — five of the six pages' `<title>`/meta/H1 were already well-led with their exact
+    head query on inspection; rewriting already-correct copy has no upside and risks the position
+    already held, so title/meta/H1 were left untouched. The genuine lever was content depth: none
+    of the six carried a real `<table>` (written 2026-07-11/07-16, before round 2 added the
+    site's table CSS) — the same `structured-block` defect class round 2's control run proved
+    site-wide. Added one fact-grounded table + one new FAQ Q&A per page, `dateModified` bumped,
+    nothing else changed. One self-introduced banned-word hit ("معتمدة" in a draft FAQ question,
+    on the project's own AR-banned-adjectives list) was caught by a pre-gate sweep and fixed to
+    "مسجّل" before it ever reached a gate run — see `ROUND-3-MAP.md`.

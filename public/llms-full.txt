@@ -5,7 +5,7 @@
 > sections do not mirror each other line for line. The individual files are at
 > https://sihatree.com/llms.txt · https://sihatree.com/ms/llms.txt · https://sihatree.com/ar/llms.txt
 
-> Last updated: 2026-08-25
+> Last updated: 2026-09-10
 
 ==============================================================================
 # LANGUAGE: English  —  source: https://sihatree.com/llms.txt
@@ -468,7 +468,7 @@ Malaysian English search habits, grouped by what the person is trying to do.
 - https://sihatree.com/retail — Retail: Shop Arabic Gum Powder Online
 - https://sihatree.com/wholesale — Wholesale: Bulk & Distributor Inquiries
 - https://sihatree.com/contact — Contact Us
-- https://sihatree.com/blog — Blog: Arabic Gum Wellness Articles (49 English articles)
+- https://sihatree.com/blog — Blog: Arabic Gum Wellness Articles (52 English articles)
 - https://sihatree.com/blog/what-is-arabic-gum-benefits-uses-dosage — What Is Arabic Gum? Benefits, Uses & Dosage
 - https://sihatree.com/blog/arabic-gum-flavours-comparison — Arabic Gum Flavours Compared
 - https://sihatree.com/blog/best-arabic-gum-flavour-for-beginners — Best Arabic Gum Flavour for Beginners
@@ -518,6 +518,9 @@ Malaysian English search habits, grouped by what the person is trying to do.
 - https://sihatree.com/blog/arabic-gum-acacia-tree-sourcing-sustainability — Where Does Arabic Gum Come From? Acacia Tree Sourcing & Sustainability
 - https://sihatree.com/blog/arabic-gum-cafe-menu-business-malaysia — Adding Arabic Gum Drinks to a Café Menu: A Malaysian F&B Guide
 - https://sihatree.com/blog/arabic-gum-first-30-days-beginners-guide — Arabic Gum First 30 Days: A Beginner's Guide
+- https://sihatree.com/blog/acacia-gum-benefits-evidence — Acacia Gum Benefits: What the Evidence Actually Supports
+- https://sihatree.com/blog/gum-arabic-vs-arabic-gum-naming — Gum Arabic vs Arabic Gum: Same Thing, Different Name?
+- https://sihatree.com/blog/acacia-gum-vs-guar-gum — Acacia Gum vs Guar Gum: How Two Plant Gums Differ
 
 **Other languages**
 
@@ -1150,7 +1153,7 @@ Hubungan: WhatsApp +60 11-1111 9912 · cs@madinah.com.my
 - https://sihatree.com/ms/retail — Runcit | Beli Serbuk Gam Arab Sihatree Dalam Talian
 - https://sihatree.com/ms/wholesale — Borong | Serbuk Gam Arab Sihatree — Pertanyaan Pukal & Pengedar
 - https://sihatree.com/ms/contact — Hubungi Kami | Serbuk Gam Arab Sihatree
-- https://sihatree.com/ms/blog — Blog | Artikel Kesihatan Gam Arab (49 artikel Bahasa Malaysia)
+- https://sihatree.com/ms/blog — Blog | Artikel Kesihatan Gam Arab (61 artikel Bahasa Malaysia)
 
 Artikel blog Bahasa Malaysia:
 
@@ -1203,6 +1206,18 @@ Artikel blog Bahasa Malaysia:
 - https://sihatree.com/ms/blog/sumber-gam-arab-pokok-akasia-kelestarian — Dari Mana Datangnya Gam Arab? Sumber Pokok Akasia & Kelestarian
 - https://sihatree.com/ms/blog/gam-arab-menu-kafe-perniagaan-malaysia — Menambah Minuman Gam Arab ke Menu Kafe: Panduan F&B Malaysia
 - https://sihatree.com/ms/blog/panduan-pemula-30-hari-pertama-gam-arab — Panduan Pemula: 30 Hari Pertama Gam Arab
+- https://sihatree.com/ms/blog/kedai-barangan-arab-berhampiran-saya — Kedai Barangan Arab Near Me: Cara Cari Kedai Berhampiran di Malaysia
+- https://sihatree.com/ms/blog/barang-di-kedai-barangan-arab — Barang di Kedai Barangan Arab: Apa Yang Dijual dan Paling Dicari
+- https://sihatree.com/ms/blog/kedai-barangan-arab-online-malaysia — Kedai Barangan Arab Online Malaysia: Beli Tanpa Perlu ke Kedai
+- https://sihatree.com/ms/blog/khasiat-arabic-gum-untuk-lelaki — Khasiat Arabic Gum untuk Lelaki: Apa Yang Betul dan Apa Yang Tidak
+- https://sihatree.com/ms/blog/gam-arab-tenaga-stamina-lelaki — Gam Arab untuk Tenaga Lelaki: Kenapa Ia Bukan Penguat Stamina
+- https://sihatree.com/ms/blog/gam-arab-kesuburan-lelaki — Gam Arab untuk Kesuburan Lelaki: Apa Yang Kajian Sebenarnya Kata
+- https://sihatree.com/ms/blog/kebaikan-gam-arab-untuk-wanita — Kebaikan Gam Arab untuk Wanita: Apa Yang Perlu Anda Tahu
+- https://sihatree.com/ms/blog/gam-arab-untuk-kolesterol — Gam Arab untuk Kolesterol: Apa Yang Serat Larut Boleh dan Tidak Boleh Buat
+- https://sihatree.com/ms/blog/kenapa-gam-arab-tak-berkesan — Kenapa Gam Arab Tak Berkesan? 6 Sebab Anda Belum Rasa Kebaikannya
+- https://sihatree.com/ms/blog/gam-arab-atau-gam-arabic-nama-ejaan — Gam Arab atau Gam Arabic? Nama, Ejaan dan Maksud Sebenarnya
+- https://sihatree.com/ms/blog/jenis-gam-arab-hablur-serbuk — Jenis Gam Arab: Hablur, Serbuk dan Beza Acacia Senegal vs Seyal
+- https://sihatree.com/ms/blog/gam-arab-dalam-makanan-harian — Gam Arab dalam Makanan Harian: Di Mana Ia Sudah Ada Tanpa Anda Sedar
 
 Nota halal untuk keseluruhan indeks ini: Diperbuat daripada bahan tumbuhan — tiada alkohol, tiada bahan daripada haiwan, sesuai untuk keluarga Muslim. Sihatree tidak memiliki sijil Halal JAKIM.
 

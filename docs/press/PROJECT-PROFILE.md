@@ -84,3 +84,30 @@ Three conclusions, all acted on:
    the site's own related-rail heading, so a boilerplate H2 is judged as an article section. A
    gate framing defect; recorded as a known-benign class in `round-2/GATE.md`, not "fixed" by
    changing the site.
+
+---
+
+## Stage 7 — shipped 2026-09-15
+
+Round 2's hard stop (DECISIONS #7) was lifted this session by explicit owner instruction ("ship
+round 2 now, then round 3"). Every check round-2's `GATE.md` listed as "deliberately not run" was
+run this session:
+
+| Check | Result |
+|---|---|
+| `npm run build` | exit 0. All 15 new slugs confirmed present in `dist/` (12 under `dist/ms/blog/`, 3 under `dist/blog/`). 297 files in `dist/`. |
+| Local browser check (Playwright, desktop 1280px + phone 375px) | 12/12 passed — one article per cluster (A1, B1, C1, D1, E1) + `/ms/benefits`. Zero console errors, no horizontal scroll from the new `<table>` CSS, hero images render, FAQ accordion toggles, lang-switch links resolve. |
+| `python scripts/ftp-deploy.py --skip-static` | 195 uploaded, 0 failed, 0 size mismatches (102 unchanged static files skipped). |
+| Live title verification (19 URLs: 15 new + 4 existing branch pages) | 19/19 match. |
+| Live browser check (same Playwright suite, against `sihatree.com`, not localhost) | 12/12 passed, both widths. |
+| `git merge press-round-gsc` into `main` | clean fast-forward, `d15c821..5a65bc4`. |
+| `git push origin main` | done, no force, branch `press-round-gsc` left intact as history. |
+
+Two small round-2-branch commits made before merge: `public/llms-full.txt` had an uncommitted
+change from the round's own `surfaces.mjs` prebuild (the combined-index URL list) — committed as
+part of the round rather than discarded. A second commit refreshed its "Last updated" stamp to
+today's build date. Neither changes round-2's content or gate verdict.
+
+No new defects found. The round's own known-benign classes (the `answer-first: Artikel Berkaitan`
+false positive, the pre-existing 132 `html-validate` errors) were not re-tested — `GATE.md` already
+settled those.

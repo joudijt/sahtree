@@ -81,3 +81,8 @@
 16. `assumed` — a writer agent reported mojibake in another agent's draft. It was a **false
     alarm**: every draft is valid UTF-8 with zero U+FFFD, and what the agent saw was its own
     console rendering an em dash through cp1252. Verified byte-level before acting on it.
+17. **User decision, 2026-09-15**: "ship round 2 now, then round 3" — lifts the DECISIONS #7 hard
+    stop. Round 2's Stage 7 (build, local + live browser check, deploy, merge, push) was run this
+    session with no further scope change; see `PROJECT-PROFILE.md`'s "Stage 7 — shipped
+    2026-09-15" section for the full check table. Merged `press-round-gsc` into `main`
+    (`d15c821..5a65bc4`, clean fast-forward) and pushed. Branch left in place as history.

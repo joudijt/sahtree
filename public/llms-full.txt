@@ -5,7 +5,7 @@
 > sections do not mirror each other line for line. The individual files are at
 > https://sihatree.com/llms.txt · https://sihatree.com/ms/llms.txt · https://sihatree.com/ar/llms.txt
 
-> Last updated: 2026-09-10
+> Last updated: 2026-09-15
 
 ==============================================================================
 # LANGUAGE: English  —  source: https://sihatree.com/llms.txt
